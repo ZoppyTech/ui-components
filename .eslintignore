@@ -1,0 +1,26 @@
+# don't ever lint package.json
+package.json
+
+# don't ever lint package-lock.json
+package-lock.json
+
+# don't ever lint e2e
+e2e
+
+# don't ever lint node_modules
+node_modules
+
+# don't lint build output (make sure it's set to your correct build folder name)
+dist
+
+# don't lint webpack files
+src/webpack
+
+# don't lint assets files
+src/assets
+
+# don't lint environments files
+src/environments
+
+# don't lint typing files
+src/typings.d.ts

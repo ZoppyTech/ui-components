@@ -2,19 +2,14 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'ps-button',
-  template: `
-    <p>
-      button works!
-    </p>
-  `,
-  styles: [
-  ]
+  templateUrl: './button.component.html',
+  styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent implements OnInit {
 
-  constructor() { }
+  public constructor() { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
 }
