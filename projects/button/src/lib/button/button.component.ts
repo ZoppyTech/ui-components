@@ -19,28 +19,19 @@ export class ButtonComponent implements AfterViewInit {
     public constructor() {}
 
     public ngAfterViewInit(): void {
-        this.defineColorTheme();
+        setTimeout(() => {
+            this.defineColorTheme();
+        });
     }
 
-    public click() {
-        if (this.disabled) {
-            return;
-        }
+    public click(): boolean {
+        if (this.disabled) return false;
         this.onClick.emit(true);
+        return true;
     }
 
-    private defineColorTheme() {
-        const bgColor: any = this.getBgColor(this.buttonContainer?.nativeElement);
-        const brightness: string = this.lightOrDark(bgColor);
-        this.isDarkTheme = brightness === 'dark';
-    }
-
-    private getBgColor(element: any): any {
-        return window.getComputedStyle(element, null).getPropertyValue('background-color');
-    }
-
-    private lightOrDark(color: any) {
-        let r: number, g: number, b: number;
+    public lightOrDark(color: any) {
+      let r: number, g: number, b: number;
 
         if (color.match(/^rgb/)) {
             color = color.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/);
@@ -60,6 +51,16 @@ export class ButtonComponent implements AfterViewInit {
         if (hsp > 180) return 'light';
         else return 'dark';
     }
+
+    private defineColorTheme() {
+        const bgColor: any = this.getBgColor(this.buttonContainer?.nativeElement);
+        const brightness: string = this.lightOrDark(bgColor);
+        this.isDarkTheme = brightness === 'dark';
+    }
+
+    private getBgColor(element: any): any {
+        return window.getComputedStyle(element, null).getPropertyValue('background-color');
+    }
 }
 
-type Style = 'clean' | 'primary' | 'secondary';
+type Style = 'clean' | 'primary' | 'secondary' | 'success' | 'alert' | 'error';
