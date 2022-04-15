@@ -1,1 +1,24 @@
-<p>button works!</p>
+<button
+    #buttonContainer
+    (click)="click()"
+    (keyup.enter)="click()"
+    [disabled]="disabled"
+    class="button"
+    [ngClass]="{
+      'clean': type === 'clean',
+      'primary': type === 'primary',
+      'secondary': type === 'secondary',
+      'alert': type === 'alert',
+      'success': type === 'success',
+      'error': type === 'error',
+      'round': round,
+      'wide': wide}"
+>
+    <div *ngIf="!loading" class="button__content">
+        <ng-content></ng-content>
+    </div>
+    <div *ngIf="loading" class="button-loading">
+        <img *ngIf="isDarkTheme" src="./gifs/light-loading.gif" />
+        <img *ngIf="!isDarkTheme" src="./gifs/dark-loading.gif" />
+    </div>
+</button>

@@ -1,0 +1,52 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+
+
+
+  &__content {
+    width: 100%;
+    height: 100%;
+    padding: 0.4rem;
+
+    &:hover {
+      background-color: rgba($color: #000000, $alpha: 0.05);
+    }
+  }
+}
+
+.clean {
+  background-color: transparent;
+}
+
+.primary {
+  background-color: var(--primary);
+}
+
+.secondary {
+  background-color: var(--secondary);
+}
+
+.alert {
+  background-color: var(--alert);
+}
+
+.success {
+  background-color: var(--success);
+}
+
+.error {
+  background-color: var(--error);
+}
+
+
+.wide {
+  width: 100%;
+}
+
+.round {
+  border-radius: 100%;
+}
+

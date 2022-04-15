@@ -7,6 +7,10 @@
       "button": [
         "dist/button/button",
         "dist/button"
+      ],
+      "visual-identity": [
+        "dist/visual-identity/visual-identity",
+        "dist/visual-identity"
       ]
     },
     "outDir": "./dist/out-tsc",

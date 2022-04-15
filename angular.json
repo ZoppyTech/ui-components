@@ -127,6 +127,37 @@
           }
         }
       }
+    },
+    "visual-identity": {
+      "projectType": "library",
+      "root": "projects/visual-identity",
+      "sourceRoot": "projects/visual-identity/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/visual-identity/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/visual-identity/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/visual-identity/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/visual-identity/src/test.ts",
+            "tsConfig": "projects/visual-identity/tsconfig.spec.json",
+            "karmaConfig": "projects/visual-identity/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "ui-components"
