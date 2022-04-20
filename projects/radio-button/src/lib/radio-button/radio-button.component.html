@@ -1,0 +1,13 @@
+<div class="radio-button" *ngIf="loaded && itemsAreObjects" [ngClass]="{'horizontal': !vertical, 'vertical': vertical}">
+  <span class="radio-item" *ngFor="let item of items">
+    <input [disabled]="disabled" [checked]="item[propertyValue] === value" (change)="onToggleRadioButton(item[propertyValue])" type="radio" id="{{item[propertyValue]}}" name="{{name}}" value="{{item[propertyValue]}}">
+    <label for="{{item[propertyValue]}}" class="text">{{item[propertyLabel]}}</label><br>
+  </span>
+</div>
+
+<div class="radio-button" *ngIf="loaded && !itemsAreObjects" [ngClass]="{'horizontal': !vertical}">
+  <span class="radio-item" *ngFor="let item of items">
+    <input type="radio" [checked]="item === value" id="{{item}}" name="{{name}}" value="{{item}}" (change)="onToggleRadioButton(item)">
+    <label class="text" for="{{item}}">{{item}}</label><br>
+  </span>
+</div>

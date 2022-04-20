@@ -16,6 +16,10 @@
         "dist/icon/icon",
         "dist/icon"
       ],
+      "radio-button": [
+        "dist/radio-button/radio-button",
+        "dist/radio-button"
+      ],
       "search-bar": [
         "dist/search-bar/search-bar",
         "dist/search-bar"

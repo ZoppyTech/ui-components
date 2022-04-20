@@ -275,6 +275,37 @@
           }
         }
       }
+    },
+    "radio-button": {
+      "projectType": "library",
+      "root": "projects/radio-button",
+      "sourceRoot": "projects/radio-button/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/radio-button/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/radio-button/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/radio-button/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/radio-button/src/test.ts",
+            "tsConfig": "projects/radio-button/tsconfig.spec.json",
+            "karmaConfig": "projects/radio-button/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "ui-components"

@@ -8,7 +8,7 @@ import { VisualIdentityService } from 'projects/visual-identity/src/public-api';
 })
 export class AppComponent implements OnInit {
     public loaded: boolean = false;
-    public components: Array<string> = ['button', 'checkbox', 'searchbar'];
+    public components: Array<string> = ['button', 'checkbox', 'searchbar', 'radiobutton'];
 
     public constructor(public visualIdentityService: VisualIdentityService) {}
 

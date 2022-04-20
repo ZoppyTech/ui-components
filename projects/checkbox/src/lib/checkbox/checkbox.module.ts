@@ -4,18 +4,9 @@ import { IconModule } from '@lucarrloliveira/icon';
 import { CheckboxComponent } from './checkbox.component';
 import { VisualIdentityModule } from '@lucarrloliveira/visual-identity';
 
-
 @NgModule({
-  declarations: [
-    CheckboxComponent
-  ],
-  exports: [
-    CheckboxComponent
-  ],
-  imports: [
-    CommonModule,
-    IconModule,
-    VisualIdentityModule
-  ]
+    declarations: [CheckboxComponent],
+    exports: [CheckboxComponent],
+    imports: [CommonModule, IconModule, VisualIdentityModule]
 })
-export class CheckboxModule { }
+export class CheckboxModule {}

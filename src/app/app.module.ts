@@ -25,6 +25,10 @@ const routes: Routes = [
     {
         path: 'searchbar',
         loadChildren: () => import('./pages/page-searchbar/page-searchbar.module').then((m: any) => m.PageSearchbarModule)
+    },
+    {
+        path: 'radiobutton',
+        loadChildren: () => import('./pages/page-radiobutton/page-radiobutton.module').then((m: any) => m.PageRadiobuttonModule)
     }
 ];
 
