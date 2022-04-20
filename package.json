@@ -15,7 +15,8 @@
     "pre-commit": "npm run pretty && npm run lint && git add -A && lint-staged",
     "pretty": "npx prettier --write ./src",
     "lint": "ng lint",
-    "test": "ng test"
+    "test": "ng test",
+    "test-headless": "ng test --browsers ChromeHeadless"
   },
   "private": true,
   "dependencies": {
