@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { UtilizationModule } from 'src/app/components/utilization/utilization.module';
+import { RouterTestingModule } from '@angular/router/testing';
 import { PageCheckboxComponent } from './page-checkbox.component';
+import { IconModule } from '@lucarrloliveira/icon';
 
 describe('PageCheckboxComponent', () => {
     let component: PageCheckboxComponent;
@@ -8,7 +10,8 @@ describe('PageCheckboxComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [PageCheckboxComponent]
+            declarations: [PageCheckboxComponent],
+            imports: [UtilizationModule, IconModule, RouterTestingModule]
         }).compileComponents();
     });
 

@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { IconModule } from '@lucarrloliveira/icon';
+import { IconModule as IconModuleDev } from 'projects/icon/src/lib/icon/icon.module';
+import { environment } from 'src/environments/environment';
 import { UtilizationComponent } from './utilization.component';
 
 describe('UtilizationComponent', () => {
@@ -8,7 +10,8 @@ describe('UtilizationComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [UtilizationComponent]
+            declarations: [UtilizationComponent],
+            imports: [environment.production ? IconModule : IconModuleDev]
         }).compileComponents();
     });
 

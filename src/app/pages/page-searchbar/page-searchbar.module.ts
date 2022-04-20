@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { PageSearchbarComponent } from './page-searchbar.component';
 import { IconModule } from '@lucarrloliveira/icon';
+import { IconModule as IconModuleDev } from 'projects/icon/src/lib/icon/icon.module';
 import { UtilizationModule } from 'src/app/components/utilization/utilization.module';
 import { SearchBarModule as SearchBarModuleDev } from 'projects/search-bar/src/lib/search-bar/search-bar.module';
 import { SearchBarModule } from '@lucarrloliveira/search-bar';
@@ -21,7 +22,7 @@ const routes: Routes = [
     imports: [
         CommonModule,
         UtilizationModule,
-        IconModule,
+        environment.production ? IconModule : IconModuleDev,
         environment.production ? SearchBarModule : SearchBarModuleDev,
         RouterModule.forChild(routes)
     ]

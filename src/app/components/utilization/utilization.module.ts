@@ -4,7 +4,6 @@ import { UtilizationComponent } from './utilization.component';
 import { IconModule } from '@lucarrloliveira/icon';
 import { IconModule as IconModuleDev } from 'projects/icon/src/lib/icon/icon.module';
 import { environment } from 'src/environments/environment';
-
 @NgModule({
     declarations: [UtilizationComponent],
     exports: [UtilizationComponent],

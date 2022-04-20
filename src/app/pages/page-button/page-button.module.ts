@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageButtonComponent } from './page-button.component';
 import { UtilizationModule } from 'src/app/components/utilization/utilization.module';
-import { ButtonModule } from '@lucarrloliveira/button';
-import { ButtonModule as DevButtonModule } from 'projects/button/src/lib/button/button.module';
+import { ButtonModule } from 'projects/button/src/lib/button/button.module';
+import { ButtonModule as ButtonModuleDev } from 'projects/button/src/lib/button/button.module';
 import { RouterModule, Routes } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { IconModule } from '@lucarrloliveira/icon';
+import { IconModule as IconModuleDev } from 'projects/icon/src/lib/icon/icon.module';
 
 const routes: Routes = [
     {
@@ -21,8 +22,8 @@ const routes: Routes = [
     imports: [
         CommonModule,
         UtilizationModule,
-        environment.production ? ButtonModule : DevButtonModule,
-        IconModule,
+        environment.production ? ButtonModule : ButtonModuleDev,
+        environment.production ? IconModule : IconModuleDev,
         RouterModule.forChild(routes)
     ]
 })

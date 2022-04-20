@@ -37,7 +37,7 @@ export class VisualIdentityService {
         root.style.setProperty('--light-highlight', this.shadeColor(highlightColor, 20));
     }
 
-    public lightOrDark(color: any) {
+    public lightOrDark(color: any = '') {
         let r: number, g: number, b: number;
 
         if (color.match(/^rgb/)) {
