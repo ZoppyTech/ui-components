@@ -1,3 +1,4 @@
+import { TemplateRef } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ButtonComponent } from './button.component';
@@ -5,6 +6,7 @@ import { ButtonComponent } from './button.component';
 describe('ButtonComponent', () => {
   let component: ButtonComponent;
   let fixture: ComponentFixture<ButtonComponent>;
+  jest.useFakeTimers();
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -32,13 +34,21 @@ describe('ButtonComponent', () => {
     expect(component.click()).toEqual(false);
   });
 
-  it('should define dark theme', () => {
-    component.lightOrDark('#000');
-    expect(component.isDarkTheme).toBeFalsy();
+  it('should not click when loading', () => {
+    component.loading = true;
+    expect(component.click()).toEqual(false);
   });
 
-  it('should define light theme', () => {
-    component.lightOrDark('#fff');
-    expect(component.isDarkTheme).toBeFalsy();
+  it('define color theme', () => {
+    component.initializeTheme();
+    jest.runAllTimers();
   });
+
+  it('define color theme', () => {
+    component.buttonContainer.nativeElement = null;
+    component.defineColorTheme();
+    component.getBgColor(null);
+    component.getBgColor(document.createElement('div'));
+  });
+
 });

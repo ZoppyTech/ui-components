@@ -3,7 +3,7 @@
     (click)="click()"
     (keyup.enter)="click()"
     [disabled]="disabled"
-    class="button"
+    class="ui-button"
     [ngClass]="{
       'clean': type === 'clean',
       'primary': type === 'primary',
@@ -12,13 +12,14 @@
       'success': type === 'success',
       'error': type === 'error',
       'round': round,
+      'fixed-height': fixedHeight,
       'wide': wide}"
 >
-    <div *ngIf="!loading" class="button__content">
+    <div *ngIf="!loading" class="ui-button__content">
         <ng-content></ng-content>
     </div>
-    <div *ngIf="loading" class="button-loading">
-        <img *ngIf="isDarkTheme" src="./gifs/light-loading.gif" />
-        <img *ngIf="!isDarkTheme" src="./gifs/dark-loading.gif" />
+    <div *ngIf="loading" class="ui-button__loading">
+        <img class="image" *ngIf="isDarkTheme" [src]="darkLoading" />
+        <img class="image" *ngIf="!isDarkTheme" [src]="lightLoading" />
     </div>
 </button>

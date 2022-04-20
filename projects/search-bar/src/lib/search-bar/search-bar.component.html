@@ -1,0 +1,23 @@
+<div
+    [ngClass]="{
+      'search-bar--focus': focus
+    }"
+    class="search-bar"
+  >
+  <div (click)="isOpen = true" class="search">
+      <input type="text" #inputSearch (focus)="setFocus(true)" (blur)="setFocus(false)" [(ngModel)]="searchText" class="search__input text" placeholder="{{placeholder}}">
+  </div>
+
+  <ps-icon
+    (mouseover)="isHovered = true"
+    (mouseleave)="isHovered = false"
+    (click)="isOpen = true"
+    icon="nl-search"
+    [ngClass]="{'focus': focus}"
+    class="icon-search">
+  </ps-icon>
+
+  <button *ngIf="isOpen || isHovered" class="icon-clear" (click)="clearText()">
+    <ps-icon icon="icon-times"></ps-icon>
+  </button>
+</div>

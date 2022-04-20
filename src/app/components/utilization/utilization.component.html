@@ -1,0 +1,20 @@
+<h1>Utilization demonstration:</h1>
+<div class="box">
+    <ng-content></ng-content>
+</div>
+<table class="properties">
+    <thead>
+        <th class="name">Name</th>
+        <th class="type">Type</th>
+        <th class="definition">Definition</th>
+        <th class="default">DefaultValue</th>
+    </thead>
+    <tbody>
+        <tr class="item" *ngFor="let property of properties">
+            <td class="name">{{ property.name }}</td>
+            <td class="type">{{ property.type }}</td>
+            <td class="definition">{{ property.definition }}</td>
+            <td class="default">{{ property.defaultValue }}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,44 +1,70 @@
-.button {
+.ui-button {
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 3px;
-
-
+  border: none;
+  transition: all 0.3s;
+  cursor: pointer;
 
   &__content {
     width: 100%;
     height: 100%;
     padding: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border: none;
+  }
 
-    &:hover {
-      background-color: rgba($color: #000000, $alpha: 0.05);
+  &__loading {
+    .image {
+      width: 2rem;
     }
   }
 }
 
 .clean {
   background-color: transparent;
+  &:hover {
+    background-color: rgba($color: #000000, $alpha: 0.05);
+  }
 }
 
 .primary {
   background-color: var(--primary);
+  &:hover {
+    background-color: var(--dark-primary);
+  }
 }
 
 .secondary {
   background-color: var(--secondary);
+  &:hover {
+    background-color: var(--dark-secondary);
+  }
 }
 
 .alert {
   background-color: var(--alert);
+  &:hover {
+    background-color: var(--dark-alert);
+  }
 }
 
 .success {
   background-color: var(--success);
+  &:hover {
+    background-color: var(--dark-success);
+  }
 }
 
 .error {
   background-color: var(--error);
+  &:hover {
+    background-color: var(--dark-error);
+  }
 }
 
 
@@ -48,5 +74,10 @@
 
 .round {
   border-radius: 100%;
+}
+
+.fixed-height {
+  height: 32px;
+  padding: unset;
 }
 

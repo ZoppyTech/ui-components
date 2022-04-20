@@ -8,6 +8,22 @@
         "dist/button/button",
         "dist/button"
       ],
+      "checkbox": [
+        "dist/checkbox/checkbox",
+        "dist/checkbox"
+      ],
+      "icon": [
+        "dist/icon/icon",
+        "dist/icon"
+      ],
+      "search-bar": [
+        "dist/search-bar/search-bar",
+        "dist/search-bar"
+      ],
+      "searchbar": [
+        "dist/searchbar/searchbar",
+        "dist/searchbar"
+      ],
       "visual-identity": [
         "dist/visual-identity/visual-identity",
         "dist/visual-identity"

@@ -1,0 +1,85 @@
+.search-bar {
+    display: grid;
+    grid-template-columns: 32px 1fr 32px;
+    border-radius: 5px;
+    border: 1px solid #cbcbcb;
+
+    &--focus {
+        border: solid 2px var(--highlight);
+        outline: none;
+    }
+
+
+    .icon-search {
+        color: #4A4A4A;
+    }
+
+    .search {
+        grid-column: 1/4;
+        width: 100%;
+        grid-row: 1;
+        margin-top: 1px;
+
+        &__input {
+            width: calc(100% - 32px);
+            height: 30px;
+            padding-left: 32px;
+            border: none;
+            border-radius: 3px;
+            background-color: transparent;
+        }
+
+        input {
+            outline: none;
+        }
+    }
+
+    ps-icon {
+        margin: 0;
+        padding: 0;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3px;
+    }
+
+    .icon-search {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .icon-clear {
+        cursor: pointer;
+        grid-column: 3;
+        grid-row: 1;
+        width: 32px;
+        height: 32px;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+
+        netlex-icon {
+            height: 26px;
+        }
+
+        &:focus {
+            outline: none;
+
+            netlex-icon {
+                color: var(--highlight);
+            }
+        }
+    }
+
+    .focus {
+        color: var(--highlight);
+    }
+}
+
+:host {
+    width: 100%;
+}
