@@ -7,11 +7,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class CheckboxComponent {
     @Input() public active: boolean = false;
-    @Output() public activeChange = new EventEmitter<boolean>();
     @Input() public disabled: boolean = false;
     @Output() onToggleCheckbox = new EventEmitter();
     @Output() onFocus = new EventEmitter();
-    @Output() onBlur = new EventEmitter();
+    @Output() onBlur = new EventEmitter()
+    @Output() public activeChange = new EventEmitter<boolean>();
     public focused: boolean = false;
 
     public constructor() {}

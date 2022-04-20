@@ -10,6 +10,7 @@
     "publish:icon": "ng build icon && cd dist/icon && npm publish --access public",
     "publish:search-bar": "ng build search-bar && cd dist/search-bar && npm publish --access public",
     "publish:checkbox": "ng build checkbox && cd dist/checkbox && npm publish --access public",
+    "publish:radio-button": "ng build radio-button && cd dist/radio-button && npm publish --access public",
     "watch": "ng build --watch --configuration development",
     "prepare": "husky install",
     "pre-commit": "npm run pretty && npm run lint && git add -A && lint-staged",
@@ -33,6 +34,7 @@
     "@lucarrloliveira/icon": "*",
     "@lucarrloliveira/search-bar": "*",
     "@lucarrloliveira/visual-identity": "*",
+    "@lucarrloliveira/radio-button": "*",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "^0.11.5"

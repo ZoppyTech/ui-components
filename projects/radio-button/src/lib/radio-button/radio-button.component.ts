@@ -10,11 +10,9 @@ export class RadioButtonComponent implements OnInit {
     @Input() public value: any = undefined;
     @Input() public disabled: boolean = false;
     @Input() public propertyLabel: string = '';
-    @Input() public propertyValue: any;
+    @Input() public propertyValue: any = undefined;
     @Input() public vertical: boolean = true;
 
-    @Output() public onFocus = new EventEmitter();
-    @Output() public onBlur = new EventEmitter();
     @Output() public valueChange: EventEmitter<any> = new EventEmitter();
 
     public focused: boolean = false;
@@ -27,16 +25,6 @@ export class RadioButtonComponent implements OnInit {
     ngOnInit(): void {
         this.itemsAreObjects = this.setIfItemsAreObjects();
         this.loaded = true;
-    }
-
-    public onFocusChange() {
-        this.focused = true;
-        this.onFocus.emit();
-    }
-
-    public onBlurChange() {
-        this.focused = false;
-        this.onBlur.emit();
     }
 
     public createGuid(): string {

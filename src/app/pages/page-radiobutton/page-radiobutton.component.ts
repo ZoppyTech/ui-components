@@ -40,45 +40,45 @@ export class PageRadiobuttonComponent implements OnInit {
     public ngOnInit(): void {
         this.properties = [
             {
-                name: 'type',
-                type: 'string',
-                definition: 'Defines button background color',
+                name: 'items',
+                type: 'Array<any>',
+                definition: 'Radio button items, can be a list of objects or a list of string | number',
+                defaultValue: '[]'
+            },
+            {
+                name: 'value',
+                type: 'any',
+                definition: 'Value selected for radio button',
                 defaultValue: 'undefined'
             },
             {
                 name: 'disabled',
                 type: 'boolean',
-                definition: 'Disable the button',
+                definition: 'Disable the component',
                 defaultValue: 'false'
             },
             {
-                name: 'wide',
-                type: 'boolean',
-                definition: 'Defines if the button will take 100% width of parent',
-                defaultValue: 'false'
+                name: 'propertyLabel',
+                type: 'string',
+                definition: 'If list items are objects, this is the property that will be displayed on text of radio buttom item',
+                defaultValue: '""'
             },
             {
-                name: 'round',
-                type: 'boolean',
-                definition: 'Defines if the button will be round',
+                name: 'propertyValue',
+                type: 'any',
+                definition: 'If list items are objects, this is the property that will map to radio button value',
                 defaultValue: 'undefined'
             },
             {
-                name: 'loading',
+                name: 'vertical',
                 type: 'boolean',
-                definition: 'Disables button and add a loading gif',
-                defaultValue: 'false'
-            },
-            {
-                name: 'fixedHeight',
-                type: 'boolean',
-                definition: 'Set button height to 32px',
+                definition: 'Define if items are vertial or horizontal',
                 defaultValue: 'true'
             },
             {
-                name: 'onClick',
-                type: 'function(boolean)',
-                definition: 'Callback function whenever button is clicked',
+                name: 'valueChange',
+                type: 'function(any)',
+                definition: 'Callback function whenever radio button value changes',
                 defaultValue: 'undefined'
             }
         ];

@@ -14,10 +14,10 @@ export class PageCheckboxComponent implements OnInit {
     public ngOnInit(): void {
         this.properties = [
             {
-                name: 'type',
-                type: 'string',
-                definition: 'Defines button background color',
-                defaultValue: 'undefined'
+                name: 'active',
+                type: 'boolean',
+                definition: 'Defines if checkbox is checked or not, this property is two-way binding',
+                defaultValue: 'false'
             },
             {
                 name: 'disabled',
@@ -26,33 +26,21 @@ export class PageCheckboxComponent implements OnInit {
                 defaultValue: 'false'
             },
             {
-                name: 'wide',
-                type: 'boolean',
-                definition: 'Defines if the button will take 100% width of parent',
-                defaultValue: 'false'
-            },
-            {
-                name: 'round',
-                type: 'boolean',
-                definition: 'Defines if the button will be round',
+                name: 'onToggleCheckbox',
+                type: 'function(active)',
+                definition: 'Callback function that returns active value when changed',
                 defaultValue: 'undefined'
             },
             {
-                name: 'loading',
-                type: 'boolean',
-                definition: 'Disables button and add a loading gif',
-                defaultValue: 'false'
+                name: 'onFocus',
+                type: 'function()',
+                definition: 'Callback function whenever checkbox is focused',
+                defaultValue: 'undefined'
             },
             {
-                name: 'fixedHeight',
-                type: 'boolean',
-                definition: 'Set button height to 32px',
-                defaultValue: 'true'
-            },
-            {
-                name: 'onClick',
-                type: 'function(boolean)',
-                definition: 'Callback function whenever button is clicked',
+                name: 'onBlur',
+                type: 'function()',
+                definition: 'Callback function whenever checkbox is blur',
                 defaultValue: 'undefined'
             }
         ];

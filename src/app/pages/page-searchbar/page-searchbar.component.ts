@@ -14,45 +14,27 @@ export class PageSearchbarComponent implements OnInit {
     public ngOnInit(): void {
         this.properties = [
             {
-                name: 'type',
+                name: 'text',
                 type: 'string',
-                definition: 'Defines button background color',
-                defaultValue: 'undefined'
+                definition: 'Searchbar text',
+                defaultValue: '""'
             },
             {
                 name: 'disabled',
                 type: 'boolean',
-                definition: 'Disable the button',
+                definition: 'Disable searchbar',
                 defaultValue: 'false'
             },
             {
-                name: 'wide',
-                type: 'boolean',
-                definition: 'Defines if the button will take 100% width of parent',
-                defaultValue: 'false'
+                name: 'placeholder',
+                type: 'string',
+                definition: 'Placeholder value',
+                defaultValue: '""'
             },
             {
-                name: 'round',
-                type: 'boolean',
-                definition: 'Defines if the button will be round',
-                defaultValue: 'undefined'
-            },
-            {
-                name: 'loading',
-                type: 'boolean',
-                definition: 'Disables button and add a loading gif',
-                defaultValue: 'false'
-            },
-            {
-                name: 'fixedHeight',
-                type: 'boolean',
-                definition: 'Set button height to 32px',
-                defaultValue: 'true'
-            },
-            {
-                name: 'onClick',
-                type: 'function(boolean)',
-                definition: 'Callback function whenever button is clicked',
+                name: 'onChanged',
+                type: 'function(string)',
+                definition: 'Callback function whenever search text changes',
                 defaultValue: 'undefined'
             }
         ];
