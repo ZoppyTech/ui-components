@@ -26,4 +26,12 @@ describe('VisualIdentityService', () => {
     expect('#fff').toEqual(style.getPropertyValue('--error'));
     expect('#fff').toEqual(style.getPropertyValue('--success'));
   })
+
+  it('Light or dark method', () => {
+    expect(service.lightOrDark('#fff')).toEqual('light');
+    expect(service.lightOrDark('#000')).toEqual('dark');
+
+    expect(service.lightOrDark('rgb(255, 255, 255)')).toEqual('light');
+    expect(service.lightOrDark('rgb(0, 0, 0)')).toEqual('dark');
+  })
 });

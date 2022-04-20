@@ -23,7 +23,7 @@ export class SearchBarComponent implements OnInit {
         if (this.disabled) this.clearText();
     }
 
-    public ngAfterViewInit() {
+    public ngAfterViewInit(): any {
         fromEvent(this.input?.nativeElement, 'input')
             .pipe(
                 filter(Boolean),
@@ -31,24 +31,28 @@ export class SearchBarComponent implements OnInit {
                 distinctUntilChanged(),
                 tap(() => {
                     this.onSearchTextChanged(this.searchText);
+                    return true;
                 })
             )
             .subscribe();
     }
 
-    public setFocus(focus: boolean) {
-        if (this.disabled) return;
+    public setFocus(focus: boolean): boolean {
+        if (this.disabled) return false;
         this.focus = focus;
+        return true
     }
 
-    public onSearchTextChanged(searchText: string) {
-        if (this.disabled) return;
+    public onSearchTextChanged(searchText: string): boolean {
+        if (this.disabled) return false;
         this.onChanged.emit(searchText);
+        return true;
     }
 
-    public clearText() {
-      if (this.disabled) return;
+    public clearText(): boolean {
+        if (this.disabled) return false;
         this.searchText = '';
         this.onChanged.emit(this.searchText);
+        return true;
     }
 }

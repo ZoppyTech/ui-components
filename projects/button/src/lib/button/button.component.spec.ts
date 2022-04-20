@@ -6,7 +6,6 @@ import { ButtonComponent } from './button.component';
 describe('ButtonComponent', () => {
   let component: ButtonComponent;
   let fixture: ComponentFixture<ButtonComponent>;
-  jest.useFakeTimers();
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -41,7 +40,6 @@ describe('ButtonComponent', () => {
 
   it('define color theme', () => {
     component.initializeTheme();
-    jest.runAllTimers();
   });
 
   it('define color theme', () => {

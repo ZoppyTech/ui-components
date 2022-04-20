@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { IconModule } from '@lucarrloliveira/icon';
+import { VisualIdentityModule } from '@lucarrloliveira/visual-identity';
 
 import { CheckboxComponent } from './checkbox.component';
 
@@ -8,7 +10,8 @@ describe('CheckboxComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CheckboxComponent ]
+      declarations: [ CheckboxComponent ],
+      imports: [IconModule, VisualIdentityModule]
     })
     .compileComponents();
   });
