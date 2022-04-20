@@ -37,6 +37,9 @@
     "tslib": "^2.3.0",
     "zone.js": "^0.11.5"
   },
+  "scss": {
+    "includePaths": ["./node_modules"]
+  },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.3.1",
     "@angular-eslint/builder": "13.2.1",

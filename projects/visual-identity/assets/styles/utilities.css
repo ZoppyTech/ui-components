@@ -168,13 +168,13 @@
   margin-bottom: 2rem;
 }
 
-@media only screen and (max-width: $phone-portrait-breakpoint) {
+@media only screen and (max-width: var(--phone-portrait-breakpoint)) {
   .desktop {
       display: none !important;
   }
 }
 
-@media only screen and (min-width: $phone-portrait-breakpoint) {
+@media only screen and (min-width: var(--phone-portrait-breakpoint)) {
   .mobile {
       display: none !important;
   }

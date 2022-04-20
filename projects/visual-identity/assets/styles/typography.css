@@ -1,0 +1,42 @@
+@import './variables';
+.text {
+    font-family: 'HelveticaNeue';
+    font-size: 13px;
+    color: var(--ps-black);
+}
+
+.text--large {
+  font-size: 18px;
+}
+
+.text--small {
+  font-size: 12px;
+}
+
+.text--white {
+  color: var(--colors-neutral-white);
+}
+
+.text--dark {
+  color: var(--ps-dark-black);
+}
+
+.text--primary {
+  color: var(--colors-base-primary);
+}
+
+.text--light {
+  color: var(--colors-neutral-light-v-high);
+}
+
+.text--bold {
+  font-weight: bold;
+}
+
+.text--italic {
+  font-style: italic;
+}
+
+.text--placeholder {
+  color: var(--colors-neutral-light);
+}

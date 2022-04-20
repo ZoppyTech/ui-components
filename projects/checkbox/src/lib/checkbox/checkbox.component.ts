@@ -1,15 +1,44 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'lib-checkbox',
-  templateUrl: './checkbox.component.html',
-  styleUrls: ['./checkbox.component.scss']
+    selector: 'ps-checkbox',
+    templateUrl: './checkbox.component.html',
+    styleUrls: ['./checkbox.component.scss']
 })
-export class CheckboxComponent implements OnInit {
+export class CheckboxComponent {
+    @Input() public active: boolean = false;
+    @Output() public activeChange = new EventEmitter<boolean>();
+    @Input() public disabled: boolean = false;
+    @Output() onToggleCheckbox = new EventEmitter();
+    @Output() onFocus = new EventEmitter();
+    @Output() onBlur = new EventEmitter();
+    public focused: boolean = false;
 
-  constructor() { }
+    public constructor() {}
 
-  ngOnInit(): void {
-  }
+    public onFocusChange() {
+        this.focused = true;
+        this.onFocus.emit();
+    }
 
+    public onBlurChange() {
+        this.focused = false;
+        this.onBlur.emit();
+    }
+
+    public toggleCheckbox() {
+        if (!this.disabled) {
+            this.active = !this.active;
+            this.onToggleCheckbox.emit(this.active);
+            this.activeChange.emit(this.active);
+        }
+    }
+
+    public toggleCheckboxEnter() {
+        if (this.focused && !this.disabled) {
+            this.active = !this.active;
+            this.onToggleCheckbox.emit(this.active);
+            this.activeChange.emit(this.active);
+        }
+    }
 }

@@ -1,3 +1,4 @@
+
 .search-bar {
     display: grid;
     grid-template-columns: 32px 1fr 32px;
@@ -9,6 +10,14 @@
         outline: none;
     }
 
+    &--disabled {
+      cursor:not-allowed;
+      background-color: var--(ps-light-gray);
+
+      div, ps-icon, button, input {
+        cursor:not-allowed;
+      }
+    }
 
     .icon-search {
         color: #4A4A4A;

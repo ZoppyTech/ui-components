@@ -1,20 +1,29 @@
-<h1>Utilization demonstration:</h1>
+<h1 class="text text--large text--bold">Utilization demonstration:</h1>
 <div class="box">
     <ng-content></ng-content>
 </div>
+<h2 class="text text--bold text--large margin-y-2">Properties</h2>
 <table class="properties">
     <thead>
-        <th class="name">Name</th>
-        <th class="type">Type</th>
-        <th class="definition">Definition</th>
-        <th class="default">DefaultValue</th>
+        <th class="name"><span class="text">Name</span></th>
+        <th class="type"><span class="text">Type</span></th>
+        <th class="definition"><span class="text">Definition</span></th>
+        <th class="default"><span class="text">DefaultValue</span></th>
     </thead>
     <tbody>
         <tr class="item" *ngFor="let property of properties">
-            <td class="name">{{ property.name }}</td>
-            <td class="type">{{ property.type }}</td>
-            <td class="definition">{{ property.definition }}</td>
-            <td class="default">{{ property.defaultValue }}</td>
+            <td class="name">
+                <span class="text">{{ property.name }}</span>
+            </td>
+            <td class="type">
+                <span class="text">{{ property.type }}</span>
+            </td>
+            <td class="definition">
+                <span class="text">{{ property.definition }}</span>
+            </td>
+            <td class="default">
+                <span class="text">{{ property.defaultValue }}</span>
+            </td>
         </tr>
     </tbody>
 </table>

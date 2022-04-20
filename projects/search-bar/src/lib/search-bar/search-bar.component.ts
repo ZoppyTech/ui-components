@@ -10,11 +10,10 @@ export class SearchBarComponent implements OnInit {
     @Output() public onChanged = new EventEmitter();
     @Input() public text: string = '';
     @Input() public placeholder: string = '';
+    @Input() public disabled: boolean = false;
     public searchText: string = '';
     public focus: boolean = false;
     public isHovered: boolean = false;
-    public isOpen: boolean = false;
-    public disabled: boolean = false;
 
     @ViewChild('inputSearch') input?: ElementRef = undefined;
 
@@ -48,7 +47,7 @@ export class SearchBarComponent implements OnInit {
     }
 
     public clearText() {
-        this.isOpen = false;
+      if (this.disabled) return;
         this.searchText = '';
         this.onChanged.emit(this.searchText);
     }

@@ -1,0 +1,8 @@
+:root {
+  --phone-portrait-breakpoint: 576px;
+  --phone-landscape-breakpoint: 768px;
+  --tablet-breakpoint: 992px;
+  --computer-breakpoint: 1200px;
+}
+
+

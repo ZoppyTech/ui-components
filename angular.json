@@ -33,10 +33,17 @@
                 "glob": "*",
                 "input": "node_modules/@lucarroliveira",
                 "output": "icon/assets/style.css"
+              },
+              {
+                "glob": "*",
+                "input": "node_modules/@lucarroliveira",
+                "output": "visual-identity/assets/styles.css"
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/@lucarrloliveira/icon/assets/icomoon/style.css",
+              "node_modules/@lucarrloliveira/visual-identity/assets/styles.css"
             ],
             "scripts": []
           },
