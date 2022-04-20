@@ -33,5 +33,6 @@ describe('VisualIdentityService', () => {
 
     expect(service.lightOrDark('rgb(255, 255, 255)')).toEqual('light');
     expect(service.lightOrDark('rgb(0, 0, 0)')).toEqual('dark');
+    expect(service.lightOrDark('rgb(0, 0, 0)')).toEqual('light');
   })
 });
