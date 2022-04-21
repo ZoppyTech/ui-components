@@ -31,10 +31,9 @@ export class ButtonComponent implements OnInit {
         this.initializeTheme();
     }
 
-    public initializeTheme(): void {
-        setTimeout(() => {
-            this.defineColorTheme();
-        });
+    public initializeTheme(): boolean {
+        this.defineColorTheme();
+        return true;
     }
 
     public click(): boolean {
@@ -43,10 +42,11 @@ export class ButtonComponent implements OnInit {
         return true;
     }
 
-    public defineColorTheme() {
+    public defineColorTheme(): boolean {
         const bgColor: any = this.getBgColor(this.buttonContainer?.nativeElement);
         const brightness: string = this.visualIdentityService.lightOrDark(bgColor);
         this.isDarkTheme = brightness === 'dark';
+        return true;
     }
 
     public getBgColor(element: any): any {

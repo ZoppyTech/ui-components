@@ -38,15 +38,17 @@ describe('ButtonComponent', () => {
     expect(component.click()).toEqual(false);
   });
 
-  it('define color theme', () => {
-    component.initializeTheme();
+  it('initialize color theme', () => {
+    const initSuccessful: boolean = component.initializeTheme();
+    expect(initSuccessful).toEqual(true);
   });
 
   it('define color theme', () => {
     component.buttonContainer.nativeElement = null;
-    component.defineColorTheme();
+    const initSuccessful: boolean = component.defineColorTheme();
     component.getBgColor(null);
     component.getBgColor(document.createElement('div'));
+    expect(initSuccessful).toEqual(true);
   });
 
 });
