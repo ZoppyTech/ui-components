@@ -16,6 +16,10 @@
         "dist/icon/icon",
         "dist/icon"
       ],
+      "multiselect": [
+        "dist/multiselect/multiselect",
+        "dist/multiselect"
+      ],
       "radio-button": [
         "dist/radio-button/radio-button",
         "dist/radio-button"

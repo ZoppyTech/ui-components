@@ -29,6 +29,10 @@ const routes: Routes = [
     {
         path: 'radiobutton',
         loadChildren: () => import('./pages/page-radiobutton/page-radiobutton.module').then((m: any) => m.PageRadiobuttonModule)
+    },
+    {
+        path: 'multiselect',
+        loadChildren: () => import('./pages/page-multiselect/page-multiselect.module').then((m: any) => m.PageMultiselectModule)
     }
 ];
 

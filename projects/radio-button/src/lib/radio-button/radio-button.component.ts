@@ -36,7 +36,6 @@ export class RadioButtonComponent implements OnInit {
     }
 
     public onToggleRadioButton(value: any): any {
-      debugger;
       this.value = value;
       this.valueChange.emit(value);
     }
