@@ -33,4 +33,17 @@ describe('SearchBarComponent', () => {
     expect(component.clearText()).toBeFalsy();
     expect(component.text).toEqual('');
   });
+
+  it('should clean text', () => {
+    component.searchText = 'this is a test';
+    component.clearText();
+    expect(component.searchText).toEqual('');
+  });
+
+  it('should set focus', () => {
+    component.setFocus(true);
+    expect(component.focus).toBeTruthy();
+    component.setFocus(false);
+    expect(component.focus).toBeFalsy();
+  });
 });

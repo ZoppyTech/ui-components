@@ -18,7 +18,7 @@
     <ps-search-bar *ngIf="setting.enableSearch" (onChanged)="searchBarChanged($event)" [placeholder]="textTranslation.searchPlaceholder || ''" [text]="searchText"></ps-search-bar>
     <ul>
       <li *ngFor="let item of items" [ngClass]="{'hidden': item.isHidden}">
-        <ps-checkbox (onToggleCheckbox)="toggleItem($event, item)" [active]="setItemSelected(item)">
+        <ps-checkbox (onToggleCheckbox)="toggleItem()" [active]="setItemSelected(item)">
           <span class="text">{{item[propertyLabel]}}</span>
         </ps-checkbox>
       </li>

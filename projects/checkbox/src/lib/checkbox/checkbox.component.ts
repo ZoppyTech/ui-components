@@ -26,19 +26,23 @@ export class CheckboxComponent {
         this.onBlur.emit();
     }
 
-    public toggleCheckbox() {
+    public toggleCheckbox(): boolean {
         if (!this.disabled) {
             this.active = !this.active;
             this.onToggleCheckbox.emit(this.active);
             this.activeChange.emit(this.active);
+            return true;
         }
+        return false
     }
 
-    public toggleCheckboxEnter() {
+    public toggleCheckboxEnter(): boolean {
         if (this.focused && !this.disabled) {
             this.active = !this.active;
             this.onToggleCheckbox.emit(this.active);
             this.activeChange.emit(this.active);
+            return true;
         }
+        return false;
     }
 }

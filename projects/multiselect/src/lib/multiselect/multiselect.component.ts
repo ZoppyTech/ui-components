@@ -37,10 +37,11 @@ export class MultiselectComponent implements AfterViewInit {
         return !!this.values.find(value => value === item[this.propertyValue]);
     }
 
-    public toggleItem(active: boolean, item: any): void {
+    public toggleItem(): boolean {
         this.values = this.items.filter((item: any) => this.setItemSelected(item)).map((item: any) => item[this.propertyValue]);
         this.valuesChange.emit(this.values);
         this.onChange?.emit(this.values);
+        return true;
     }
 
     public setItemSelected(item: any) : boolean {

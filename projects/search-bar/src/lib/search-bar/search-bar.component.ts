@@ -6,7 +6,7 @@ import { fromEvent, filter, debounceTime, distinctUntilChanged, tap } from 'rxjs
     templateUrl: './search-bar.component.html',
     styleUrls: ['./search-bar.component.scss']
 })
-export class SearchBarComponent implements OnInit {
+export class SearchBarComponent {
     @Output() public onChanged = new EventEmitter();
     @Input() public text: string = '';
     @Input() public placeholder: string = '';
@@ -18,10 +18,6 @@ export class SearchBarComponent implements OnInit {
     @ViewChild('inputSearch') input?: ElementRef = undefined;
 
     public constructor() {}
-
-    public ngOnInit(): void {
-        if (this.disabled) this.clearText();
-    }
 
     public ngAfterViewInit(): any {
         fromEvent(this.input?.nativeElement, 'input')

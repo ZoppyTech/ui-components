@@ -25,4 +25,31 @@ describe('CheckboxComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should focus', () => {
+    component.onFocusChange();
+    expect(component.focused).toBeTruthy();
+  });
+
+  it('should blur', () => {
+    component.onBlurChange();
+    expect(component.focused).toBeFalsy();
+  });
+
+  it('shouldnt call actions if is disabled', () => {
+    component.disabled = true;
+    expect(component.toggleCheckbox()).toBeFalsy();
+    expect(component.toggleCheckboxEnter()).toBeFalsy();
+  });
+
+  it('should call actions if is not disabled', () => {
+    component.disabled = false;
+    expect(component.toggleCheckbox()).toBeTruthy();
+
+    component.focused = true
+    expect(component.toggleCheckboxEnter()).toBeTruthy();
+
+    component.focused = false
+    expect(component.toggleCheckboxEnter()).toBeFalsy();
+  });
 });
