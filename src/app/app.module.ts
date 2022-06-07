@@ -7,6 +7,7 @@ import { ButtonModule as DevButtonModule } from 'projects/button/src/lib/button/
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
 import { RouterModule, Routes } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const routes: Routes = [
     {
@@ -38,7 +39,7 @@ const routes: Routes = [
 
 @NgModule({
     declarations: [AppComponent],
-    imports: [BrowserModule, RouterModule.forRoot(routes), environment.production ? ButtonModule : DevButtonModule],
+    imports: [BrowserModule, FontAwesomeModule, RouterModule.forRoot(routes), environment.production ? ButtonModule : DevButtonModule],
     providers: [VisualIdentityModule],
     bootstrap: [AppComponent]
 })

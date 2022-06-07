@@ -1,4 +1,15 @@
-import { AfterViewChecked, AfterViewInit, Component, EventEmitter, HostListener, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import {
+    AfterViewChecked,
+    AfterViewInit,
+    Component,
+    EventEmitter,
+    HostListener,
+    Input,
+    OnChanges,
+    OnInit,
+    Output,
+    SimpleChanges
+} from '@angular/core';
 
 @Component({
     selector: 'ps-multiselect',
@@ -12,6 +23,7 @@ export class MultiselectComponent implements AfterViewInit {
     @Input() public values: Array<any> = [];
     @Input() public propertyLabel: string = 'label';
     @Input() public propertyValue: any = 'label';
+    @Input() public disabled: boolean = false;
     @Output() public onChange?: EventEmitter<any> = undefined;
     @Output() public valuesChange: EventEmitter<any> = new EventEmitter();
 
@@ -27,8 +39,8 @@ export class MultiselectComponent implements AfterViewInit {
     }
 
     public init(): void {
-        this.formatItems();
         setTimeout(() => {
+            this.formatItems();
             this.loaded = true;
         });
     }
@@ -37,15 +49,17 @@ export class MultiselectComponent implements AfterViewInit {
         return !!this.values.find(value => value === item[this.propertyValue]);
     }
 
-    public toggleItem(): boolean {
+    public toggleItem(active: boolean, item: any): boolean {
+        if (active) this.values.push(item[this.propertyValue]);
+        else this.values = this.values.filter((value: any) => value !== item[this.propertyValue]);
         this.values = this.items.filter((item: any) => this.setItemSelected(item)).map((item: any) => item[this.propertyValue]);
         this.valuesChange.emit(this.values);
         this.onChange?.emit(this.values);
         return true;
     }
 
-    public setItemSelected(item: any) : boolean {
-      return this.values.find((value: any) => value === item[this.propertyValue]);
+    public setItemSelected(item: any): boolean {
+        return this.values.find((value: any) => value === item[this.propertyValue]);
     }
 
     public setValueSelectedLabel(): string {
@@ -67,7 +81,17 @@ export class MultiselectComponent implements AfterViewInit {
     }
 
     public noItemsVisible(): boolean {
-      return this.items.filter((item: any) => !item.isHidden).length === 0;
+        return this.items.filter((item: any) => !item.isHidden).length === 0;
+    }
+
+    public toggleSelectAll(active: boolean): void {
+        this.values = active ? this.items.map((item: any) => item[this.propertyValue]) : [];
+        this.valuesChange.emit(this.values);
+    }
+
+    public toggleOpen() {
+        if (this.disabled) this.open = false;
+        else this.open = !this.open;
     }
 
     private formatItems(): void {
@@ -93,18 +117,13 @@ export class MultiSelectConfig {
 }
 
 export class MultiSelectConfigSetting {
-    public multiple?: boolean = true;
-    public checkbox?: boolean = true;
     public selectAll?: boolean = true;
     public enableSearch?: boolean = true;
-    public maxWordLength?: number = 255;
 }
 
 export class MultiSelectConfigText {
     public noDataText: string = 'No Data';
     public selectText?: string = 'Select';
-    public selectedText?: string = 'Selected';
     public selectAllText: string = 'Select All';
-    public selectedAllText?: string = 'Selected All';
     public searchPlaceholder?: string = 'Search';
 }

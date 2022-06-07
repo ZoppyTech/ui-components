@@ -1,24 +1,28 @@
-<div class="multiselect" (mouseenter)="hover = true" (mouseleave)="hover = false">
-  <div class="select" (click)="open = !open">
+<div class="multiselect" [ngClass]="{'disabled': disabled}" (mouseenter)="hover = true" (mouseleave)="hover = false">
+  <div class="select" (click)="toggleOpen()">
     <div class="left-content">
-      <span *ngIf="!values || values?.length === 0" class="text">
-        {{textTranslation?.selectText}}
-      </span>
-
-      <span class="text" *ngIf="loaded">
-        {{setValueSelectedLabel()}}
-      </span>
+      <ng-container *ngIf="!values || values?.length === 0; else elseTemplate">
+        <span class="text text--light">{{textTranslation?.selectText}}</span>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <span class="text">{{setValueSelectedLabel()}}</span>
+      </ng-template>
     </div>
     <div class="right-content">
       <ps-icon icon="icon-arrow"></ps-icon>
     </div>
   </div>
 
-  <div class="menu" *ngIf="open">
+  <div class="menu" *ngIf="open && !disabled">
     <ps-search-bar *ngIf="setting.enableSearch" (onChanged)="searchBarChanged($event)" [placeholder]="textTranslation.searchPlaceholder || ''" [text]="searchText"></ps-search-bar>
     <ul>
+      <li *ngIf="setting.selectAll">
+        <ps-checkbox (onToggleCheckbox)="toggleSelectAll($event)">
+          <span class="text">{{textTranslation.selectAllText}}</span>
+        </ps-checkbox>
+      </li>
       <li *ngFor="let item of items" [ngClass]="{'hidden': item.isHidden}">
-        <ps-checkbox (onToggleCheckbox)="toggleItem()" [active]="setItemSelected(item)">
+        <ps-checkbox (onToggleCheckbox)="toggleItem($event, item)" [active]="setItemSelected(item)">
           <span class="text">{{item[propertyLabel]}}</span>
         </ps-checkbox>
       </li>

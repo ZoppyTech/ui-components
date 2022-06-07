@@ -37,19 +37,24 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
+    "@fortawesome/angular-fontawesome": "^0.10.2",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@lucarrloliveira/button": "*",
     "@lucarrloliveira/checkbox": "*",
     "@lucarrloliveira/icon": "*",
+    "@lucarrloliveira/multiselect": "*",
+    "@lucarrloliveira/radio-button": "*",
     "@lucarrloliveira/search-bar": "*",
     "@lucarrloliveira/visual-identity": "*",
-    "@lucarrloliveira/radio-button": "*",
-    "@lucarrloliveira/multiselect": "*",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "^0.11.5"
   },
   "scss": {
-    "includePaths": ["./node_modules"]
+    "includePaths": [
+      "./node_modules"
+    ]
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.3.1",
