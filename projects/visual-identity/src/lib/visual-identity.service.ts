@@ -103,6 +103,26 @@ export class VisualIdentityService {
 }
 
 export class Pallete {
+    public constructor(
+        color100: string,
+        color200: string,
+        color300: string,
+        color400: string,
+        color500: string,
+        color600: string,
+        color700: string,
+        color800: string,
+    ){
+        this.color100 = color100;
+        this.color200 = color200;
+        this.color300 = color300;
+        this.color400 = color400;
+        this.color500 = color500;
+        this.color600 = color600;
+        this.color700 = color700;
+        this.color800 = color800;
+    }
+
     public color100: string = '';
     public color200: string = '';
     public color300: string = '';

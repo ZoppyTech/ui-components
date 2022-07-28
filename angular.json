@@ -307,23 +307,23 @@
         }
       }
     },
-    "multiselect": {
+    "multi-select": {
       "projectType": "library",
-      "root": "projects/multiselect",
-      "sourceRoot": "projects/multiselect/src",
+      "root": "projects/multi-select",
+      "sourceRoot": "projects/multi-select/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/multiselect/ng-package.json"
+            "project": "projects/multi-select/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/multiselect/tsconfig.lib.prod.json"
+              "tsConfig": "projects/multi-select/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/multiselect/tsconfig.lib.json"
+              "tsConfig": "projects/multi-select/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -331,9 +331,9 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/multiselect/src/test.ts",
-            "tsConfig": "projects/multiselect/tsconfig.spec.json",
-            "karmaConfig": "projects/multiselect/karma.conf.js"
+            "main": "projects/multi-select/src/test.ts",
+            "tsConfig": "projects/multi-select/tsconfig.spec.json",
+            "karmaConfig": "projects/multi-select/karma.conf.js"
           }
         }
       }

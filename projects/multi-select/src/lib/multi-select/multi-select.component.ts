@@ -1,18 +1,11 @@
-import {
-    AfterViewInit,
-    Component,
-    EventEmitter,
-    HostListener,
-    Input,
-    Output} from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-    selector: 'ps-multiselect',
-    templateUrl: './multiselect.component.html',
-    styleUrls: ['./multiselect.component.scss']
+    selector: 'ps-multi-select',
+    templateUrl: './multi-select.component.html',
+    styleUrls: ['./multi-select.component.scss']
 })
-export class MultiselectComponent implements AfterViewInit {
-    
+export class MultiSelectComponent implements OnInit {
     @Input() public setting: MultiSelectConfigSetting = new MultiSelectConfigSetting();
     @Input() public textTranslation: MultiSelectConfigText = new MultiSelectConfigText();
     @Input() public items: Array<any> = [];
@@ -30,7 +23,7 @@ export class MultiselectComponent implements AfterViewInit {
 
     public constructor() {}
 
-    public ngAfterViewInit(): void {
+    public ngOnInit(): void {
         this.init();
     }
 

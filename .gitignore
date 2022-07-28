@@ -13,7 +13,7 @@ projects/icon/node_modules
 projects/search-bar/node_modules
 projects/checkbox/node_modules
 projects/radio-button/node_modules
-projects/multiselect/node_modules
+projects/multi-select/node_modules
 /node_modules
 npm-debug.log
 yarn-error.log

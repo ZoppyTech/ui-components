@@ -1,24 +1,23 @@
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { MultiSelectComponent } from './multi-select.component';
 import { ButtonModule } from '@lucarrloliveira/button';
-import { CheckboxModule } from '@lucarrloliveira/checkbox';
 import { IconModule } from '@lucarrloliveira/icon';
 import { SearchBarModule } from '@lucarrloliveira/search-bar';
+import { CheckboxModule } from '@lucarrloliveira/checkbox';
 
-import { MultiselectComponent } from './multiselect.component';
-
-describe('MultiselectComponent', () => {
-    let component: MultiselectComponent;
-    let fixture: ComponentFixture<MultiselectComponent>;
+describe('MultiSelectComponent', () => {
+    let component: MultiSelectComponent;
+    let fixture: ComponentFixture<MultiSelectComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [MultiselectComponent],
+            declarations: [MultiSelectComponent],
             imports: [ButtonModule, IconModule, SearchBarModule, CheckboxModule]
         }).compileComponents();
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(MultiselectComponent);
+        fixture = TestBed.createComponent(MultiSelectComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

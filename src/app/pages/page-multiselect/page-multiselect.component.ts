@@ -6,7 +6,7 @@ import { Property } from 'src/app/components/utilization/utilization.component';
     templateUrl: './page-multiselect.component.html',
     styleUrls: ['./page-multiselect.component.scss']
 })
-export class PageMultiselectComponent implements OnInit {
+export class PageMultiSelectComponent implements OnInit {
     public properties: Array<Property> = [];
     public itemsPlain: any = ['Banana', 'Apple', 'Grape', 'Watermelon', 'Pineapple', 'Peach', 'Strawberry', 'Blueberry'];
 

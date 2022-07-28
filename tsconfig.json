@@ -16,9 +16,9 @@
         "dist/icon/icon",
         "dist/icon"
       ],
-      "multiselect": [
-        "dist/multiselect/multiselect",
-        "dist/multiselect"
+      "multi-select": [
+        "dist/multi-select",
+        "dist/multi-select/multi-select"
       ],
       "radio-button": [
         "dist/radio-button/radio-button",

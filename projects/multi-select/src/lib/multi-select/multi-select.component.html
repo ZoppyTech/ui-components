@@ -13,15 +13,15 @@
     </div>
   </div>
   <div class="menu" *ngIf="open && !disabled">
-    <ps-search-bar *ngIf="setting.enableSearch" (onChanged)="searchBarChanged(text)" [placeholder]="textTranslation.searchPlaceholder || ''" [text]="searchText"></ps-search-bar>
+    <ps-search-bar *ngIf="setting.enableSearch" (onChanged)="searchBarChanged($event)" [placeholder]="textTranslation.searchPlaceholder || ''" [text]="searchText"></ps-search-bar>
     <ul>
       <li *ngIf="setting.selectAll">
-        <ps-checkbox (onToggleCheckbox)="toggleSelectAll(active)">
+        <ps-checkbox (onToggleCheckbox)="toggleSelectAll($event)">
           <span class="text">{{textTranslation.selectAllText}}</span>
         </ps-checkbox>
       </li>
       <li *ngFor="let item of items" [ngClass]="{'hidden': item.isHidden}">
-        <ps-checkbox (onToggleCheckbox)="toggleItem(active, item)" [active]="setItemSelected(item)">
+        <ps-checkbox (onToggleCheckbox)="toggleItem($event, item)" [active]="setItemSelected(item)">
           <span class="text">{{item[propertyLabel]}}</span>
         </ps-checkbox>
       </li>
