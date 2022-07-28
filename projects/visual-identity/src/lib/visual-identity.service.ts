@@ -15,7 +15,7 @@ export class VisualIdentityService {
         success: string,
         info: string,
         warning: string,
-        negative: string,
+        negative: string
     ): void {
         const root: any = document.querySelector(':root');
         root.style.setProperty('--neutral-800', neutral.color800);
@@ -35,7 +35,7 @@ export class VisualIdentityService {
         root.style.setProperty('--primary-300', primary.color300);
         root.style.setProperty('--primary-200', primary.color200);
         root.style.setProperty('--primary-100', primary.color100);
-        
+
         root.style.setProperty('--secondary-800', secondary.color800);
         root.style.setProperty('--secondary-700', secondary.color700);
         root.style.setProperty('--secondary-600', secondary.color600);
@@ -44,7 +44,7 @@ export class VisualIdentityService {
         root.style.setProperty('--secondary-300', secondary.color300);
         root.style.setProperty('--secondary-200', secondary.color200);
         root.style.setProperty('--secondary-100', secondary.color100);
-        
+
         root.style.setProperty('--tertiary-800', tertiary.color800);
         root.style.setProperty('--tertiary-700', tertiary.color700);
         root.style.setProperty('--tertiary-600', tertiary.color600);
@@ -104,15 +104,15 @@ export class VisualIdentityService {
 
 export class Pallete {
     public constructor(
-        color100: string,
-        color200: string,
-        color300: string,
-        color400: string,
-        color500: string,
-        color600: string,
-        color700: string,
         color800: string,
-    ){
+        color700: string,
+        color600: string,
+        color500: string,
+        color400: string,
+        color300: string,
+        color200: string,
+        color100: string
+    ) {
         this.color100 = color100;
         this.color200 = color200;
         this.color300 = color300;

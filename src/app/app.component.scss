@@ -1,32 +1,32 @@
-// .main {
-//     height: 100vh;
-//     width: 100vw;
-//     overflow: hidden;
-//     display: flex;
+.main {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
 
-//     .side-nav {
-//         height: 100vh;
-//         width: 20rem;
-//         background-color: rgb(58, 58, 58);
+    .side-nav {
+        height: 100vh;
+        width: 20rem;
+        background-color: rgb(58, 58, 58);
 
-//         .item {
-//             padding: 1rem;
-//             display: flex;
-//             justify-content: center;
-//             align-items: center;
+        .item {
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-//             a {
-//                 color: white;
-//             }
-//         }
-//     }
+            a {
+                color: white;
+            }
+        }
+    }
 
-//     .body {
-//         flex-grow: 1;
-//         min-width: 0;
-//         height: 100vh;
-//     }
-// }
+    .body {
+        flex-grow: 1;
+        min-width: 0;
+        height: 100vh;
+    }
+}
 
 .content {
     display: flex;
