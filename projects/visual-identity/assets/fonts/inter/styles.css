@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Inter-Bold';
+    src: url("./Inter-Bold.otf") format("otf");
+  }
+  
+  @font-face {
+    font-family: 'Inter-Light';
+    src: url("./Inter-Light.otf") format("otf"),
+      url("./Inter-Light.otf") format("otf"),
+      url("./Inter-Light.otf") format("otf");
+  }
+  
+  @font-face {
+    font-family: 'Inter';
+    src: url("./Inter-Light.otf") format("otf");
+  }
+  

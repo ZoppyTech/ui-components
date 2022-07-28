@@ -7,34 +7,66 @@ export class VisualIdentityService {
     public constructor() {}
 
     public setVariables(
-        primaryColor: string = '#BF2009',
-        secondaryColor: string = '',
-        alertColor: string = '',
-        errorColor: string = '',
-        successColor: string = '',
-        highlightColor: string = ''
+        neutral: Pallete,
+        primary: Pallete,
+        secondary: Pallete,
+        tertiary: Pallete,
+        quaternary: Pallete,
+        success: string,
+        info: string,
+        warning: string,
+        negative: string,
     ): void {
         const root: any = document.querySelector(':root');
-        root.style.setProperty('--primary', primaryColor);
-        root.style.setProperty('--secondary', secondaryColor);
-        root.style.setProperty('--alert', alertColor);
-        root.style.setProperty('--error', errorColor);
-        root.style.setProperty('--success', successColor);
-        root.style.setProperty('--highlight', highlightColor);
+        root.style.setProperty('--neutral-800', neutral.color800);
+        root.style.setProperty('--neutral-700', neutral.color700);
+        root.style.setProperty('--neutral-600', neutral.color600);
+        root.style.setProperty('--neutral-500', neutral.color500);
+        root.style.setProperty('--neutral-400', neutral.color400);
+        root.style.setProperty('--neutral-300', neutral.color300);
+        root.style.setProperty('--neutral-200', neutral.color200);
+        root.style.setProperty('--neutral-100', neutral.color100);
 
-        root.style.setProperty('--dark-primary', this.shadeColor(primaryColor, -20));
-        root.style.setProperty('--dark-secondary', this.shadeColor(secondaryColor, -20));
-        root.style.setProperty('--dark-alert', this.shadeColor(alertColor, -20));
-        root.style.setProperty('--dark-error', this.shadeColor(errorColor, -20));
-        root.style.setProperty('--dark-success', this.shadeColor(successColor, -20));
-        root.style.setProperty('--dark-highlight', this.shadeColor(highlightColor, -20));
+        root.style.setProperty('--primary-800', primary.color800);
+        root.style.setProperty('--primary-700', primary.color700);
+        root.style.setProperty('--primary-600', primary.color600);
+        root.style.setProperty('--primary-500', primary.color500);
+        root.style.setProperty('--primary-400', primary.color400);
+        root.style.setProperty('--primary-300', primary.color300);
+        root.style.setProperty('--primary-200', primary.color200);
+        root.style.setProperty('--primary-100', primary.color100);
+        
+        root.style.setProperty('--secondary-800', secondary.color800);
+        root.style.setProperty('--secondary-700', secondary.color700);
+        root.style.setProperty('--secondary-600', secondary.color600);
+        root.style.setProperty('--secondary-500', secondary.color500);
+        root.style.setProperty('--secondary-400', secondary.color400);
+        root.style.setProperty('--secondary-300', secondary.color300);
+        root.style.setProperty('--secondary-200', secondary.color200);
+        root.style.setProperty('--secondary-100', secondary.color100);
+        
+        root.style.setProperty('--tertiary-800', tertiary.color800);
+        root.style.setProperty('--tertiary-700', tertiary.color700);
+        root.style.setProperty('--tertiary-600', tertiary.color600);
+        root.style.setProperty('--tertiary-500', tertiary.color500);
+        root.style.setProperty('--tertiary-400', tertiary.color400);
+        root.style.setProperty('--tertiary-300', tertiary.color300);
+        root.style.setProperty('--tertiary-200', tertiary.color200);
+        root.style.setProperty('--tertiary-100', tertiary.color100);
 
-        root.style.setProperty('--light-primary', this.shadeColor(primaryColor, 20));
-        root.style.setProperty('--light-secondary', this.shadeColor(secondaryColor, 20));
-        root.style.setProperty('--light-alert', this.shadeColor(alertColor, 20));
-        root.style.setProperty('--light-error', this.shadeColor(errorColor, 20));
-        root.style.setProperty('--light-success', this.shadeColor(successColor, 20));
-        root.style.setProperty('--light-highlight', this.shadeColor(highlightColor, 20));
+        root.style.setProperty('--quaternary-800', quaternary.color800);
+        root.style.setProperty('--quaternary-700', quaternary.color700);
+        root.style.setProperty('--quaternary-600', quaternary.color600);
+        root.style.setProperty('--quaternary-500', quaternary.color500);
+        root.style.setProperty('--quaternary-400', quaternary.color400);
+        root.style.setProperty('--quaternary-300', quaternary.color300);
+        root.style.setProperty('--quaternary-200', quaternary.color200);
+        root.style.setProperty('--quaternary-100', quaternary.color100);
+
+        root.style.setProperty('--success', success);
+        root.style.setProperty('--info', info);
+        root.style.setProperty('--warning', warning);
+        root.style.setProperty('--negative', negative);
     }
 
     public lightOrDark(color: any = '') {
@@ -68,4 +100,15 @@ export class VisualIdentityService {
                 .replace(/../g, (color: any) => ('0' + Math.min(255, Math.max(0, parseInt(color, 16) + percent)).toString(16)).substr(-2));
         return result;
     }
+}
+
+export class Pallete {
+    public color100: string = '';
+    public color200: string = '';
+    public color300: string = '';
+    public color400: string = '';
+    public color500: string = '';
+    public color600: string = '';
+    public color700: string = '';
+    public color800: string = '';
 }

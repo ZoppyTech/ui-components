@@ -39,7 +39,7 @@
   width: 20px;
   height: 20px;
   border-radius: 11px;
-  border: 1px solid var(--ps-black);
+  border: 1px solid var(neutral-500);
   background-color: transparent;
 }
 
@@ -52,5 +52,5 @@
   left: 10px;
   content: " ";
   display: block;
-  background: var(--primary);
+  background: var(--primary-800);
 }

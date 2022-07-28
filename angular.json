@@ -339,5 +339,8 @@
       }
     }
   },
-  "defaultProject": "ui-components"
+  "defaultProject": "ui-components",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -3,16 +3,16 @@
     display: grid;
     grid-template-columns: 32px 1fr 32px;
     border-radius: 5px;
-    border: 1px solid #cbcbcb;
+    border: 1px solid var(neutral-500);
 
     &--focus {
-        border: solid 2px var(--highlight);
+        border: solid 2px var(--primary-400);
         outline: none;
     }
 
     &--disabled {
       cursor:not-allowed;
-      background-color: var--(ps-light-gray);
+      background-color: var--(neutral-400);
 
       div, ps-icon, button, input {
         cursor:not-allowed;
@@ -78,14 +78,14 @@
         &:focus {
             outline: none;
 
-            netlex-icon {
-                color: var(--highlight);
+            ps-icon {
+                color: var(--primary-800);
             }
         }
     }
 
     .focus {
-        color: var(--highlight);
+        color: var(--primary-800);
     }
 }
 
