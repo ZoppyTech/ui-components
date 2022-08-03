@@ -8,7 +8,17 @@ import { VisualIdentityService, Pallete } from '@lucarrloliveira/visual-identity
 })
 export class AppComponent implements OnInit {
     public loaded: boolean = false;
-    public components: Array<string> = ['button', 'checkbox', 'searchbar', 'radiobutton', 'multiselect'];
+    public components: Array<string> = [
+        'button',
+        'checkbox',
+        'searchbar',
+        'radiobutton',
+        'multiselect',
+        'toast',
+        'tooltip',
+        'input',
+        'confirmaction'
+    ];
 
     public constructor(public visualIdentityService: VisualIdentityService) {}
 

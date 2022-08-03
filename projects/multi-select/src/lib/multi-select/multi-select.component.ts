@@ -6,14 +6,17 @@ import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@a
     styleUrls: ['./multi-select.component.scss']
 })
 export class MultiSelectComponent implements OnInit {
-    @Input() public setting: MultiSelectConfigSetting = new MultiSelectConfigSetting();
-    @Input() public textTranslation: MultiSelectConfigText = new MultiSelectConfigText();
+    @Input() public enableSearch: boolean = true;
+    @Input() public selectAll: boolean = true;
+    @Input() public noDataText: string = 'Lista vazia';
+    @Input() public selectText?: string = 'Selecione...';
+    @Input() public selectAllText: string = 'Selecionar todos';
+    @Input() public searchPlaceholder?: string = 'Pesquisar...';
     @Input() public items: Array<any> = [];
     @Input() public values: Array<any> = [];
     @Input() public propertyLabel: string = 'label';
     @Input() public propertyValue: any = 'label';
     @Input() public disabled: boolean = false;
-    @Output() public onChange?: EventEmitter<any> = undefined;
     @Output() public valuesChange: EventEmitter<any> = new EventEmitter();
 
     public loaded: boolean = false;
@@ -43,7 +46,6 @@ export class MultiSelectComponent implements OnInit {
         else this.values = this.values.filter((value: any) => value !== item[this.propertyValue]);
         this.values = this.items.filter((item: any) => this.setItemSelected(item)).map((item: any) => item[this.propertyValue]);
         this.valuesChange.emit(this.values);
-        this.onChange?.emit(this.values);
         return true;
     }
 
@@ -57,7 +59,7 @@ export class MultiSelectComponent implements OnInit {
         if (countSelected > 1) return countSelected + ' Selected';
         const itemSelected = this.items.find((item: any) => this.setItemSelected(item));
         if (itemSelected && typeof itemSelected === 'object') return itemSelected[this.propertyLabel];
-        return this.textTranslation.selectText as string;
+        return this.selectText as string;
     }
 
     public searchBarChanged(text: string) {
@@ -98,21 +100,4 @@ export class MultiSelectComponent implements OnInit {
     @HostListener('document:click', ['$event']) public onClick() {
         if (!this.hover) this.open = false;
     }
-}
-
-export class MultiSelectConfig {
-    setting?: MultiSelectConfigSetting;
-    text?: MultiSelectConfigText;
-}
-
-export class MultiSelectConfigSetting {
-    public selectAll?: boolean = true;
-    public enableSearch?: boolean = true;
-}
-
-export class MultiSelectConfigText {
-    public noDataText: string = 'No Data';
-    public selectText?: string = 'Select';
-    public selectAllText: string = 'Select All';
-    public searchPlaceholder?: string = 'Search';
 }

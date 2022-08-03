@@ -33,37 +33,37 @@
 }
 
 .primary {
-  background-color: var(--primary);
+  background-color: var(--primary-800);
   &:hover {
-    background-color: var(--dark-primary);
+    background-color: var(--primary-600);
   }
 }
 
 .secondary {
-  background-color: var(--secondary);
+  background-color: var(--secondary-600);
   &:hover {
-    background-color: var(--dark-secondary);
+    background-color: var(--secondary-800);
   }
 }
 
 .alert {
-  background-color: var(--alert);
+  background-color: var(--warning);
   &:hover {
-    background-color: var(--dark-alert);
+    background-color: var(--warning);
   }
 }
 
 .success {
   background-color: var(--success);
   &:hover {
-    background-color: var(--dark-success);
+    background-color: var(--success);
   }
 }
 
 .error {
-  background-color: var(--error);
+  background-color: var(--negative);
   &:hover {
-    background-color: var(--dark-error);
+    background-color: var(--negative);
   }
 }
 

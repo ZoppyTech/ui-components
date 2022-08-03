@@ -12,9 +12,15 @@
         "dist/checkbox/checkbox",
         "dist/checkbox"
       ],
+      "confirm-action": [
+        "dist/confirm-action"
+      ],
       "icon": [
         "dist/icon/icon",
         "dist/icon"
+      ],
+      "input": [
+        "dist/input"
       ],
       "multi-select": [
         "dist/multi-select",
@@ -31,6 +37,12 @@
       "searchbar": [
         "dist/searchbar/searchbar",
         "dist/searchbar"
+      ],
+      "toast": [
+        "dist/toast"
+      ],
+      "tooltip": [
+        "dist/tooltip"
       ],
       "visual-identity": [
         "dist/visual-identity/visual-identity",

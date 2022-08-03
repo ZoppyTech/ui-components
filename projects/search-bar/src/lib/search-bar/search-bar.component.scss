@@ -3,16 +3,16 @@
     display: grid;
     grid-template-columns: 32px 1fr 32px;
     border-radius: 5px;
-    border: 1px solid var(neutral-500);
+    border: 1px solid var(--neutral-300);
 
     &--focus {
-        border: solid 2px var(--primary-400);
+        border: solid 2px var(--primary-300);
         outline: none;
     }
 
     &--disabled {
       cursor:not-allowed;
-      background-color: var--(neutral-400);
+      background-color: var--(neutral-200);
 
       div, ps-icon, button, input {
         cursor:not-allowed;

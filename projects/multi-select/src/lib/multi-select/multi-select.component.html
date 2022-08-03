@@ -1,8 +1,8 @@
-<div class="multiselect" [ngClass]="{'disabled': disabled}" (mouseenter)="hover = true" (mouseleave)="hover = false">
+<div class="multi-select" [ngClass]="{'disabled': disabled}" (mouseenter)="hover = true" (mouseleave)="hover = false">
   <div class="select" (click)="toggleOpen()">
     <div class="left-content">
       <ng-container *ngIf="!values || values?.length === 0; else elseTemplate">
-        <span class="text text--light">{{textTranslation.selectText}}</span>
+        <span class="text text--light">{{selectText}}</span>
       </ng-container>
       <ng-template #elseTemplate>
         <span class="text">{{setValueSelectedLabel()}}</span>
@@ -13,11 +13,11 @@
     </div>
   </div>
   <div class="menu" *ngIf="open && !disabled">
-    <ps-search-bar *ngIf="setting.enableSearch" (onChanged)="searchBarChanged($event)" [placeholder]="textTranslation.searchPlaceholder || ''" [text]="searchText"></ps-search-bar>
+    <ps-search-bar *ngIf="enableSearch" (onChanged)="searchBarChanged($event)" [placeholder]="searchPlaceholder || ''" [text]="searchText"></ps-search-bar>
     <ul>
-      <li *ngIf="setting.selectAll">
+      <li *ngIf="selectAll">
         <ps-checkbox (onToggleCheckbox)="toggleSelectAll($event)">
-          <span class="text">{{textTranslation.selectAllText}}</span>
+          <span class="text">{{selectAllText}}</span>
         </ps-checkbox>
       </li>
       <li *ngFor="let item of items" [ngClass]="{'hidden': item.isHidden}">
@@ -28,7 +28,7 @@
     </ul>
 
     <div class="no-data" *ngIf="noItemsVisible()">
-      <span class="text text--light">{{textTranslation.noDataText}}</span>
+      <span class="text text--light">{{noDataText}}</span>
     </div>
   </div>
 </div>
