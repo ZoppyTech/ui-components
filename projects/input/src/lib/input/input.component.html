@@ -1,3 +1,65 @@
-<p>
-  input works!
-</p>
+<div class="input-container">
+  <input
+      *ngIf="rows === 1 && mask !== 'number'"
+      [disabled]="disabled"
+      [maxlength]="maxCharactersAllowed"
+      [ngClass]="{error: errors.length > 0}"
+      #input
+      class="input"
+      [ngModelOptions]="{ standalone: true }"
+      [placeholder]="placeholder"
+      [(ngModel)]="ngModel"
+      [type]="type"
+      [mask]="mask"
+      (blur)="onInputBlur()"
+      (focus)="onInputFocus()"
+      (mouseover)="hover = true"
+      (mouseleave)="hover = false"
+  />
+
+  <input
+      *ngIf="rows === 1 && mask === 'number'"
+      currencyMask
+      #input
+      [ngClass]="{
+          error: errors.length > 0
+      }"
+      [(ngModel)]="ngModel"
+      class="input"
+      [disabled]="disabled"
+      (blur)="onInputBlur()"
+      (focus)="onInputFocus()"
+      (mouseover)="hover = true"
+      (mouseleave)="hover = false"
+  />
+
+  <textarea
+      *ngIf="rows > 1"
+      [disabled]="disabled"
+      [maxlength]="maxCharactersAllowed"
+      [ngClass]="{
+          error: errors.length > 0
+      }"
+      [rows]="rows"
+      #textArea
+      class="input"
+      [ngModelOptions]="{ standalone: true }"
+      [placeholder]="placeholder"
+      (blur)="onInputBlur()"
+      (focus)="onInputFocus()"
+      [(ngModel)]="ngModel"
+      (mouseover)="hover = true"
+      (mouseleave)="hover = false"
+  ></textarea>
+
+  <div class="limit-caracters" *ngIf="maxCharactersAllowed">
+      <span class="text text--small text--500"
+          >{{ ngModel && ngModel.length ? ngModel.length : 0 }}/{{ maxCharactersAllowed }}</span
+      >
+  </div>
+</div>
+
+<div class="error-list" *ngIf="errors.length > 0">
+  <p *ngFor="let error of errors" class="text text--negative">{{error}}</p>
+</div>
+

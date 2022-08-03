@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Property } from 'src/app/components/utilization/utilization.component';
 
 @Component({
     selector: 'app-page-input',
@@ -6,9 +7,84 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./page-input.component.scss']
 })
 export class PageInputComponent implements OnInit {
+    public properties: Array<Property> = [];
+
     public constructor() {}
 
     public ngOnInit(): void {
-        console.log('do nothing');
+        this.properties = [
+            {
+                name: 'ngModel',
+                type: 'string',
+                definition: 'Two way binding property to bind value',
+                defaultValue: ''
+            },
+            {
+                name: 'mask',
+                type: 'string',
+                definition: 'Mask inserted to input field',
+                defaultValue: ''
+            },
+            {
+                name: 'type',
+                type: 'string',
+                definition: 'Type of the input, can be text, email, number, etc.',
+                defaultValue: 'text'
+            },
+            {
+                name: 'rows',
+                type: 'number',
+                definition: 'Number os rows, if more than one, input becomes a textarea',
+                defaultValue: '1'
+            },
+            {
+                name: 'maxCharactersAllowed',
+                type: 'number',
+                definition: 'Maximum number of characters allowed to value',
+                defaultValue: 'null'
+            },
+            {
+                name: 'debounce',
+                type: 'number',
+                definition: 'Amount of miliseconds to wait until call input callback change, ideal for API´s',
+                defaultValue: '0'
+            },
+            {
+                name: 'disabled',
+                type: 'boolean',
+                definition: 'Disable the input',
+                defaultValue: 'false'
+            },
+            {
+                name: 'errors',
+                type: 'Array<string>',
+                definition: 'add errors to input to make it red and show errors',
+                defaultValue: '[]'
+            },
+            {
+                name: 'placeholder',
+                type: 'string',
+                definition: 'blu',
+                defaultValue: 'cauos'
+            },
+            {
+                name: 'onFocus',
+                type: 'EventEmitter',
+                definition: 'blu',
+                defaultValue: 'cauos'
+            },
+            {
+                name: 'onBlur',
+                type: 'EventEmitter',
+                definition: 'blu',
+                defaultValue: 'cauos'
+            },
+            {
+                name: 'ngModelChange',
+                type: 'EventEmitter',
+                definition: 'blu',
+                defaultValue: 'cauos'
+            }
+        ];
     }
 }

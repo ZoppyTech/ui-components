@@ -3,11 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { VisualIdentityModule } from '@lucarrloliveira/visual-identity';
 import { ButtonModule } from '@lucarrloliveira/button';
 import { ButtonModule as DevButtonModule } from 'projects/button/src/lib/button/button.module';
-
+import { NgxMaskModule } from 'ngx-mask';
+import { NgxCurrencyModule } from 'ngx-currency';
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
 import { RouterModule, Routes } from '@angular/router';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const routes: Routes = [
     {
@@ -55,7 +55,13 @@ const routes: Routes = [
 
 @NgModule({
     declarations: [AppComponent],
-    imports: [BrowserModule, FontAwesomeModule, RouterModule.forRoot(routes), environment.production ? ButtonModule : DevButtonModule],
+    imports: [
+        BrowserModule,
+        NgxCurrencyModule,
+        NgxMaskModule.forRoot(),
+        RouterModule.forRoot(routes),
+        environment.production ? ButtonModule : DevButtonModule
+    ],
     providers: [VisualIdentityModule],
     bootstrap: [AppComponent]
 })

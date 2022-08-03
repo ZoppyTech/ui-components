@@ -5,9 +5,7 @@
     (click)="toggleCheckbox()"
 >
     <label [ngClass]="{ checked: active, focused: focused }" class="checkbox" tabindex="1" (focus)="onFocusChange()" (blur)="onBlurChange()">
-        <!-- <ps-icon *ngIf="active" icon="fa-solid fa-check"></ps-icon> -->
-        <!-- <i class="fa-solid fa-check"></i> -->
-        <i class="fa-solid fa-user"></i>
+        <ps-icon *ngIf="active" icon="icon-approval"></ps-icon>
     </label>
 
     <span class="text unselectable">
