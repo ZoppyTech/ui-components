@@ -6,10 +6,9 @@ import { Property } from 'src/app/components/utilization/utilization.component';
     templateUrl: './page-multiselect.component.html',
     styleUrls: ['./page-multiselect.component.scss']
 })
-export class PageMultiselectComponent implements OnInit {
+export class PageMultiSelectComponent implements OnInit {
     public properties: Array<Property> = [];
     public itemsPlain: any = ['Banana', 'Apple', 'Grape', 'Watermelon', 'Pineapple', 'Peach', 'Strawberry', 'Blueberry'];
-
     public initialValues: any = ['Watermelon', 'Peach'];
 
     public constructor() {}
@@ -17,46 +16,70 @@ export class PageMultiselectComponent implements OnInit {
     public ngOnInit(): void {
         this.properties = [
             {
+                name: 'enableSearch',
+                type: 'boolean',
+                definition: 'enable searchbar',
+                defaultValue: 'true'
+            },
+            {
+                name: 'selectAll',
+                type: 'boolean',
+                definition: 'enable selectAll button',
+                defaultValue: 'true'
+            },
+            {
+                name: 'noDataText',
+                type: 'string',
+                definition: 'Placeholder text for no data',
+                defaultValue: 'Lista vazia'
+            },
+            {
+                name: 'selectText',
+                type: 'string',
+                definition: 'Select Item text',
+                defaultValue: 'Selecione...'
+            },
+            {
+                name: 'selectAllText',
+                type: 'string',
+                definition: 'Texto do checkbox selecionar todos',
+                defaultValue: 'Selecionar todos'
+            },
+            {
+                name: 'searchPlaceholder',
+                type: 'string',
+                definition: 'Texto da searchbar',
+                defaultValue: 'Pesquisar...'
+            },
+            {
                 name: 'items',
                 type: 'Array<any>',
-                definition: 'Radio button items, can be a list of objects or a list of string | number',
+                definition: 'Items do multiSelector',
                 defaultValue: '[]'
             },
             {
-                name: 'value',
-                type: 'any',
-                definition: 'Value selected for radio button',
-                defaultValue: 'undefined'
-            },
-            {
-                name: 'disabled',
-                type: 'boolean',
-                definition: 'Disable the component',
-                defaultValue: 'false'
+                name: 'values',
+                type: 'Array<any>',
+                definition: 'Items selecionados do multiSelector',
+                defaultValue: '[]'
             },
             {
                 name: 'propertyLabel',
                 type: 'string',
-                definition: 'If list items are objects, this is the property that will be displayed on text of radio buttom item',
-                defaultValue: '""'
+                definition: 'Propriedade dos items que será exibida no campo',
+                defaultValue: 'label'
             },
             {
                 name: 'propertyValue',
                 type: 'any',
-                definition: 'If list items are objects, this is the property that will map to radio button value',
-                defaultValue: 'undefined'
+                definition: 'Propriedade que será usada como valor do item',
+                defaultValue: 'label'
             },
             {
-                name: 'vertical',
+                name: 'disabled',
                 type: 'boolean',
-                definition: 'Define if items are vertial or horizontal',
-                defaultValue: 'true'
-            },
-            {
-                name: 'valueChange',
-                type: 'function(any)',
-                definition: 'Callback function whenever radio button value changes',
-                defaultValue: 'undefined'
+                definition: 'Desabilitar o componente',
+                defaultValue: 'false'
             }
         ];
     }

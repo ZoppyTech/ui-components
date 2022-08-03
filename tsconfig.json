@@ -12,13 +12,19 @@
         "dist/checkbox/checkbox",
         "dist/checkbox"
       ],
+      "confirm-action": [
+        "dist/confirm-action"
+      ],
       "icon": [
         "dist/icon/icon",
         "dist/icon"
       ],
-      "multiselect": [
-        "dist/multiselect/multiselect",
-        "dist/multiselect"
+      "input": [
+        "dist/input"
+      ],
+      "multi-select": [
+        "dist/multi-select",
+        "dist/multi-select/multi-select"
       ],
       "radio-button": [
         "dist/radio-button/radio-button",
@@ -31,6 +37,12 @@
       "searchbar": [
         "dist/searchbar/searchbar",
         "dist/searchbar"
+      ],
+      "toast": [
+        "dist/toast"
+      ],
+      "tooltip": [
+        "dist/tooltip"
       ],
       "visual-identity": [
         "dist/visual-identity/visual-identity",

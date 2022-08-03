@@ -1,0 +1,16 @@
+{
+  "name": "@lucarrloliveira/multi-select",
+  "version": "0.0.5",
+  "peerDependencies": {
+    "@angular/common": "^14.1.0",
+    "@angular/core": "^14.1.0",
+    "@lucarrloliveira/visual-identity": "*",
+    "@lucarrloliveira/checkbox": "*",
+    "@lucarrloliveira/search-bar": "*",
+    "@lucarrloliveira/icon": "*",
+    "@lucarrloliveira/button": "*"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

@@ -1,42 +1,98 @@
 @import './variables';
-.text {
-    font-family: 'HelveticaNeue';
-    font-size: 13px;
-    color: var(--ps-black);
+
+h1 {
+    font-size: 56px;
+    font-family: 'Inter';
+    color: var(--neutral-800);
 }
 
-.text--large {
-  font-size: 18px;
+h2 {
+    font-size: 48px;
+    font-family: 'Inter';
+    color: var(--neutral-800);
+}
+
+h3 {
+    font-size: 40px;
+    font-family: 'Inter';
+    color: var(--neutral-800);
+}
+
+h4 {
+    font-size: 32px;
+    font-family: 'Inter';
+    color: var(--neutral-800);
+}
+
+h5 {
+    font-size: 24px;
+    font-family: 'Inter';
+    color: var(--neutral-800);
+}
+
+h6 {
+    font-size: 20px;
+    font-family: 'Inter';
+    color: var(--neutral-800);
+}
+
+.text--800 {
+    color: var(--neutral-800);
+}
+.text--700 {
+    color: var(--neutral-700);
+}
+.text--600 {
+    color: var(--neutral-600);
+}
+.text--500 {
+    color: var(--neutral-500);
+}
+.text--400 {
+    color: var(--neutral-400);
+}
+.text--300 {
+    color: var(--neutral-300);
+}
+.text--200 {
+    color: var(--neutral-200);
+}
+.text--100 {
+    color: var(--neutral-100);
+}
+
+.text--caption {
+    font-size: 12px;
+    font-family: 'Inter';
 }
 
 .text--small {
-  font-size: 12px;
+    font-size: 14px;
+    font-family: 'Inter';
 }
 
-.text--white {
-  color: var(--colors-neutral-white);
+.text {
+    font-size: 16px;
+    font-family: 'Inter';
 }
 
-.text--dark {
-  color: var(--ps-dark-black);
+.text--large {
+    font-size: 18px;
+    font-family: 'Inter';
 }
 
-.text--primary {
-  color: var(--colors-base-primary);
+.text--negative {
+    color: var(--negative);
 }
 
-.text--light {
-  color: var(--colors-neutral-light-v-high);
+.text--warning {
+    color: var(--warning);
 }
 
-.text--bold {
-  font-weight: bold;
+.text--info {
+    color: var(--info);
 }
 
-.text--italic {
-  font-style: italic;
-}
-
-.text--placeholder {
-  color: var(--colors-neutral-light);
+.text--success {
+    color: var(--success);
 }

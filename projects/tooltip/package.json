@@ -1,0 +1,14 @@
+{
+    "name": "@lucarrloliveira/tooltip",
+    "version": "0.0.3",
+    "peerDependencies": {
+        "@angular/common": "^14.1.0",
+        "@angular/core": "^14.1.0",
+        "@lucarrloliveira/visual-identity": "*"
+    },
+    "dependencies": {
+        "tslib": "^2.3.0"
+    },
+    "description": "Tooltip component.",
+    "license": "ISC"
+}

@@ -34,6 +34,22 @@ const routes: Routes = [
     {
         path: 'multiselect',
         loadChildren: () => import('./pages/page-multiselect/page-multiselect.module').then((m: any) => m.PageMultiselectModule)
+    },
+    {
+        path: 'toast',
+        loadChildren: () => import('./pages/page-toast/page-toast.module').then((m: any) => m.PageToastModule)
+    },
+    {
+        path: 'tooltip',
+        loadChildren: () => import('./pages/page-tooltip/page-tooltip.module').then((m: any) => m.PageTooltipModule)
+    },
+    {
+        path: 'input',
+        loadChildren: () => import('./pages/page-input/page-input.module').then((m: any) => m.PageInputModule)
+    },
+    {
+        path: 'confirm-action',
+        loadChildren: () => import('./pages/page-confirm-action/page-confirm-action.module').then((m: any) => m.PageConfirmActionModule)
     }
 ];
 

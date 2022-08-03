@@ -1,7 +1,6 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { VisualIdentityService } from 'projects/visual-identity/src/public-api';
-//import { VisualIdentityService } from '@lucarrloliveira/visual-identity';
+import { VisualIdentityService } from '@lucarrloliveira/visual-identity';
 
 @Component({
     selector: 'ps-button',
