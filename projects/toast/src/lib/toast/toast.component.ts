@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ToastService } from './toast.service';
 
 @Component({
     selector: 'ps-toast',
@@ -6,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./toast.component.scss']
 })
 export class ToastComponent implements OnInit {
-    constructor() {}
+    public observer: MutationObserver | undefined = undefined;
+    constructor(public toast: ToastService, private elementRef: ElementRef) {}
 
-    ngOnInit() {}
+    public ngOnInit(): void {}
+
+    public close(): void {
+        this.toast.open = false;
+    }
 }

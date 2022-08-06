@@ -1,3 +1,37 @@
-<p>
-  toast works!
-</p>
+<div class="toast" [ngClass]="{ closed: !toast.open }">
+    <div
+        class="left"
+        [ngClass]="{
+            success: toast.type === 'success',
+            alert: toast.type === 'alert',
+            error: toast.type === 'error'
+        }"
+    ></div>
+    <div class="toast__content">
+        <div
+            class="icon-content"
+            [ngClass]="{
+                'icon--success': toast.type === 'success',
+                'icon--alert': toast.type === 'alert',
+                'icon--error': toast.type === 'error'
+            }"
+        >
+            <span [ngSwitch]="toast.type">
+                <ps-icon icon="icon-success" class="text text--bold" *ngSwitchCase="'success'"></ps-icon>
+                <ps-icon icon="icon-error" class="text text--bold" *ngSwitchCase="'error'"></ps-icon>
+                <ps-icon icon="icon-success" class="text text--bold" *ngSwitchCase="'alert'"></ps-icon>
+            </span>
+        </div>
+        <div class="labels">
+            <span [ngSwitch]="toast.type">
+                <span class="text text--bold" *ngSwitchCase="'success'">{{ toast.title || 'Sucesso' }}</span>
+                <span class="text text--bold" *ngSwitchCase="'error'">{{ toast.title || 'Erro' }}</span>
+                <span class="text text--bold" *ngSwitchCase="'alert'">{{ toast.title || 'Alerta' }}</span>
+            </span>
+
+            <span class="text text--400">
+                {{ toast.text }}
+            </span>
+        </div>
+    </div>
+</div>

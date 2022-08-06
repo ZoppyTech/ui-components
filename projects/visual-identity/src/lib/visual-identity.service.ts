@@ -35,6 +35,7 @@ export class VisualIdentityService {
         root.style.setProperty('--primary-300', primary.color300);
         root.style.setProperty('--primary-200', primary.color200);
         root.style.setProperty('--primary-100', primary.color100);
+        root.style.setProperty('--primary', primary.colorDefault);
 
         root.style.setProperty('--secondary-800', secondary.color800);
         root.style.setProperty('--secondary-700', secondary.color700);
@@ -44,6 +45,7 @@ export class VisualIdentityService {
         root.style.setProperty('--secondary-300', secondary.color300);
         root.style.setProperty('--secondary-200', secondary.color200);
         root.style.setProperty('--secondary-100', secondary.color100);
+        root.style.setProperty('--secondary', secondary.colorDefault);
 
         root.style.setProperty('--tertiary-800', tertiary.color800);
         root.style.setProperty('--tertiary-700', tertiary.color700);
@@ -53,6 +55,7 @@ export class VisualIdentityService {
         root.style.setProperty('--tertiary-300', tertiary.color300);
         root.style.setProperty('--tertiary-200', tertiary.color200);
         root.style.setProperty('--tertiary-100', tertiary.color100);
+        root.style.setProperty('--tertiary', tertiary.colorDefault);
 
         root.style.setProperty('--quaternary-800', quaternary.color800);
         root.style.setProperty('--quaternary-700', quaternary.color700);
@@ -62,6 +65,7 @@ export class VisualIdentityService {
         root.style.setProperty('--quaternary-300', quaternary.color300);
         root.style.setProperty('--quaternary-200', quaternary.color200);
         root.style.setProperty('--quaternary-100', quaternary.color100);
+        root.style.setProperty('--quaternary', quaternary.colorDefault);
 
         root.style.setProperty('--success', success);
         root.style.setProperty('--info', info);
@@ -111,7 +115,8 @@ export class Pallete {
         color400: string,
         color300: string,
         color200: string,
-        color100: string
+        color100: string,
+        colorDefault: string = ''
     ) {
         this.color100 = color100;
         this.color200 = color200;
@@ -121,6 +126,7 @@ export class Pallete {
         this.color600 = color600;
         this.color700 = color700;
         this.color800 = color800;
+        this.colorDefault = colorDefault;
     }
 
     public color100: string = '';
@@ -131,4 +137,5 @@ export class Pallete {
     public color600: string = '';
     public color700: string = '';
     public color800: string = '';
+    public colorDefault: string = '';
 }

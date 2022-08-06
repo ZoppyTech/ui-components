@@ -7,28 +7,28 @@
         position: relative;
         background-color: var(--neutral-100);
         padding: 0px 1px;
-        border: 1px solid var(--neutral-500);
-        border-radius: 2px;
+        border: 1px solid var(--neutral-300);
+        border-radius: 6px;
         overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
         transition: all 0.2s;
-        height: 16px;
-        width: 16px;
+        height: 24px;
+        width: 24px;
 
         &.checked {
-            background-color: var(--primary-800);
+            background-color: var(--secondary);
 
             ps-icon {
                 color: var(--neutral-100);
-                font-size: 14px;
-                height: 100%;
+                font-size: 12px;
+                margin-top: 2px;
             }
         }
 
         &.focused {
-            border: 1px solid var(--primary-800);
+            border: 1px solid var(--secondary);
             outline: none;
         }
     }

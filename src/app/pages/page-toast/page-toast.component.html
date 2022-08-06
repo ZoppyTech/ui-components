@@ -1,1 +1,7 @@
-<p>page-toast works!</p>
+<app-utilization class="content" [properties]="properties">
+    <div class="components-content">
+        <a class="text--info text--link" (click)="openToast('success')">Open success toast</a>
+        <a class="text--info text--link" (click)="openToast('error')">Open error toast</a>
+        <a class="text--info text--link" (click)="openToast('alert')">Open alert toast</a>
+    </div>
+</app-utilization>

@@ -8,6 +8,8 @@ import { NgxCurrencyModule } from 'ngx-currency';
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
 import { RouterModule, Routes } from '@angular/router';
+import { ToastModule } from '@lucarrloliveira/toast';
+import { ToastModule as DevToastModule } from 'projects/toast/src/lib/toast/toast.module';
 
 const routes: Routes = [
     {
@@ -60,7 +62,8 @@ const routes: Routes = [
         NgxCurrencyModule,
         NgxMaskModule.forRoot(),
         RouterModule.forRoot(routes),
-        environment.production ? ButtonModule : DevButtonModule
+        environment.production ? ButtonModule : DevButtonModule,
+        environment.production ? ToastModule : DevToastModule
     ],
     providers: [VisualIdentityModule],
     bootstrap: [AppComponent]

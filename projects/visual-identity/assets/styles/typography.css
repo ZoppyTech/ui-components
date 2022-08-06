@@ -96,3 +96,36 @@ h6 {
 .text--success {
     color: var(--success);
 }
+
+.text--primary {
+    color: var(--primary);
+}
+
+.text--secondary {
+    color: var(--secondary);
+}
+
+.text--tertiary {
+    color: var(--tertiary);
+}
+
+.text--quaternary {
+    color: var(--quaternary);
+}
+
+.text--bold {
+    font-weight: bold;
+}
+
+.text--link {
+    text-decoration: none !important;
+}
+
+.text--link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.text--center {
+    text-align: center;
+}

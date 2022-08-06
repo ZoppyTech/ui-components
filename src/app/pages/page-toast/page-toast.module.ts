@@ -3,9 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PageToastComponent } from './page-toast.component';
 import { Routes, RouterModule } from '@angular/router';
 import { UtilizationModule } from 'src/app/components/utilization/utilization.module';
-import { ToastModule as ToastModuleDev } from 'projects/toast/src/lib/toast/toast.module';
-import { ToastModule } from '@lucarrloliveira/toast';
-import { environment } from 'src/environments/environment';
+
 const routes: Routes = [
     {
         path: '',
@@ -14,7 +12,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [CommonModule, UtilizationModule, RouterModule.forChild(routes), environment.production ? ToastModule : ToastModuleDev],
+    imports: [CommonModule, UtilizationModule, RouterModule.forChild(routes)],
     declarations: [PageToastComponent]
 })
 export class PageToastModule {}

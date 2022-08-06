@@ -2,10 +2,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 3px;
+  border-radius: 12px;
   border: none;
   transition: all 0.3s;
   cursor: pointer;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.25);
+  }
 
   &__content {
     width: 100%;
@@ -28,21 +33,35 @@
 .clean {
   background-color: transparent;
   &:hover {
-    background-color: var(--neutral-200);
+    background-color: var(--neutral-200) !important;
   }
 }
 
 .primary {
-  background-color: var(--primary-800);
+  background-color: var(--primary);
   &:hover {
-    background-color: var(--primary-600);
+    background-color: var(--primary-800) !important;
   }
 }
 
 .secondary {
-  background-color: var(--secondary-600);
+  background-color: var(--secondary);
   &:hover {
-    background-color: var(--secondary-800);
+    background-color: var(--secondary-800) !important;
+  }
+}
+
+.tertiary {
+  background-color: var(--tertiary);
+  &:hover {
+    background-color: var(--tertiary-500) !important;
+  }
+}
+
+.quaternary {
+  background-color: var(--quaternary);
+  &:hover {
+    background-color: var(--quaternary-800) !important;
   }
 }
 
@@ -77,7 +96,7 @@
 }
 
 .fixed-height {
-  height: 32px;
+  height: 52px;
   padding: unset;
 }
 

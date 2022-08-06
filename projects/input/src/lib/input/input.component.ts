@@ -16,6 +16,9 @@ export class InputComponent implements OnInit, AfterViewInit {
     @Input() public disabled: boolean = false;
     @Input() public errors: Array<string> = [];
     @Input() public placeholder: string = '';
+    @Input() public icon: string = '';
+    @Input() public iconColor: string = '';
+    @Input() public showErrors: boolean = false;
     @Output() public onFocus = new EventEmitter();
     @Output() public onBlur = new EventEmitter();
     @Output() public ngModelChange = new EventEmitter<string>();
@@ -29,8 +32,6 @@ export class InputComponent implements OnInit, AfterViewInit {
     constructor() {}
 
     ngAfterViewInit() {
-        if (!this.debounce) return;
-
         setTimeout(() => {
             this.domComponent = this.rows > 1 ? this.textArea : this.input;
             fromEvent(this.domComponent?.nativeElement, 'keyup')
@@ -51,6 +52,11 @@ export class InputComponent implements OnInit, AfterViewInit {
     }
 
     ngOnInit() {}
+
+    public onModelChange(): void {
+        if (this.debounce) return;
+        this.ngModelChange.emit(this.ngModel);
+    }
 
     public onInputFocus() {
         if (this.hover && !this.focus) {

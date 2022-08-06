@@ -1,11 +1,12 @@
-<div
-    class="container"
-    [ngClass]="{ disabled: disabled }"
-    (keyup.enter)="toggleCheckboxEnter()"
-    (click)="toggleCheckbox()"
->
-    <label [ngClass]="{ checked: active, focused: focused }" class="checkbox" tabindex="1" (focus)="onFocusChange()" (blur)="onBlurChange()">
-        <ps-icon *ngIf="active" icon="icon-approval"></ps-icon>
+<div class="container" [ngClass]="{ disabled: disabled }" (keyup.enter)="toggleCheckboxEnter()" (click)="toggleCheckbox()">
+    <label
+        [ngClass]="{ checked: active, focused: focused }"
+        class="checkbox"
+        tabindex="1"
+        (focus)="onFocusChange()"
+        (blur)="onBlurChange()"
+    >
+        <ps-icon *ngIf="active" icon="icon-check"></ps-icon>
     </label>
 
     <span class="text unselectable">

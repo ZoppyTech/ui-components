@@ -7,12 +7,13 @@
 }
 
 .input {
-    border-radius: 3px;
+    border-radius: 12px;
     background-color: var(--neutral-100);
     border: 1px solid var(--neutral-300);
     outline: none;
     padding-left: 5px;
     width: 100%;
+    font-family: "Inter" !important;
 
     &.no-border {
         border: none;
@@ -29,11 +30,32 @@
     }
 
     &:focus {
-        border: solid 1px var(--primary-600);
-        box-shadow: 0 0 6px 0 rgba(var(--primary-600), 0.3);
+        border: solid 1px var(--secondary-600);
+        box-shadow: 0 0 6px 0 rgba(var(--secondary-600), 0.3);
         outline: none;
         background-color: var(--neutral-100);
     }
+}
+
+.icon-field {
+  padding-right: 32px;
+}
+
+.content-with-icon {
+  position: relative;
+}
+
+ps-icon {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  bottom: 16px;
+  font-size: 20px;
+  color: var(--neutral-400);
+}
+
+.icon--error {
+  color: var(--negative);
 }
 
 .error {
@@ -63,7 +85,7 @@
 }
 
 input {
-    height: 32px;
+    height: 52px;
 }
 
 input::-webkit-outer-spin-button,

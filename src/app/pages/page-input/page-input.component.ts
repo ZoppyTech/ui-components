@@ -8,7 +8,7 @@ import { Property } from 'src/app/components/utilization/utilization.component';
 })
 export class PageInputComponent implements OnInit {
     public properties: Array<Property> = [];
-
+    public batata: string = '';
     public constructor() {}
 
     public ngOnInit(): void {
@@ -64,26 +64,44 @@ export class PageInputComponent implements OnInit {
             {
                 name: 'placeholder',
                 type: 'string',
-                definition: 'blu',
-                defaultValue: 'cauos'
+                definition: 'Input placeholder',
+                defaultValue: ''
+            },
+            {
+                name: 'icon',
+                type: 'string',
+                definition: 'show icon on right',
+                defaultValue: ''
+            },
+            {
+                name: 'iconColor',
+                type: 'string',
+                definition: 'change icon color',
+                defaultValue: ''
+            },
+            {
+                name: 'showErrors',
+                type: 'boolean',
+                definition: 'Show array of errors',
+                defaultValue: 'false'
             },
             {
                 name: 'onFocus',
                 type: 'EventEmitter',
-                definition: 'blu',
-                defaultValue: 'cauos'
+                definition: 'Trigger on Focus',
+                defaultValue: ''
             },
             {
                 name: 'onBlur',
                 type: 'EventEmitter',
-                definition: 'blu',
-                defaultValue: 'cauos'
+                definition: 'Trigger on Blur',
+                defaultValue: ''
             },
             {
                 name: 'ngModelChange',
                 type: 'EventEmitter',
-                definition: 'blu',
-                defaultValue: 'cauos'
+                definition: 'Trigger whenever value changes',
+                defaultValue: ''
             }
         ];
     }

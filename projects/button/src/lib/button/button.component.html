@@ -1,19 +1,21 @@
 <button
     #buttonContainer
     (click)="click()"
-    (keyup.enter)="click()"
     [disabled]="disabled"
     class="ui-button"
     [ngClass]="{
-      'clean': type === 'clean',
-      'primary': type === 'primary',
-      'secondary': type === 'secondary',
-      'alert': type === 'alert',
-      'success': type === 'success',
-      'error': type === 'error',
-      'round': round,
-      'fixed-height': fixedHeight,
-      'wide': wide}"
+        clean: type === 'clean',
+        primary: type === 'primary',
+        secondary: type === 'secondary',
+        tertiary: type === 'tertiary',
+        quaternary: type === 'quaternary',
+        alert: type === 'alert',
+        success: type === 'success',
+        error: type === 'error',
+        round: round,
+        'fixed-height': fixedHeight,
+        wide: wide
+    }"
 >
     <div *ngIf="!loading" class="ui-button__content">
         <ng-content></ng-content>
