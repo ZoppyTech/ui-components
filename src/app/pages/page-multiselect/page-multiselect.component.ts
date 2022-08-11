@@ -11,6 +11,9 @@ export class PageMultiSelectComponent implements OnInit {
     public itemsPlain: any = ['Banana', 'Apple', 'Grape', 'Watermelon', 'Pineapple', 'Peach', 'Strawberry', 'Blueberry'];
     public initialValues: any = ['Watermelon', 'Peach'];
 
+    public emptyItemsPlain: any = [];
+    public emptyInitialValues: any = [];
+
     public constructor() {}
 
     public ngOnInit(): void {

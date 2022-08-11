@@ -16,6 +16,7 @@
         "publish:tooltip": "cd projects/tooltip && npm version patch && cd ../.. && ng build tooltip && cd dist/tooltip && npm publish --access public",
         "publish:confirmaction": "cd projects/confirm-action && npm version patch && cd ../.. && ng build confirm-action && cd dist/confirm-action && npm publish --access public",
         "publish:input": "cd projects/input && npm version patch && cd ../.. && ng build input && cd dist/input && npm publish --access public",
+        "publish:switch": "cd projects/switch && npm version patch && cd ../.. && ng build switch && cd dist/switch && npm publish --access public",
         "watch": "ng build --watch --configuration development",
         "prepare": "husky install",
         "pre-commit": "npm run pretty && npm run lint && git add -A && lint-staged",
@@ -33,7 +34,8 @@
         "test:toast": "ng test toast --watch false --browsers ChromeHeadless",
         "test:tooltip": "ng test tooltip --watch false --browsers ChromeHeadless",
         "test:confirmaction": "ng test confirm-action --watch false --browsers ChromeHeadless",
-        "test:input": "ng test input --watch false --browsers ChromeHeadless"
+        "test:input": "ng test input --watch false --browsers ChromeHeadless",
+        "test:switch": "ng test switch --watch false --browsers ChromeHeadless"
     },
     "private": true,
     "dependencies": {
@@ -51,10 +53,11 @@
         "@lucarrloliveira/confirm-action": "*",
         "@lucarrloliveira/icon": "*",
         "@lucarrloliveira/input": "*",
-        "@lucarrloliveira/multi-select": "*",
+        "@lucarrloliveira/multi-select": "^0.0.6",
         "@lucarrloliveira/radio-button": "*",
-        "@lucarrloliveira/search-bar": "*",
+        "@lucarrloliveira/search-bar": "^0.0.6",
         "@lucarrloliveira/toast": "^0.0.3",
+        "@lucarrloliveira/switch": "^0.0.3",
         "@lucarrloliveira/tooltip": "*",
         "@lucarrloliveira/visual-identity": "*",
         "ngx-currency": "^2.5.3",

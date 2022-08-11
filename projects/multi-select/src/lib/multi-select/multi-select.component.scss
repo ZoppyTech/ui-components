@@ -1,13 +1,21 @@
 .multi-select {
   position: relative;
   background-color: var(--neutral-100);
+  min-width: 320px;
   .select {
-      border: 1px solid var(--neutral-500);
-      border-radius: 3px;
-      height: 32px;
+      border: 1px solid var(--neutral-400);
+      border-radius: 12px;
+      height: 52px;
       display: flex;
       &:hover {
-          background-color: rgba($color: #000000, $alpha: 0.025);
+        border: 1px solid var(--primary-400);
+        background-color: var(--neutral-200);
+
+        .right-content {
+          ps-icon {
+            color: var(--primary-400);
+          }
+        }
       }
       .left-content {
           height: 100%;
@@ -20,13 +28,17 @@
 
       .right-content {
           height: 100%;
-          width: 32px;
+          width: 52px;
           display: flex;
           align-items: center;
           justify-content: center;
           ps-icon {
-              color: var(neutral-800);
+              font-size: 24px;
+              color: var(neutral-500);
               transform: rotate(270deg);
+          }
+          .ic-open {
+            transform: rotate(90deg);
           }
       }
   }
@@ -35,13 +47,21 @@
       position: absolute;
       background-color: var(--neutral-100);
       box-shadow: 0 2px 6px 0 var(--neutral-200);
-      max-height: 200px;
+      max-height: 400px;
+      box-shadow: 0px 16px 40px -8px rgba(29, 29, 38, 0.08);
       width: 100%;
       display: flex;
       flex-direction: column;
+      transition-duration: 300ms;
 
       ps-search-bar {
-          padding: 8px;
+          padding: 16px;
+      }
+
+      ps-checkbox {
+        span {
+          margin-left: 16px;
+        }
       }
 
       ul {
@@ -55,8 +75,9 @@
           min-height: 0;
           overflow: auto;
           li {
-              padding: 8px;
-              width: 100%;
+              padding: 16px;
+              margin: 8px;
+              width: calc(100% - 16px);
               display: unset;
               display: flex;
               align-items: center;
@@ -75,11 +96,13 @@
       .no-data {
         display: flex;
         align-items: center;
-        padding: 8px;
-        width: calc(100% - 16px);
-        border: 1px dashed var(--neutral-500);
+        padding: 32px;
+        width: calc(100% - 32px);
+        border: 1px dashed var(--neutral-400);
         background-color: var(--neutral-200);
-        margin: 8px;
+        justify-content: center;
+        margin: 16px;
+        margin-top: 0;
       }
   }
 }

@@ -50,6 +50,10 @@ const routes: Routes = [
         loadChildren: () => import('./pages/page-input/page-input.module').then((m: any) => m.PageInputModule)
     },
     {
+        path: 'switch',
+        loadChildren: () => import('./pages/page-switch/page-switch.module').then((m: any) => m.PageSwitchModule)
+    },
+    {
         path: 'confirm-action',
         loadChildren: () => import('./pages/page-confirm-action/page-confirm-action.module').then((m: any) => m.PageConfirmActionModule)
     }

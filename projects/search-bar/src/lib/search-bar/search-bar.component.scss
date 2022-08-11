@@ -1,13 +1,21 @@
 
 .search-bar {
     display: grid;
-    grid-template-columns: 32px 1fr 32px;
-    border-radius: 5px;
+    grid-template-columns: 52px 1fr 52px;
+    border-radius: 12px;
     border: 1px solid var(--neutral-300);
 
     &--focus {
-        border: solid 2px var(--primary-300);
+        border: solid 2px var(--primary-400);
         outline: none;
+
+        .icon-search {
+          color: var(--primary-400);
+        }
+
+        .icon-clear {
+          color: var(--primary-400);
+        }
     }
 
     &--disabled {
@@ -19,10 +27,6 @@
       }
     }
 
-    .icon-search {
-        color: #4A4A4A;
-    }
-
     .search {
         grid-column: 1/4;
         width: 100%;
@@ -30,11 +34,11 @@
         margin-top: 1px;
 
         &__input {
-            width: calc(100% - 32px);
-            height: 30px;
-            padding-left: 32px;
+            width: calc(100% - 52px);
+            height: 52px;
+            padding-left: 52px;
             border: none;
-            border-radius: 3px;
+            border-radius: 12px;
             background-color: transparent;
         }
 
@@ -46,8 +50,8 @@
     ps-icon {
         margin: 0;
         padding: 0;
-        width: 32px;
-        height: 32px;
+        width: 52px;
+        height: 52px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -55,6 +59,8 @@
     }
 
     .icon-search {
+      color: var(--neutral-400);
+        font-size: 24px;
         grid-column: 1;
         grid-row: 1;
     }
@@ -63,29 +69,25 @@
         cursor: pointer;
         grid-column: 3;
         grid-row: 1;
-        width: 32px;
-        height: 32px;
+        width: 52px;
+        height: 52px;
         border: none;
         display: flex;
         align-items: center;
         justify-content: center;
         background-color: transparent;
 
-        netlex-icon {
-            height: 26px;
-        }
-
         &:focus {
             outline: none;
 
             ps-icon {
-                color: var(--primary-800);
+              color: var(--neutral-400);
             }
         }
     }
 
     .focus {
-        color: var(--primary-800);
+        color: var(--primary-400);
     }
 }
 

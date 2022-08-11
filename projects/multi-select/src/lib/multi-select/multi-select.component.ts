@@ -17,6 +17,7 @@ export class MultiSelectComponent implements OnInit {
     @Input() public propertyLabel: string = 'label';
     @Input() public propertyValue: any = 'label';
     @Input() public disabled: boolean = false;
+    @Input() public errors: Array<string> = [];
     @Output() public valuesChange: EventEmitter<any> = new EventEmitter();
 
     public loaded: boolean = false;
@@ -56,7 +57,7 @@ export class MultiSelectComponent implements OnInit {
     public setValueSelectedLabel(): string {
         const countSelected: number = this.items.filter((item: any) => this.setItemSelected(item))?.length;
 
-        if (countSelected > 1) return countSelected + ' Selected';
+        if (countSelected > 1) return countSelected + ' Selecionados';
         const itemSelected = this.items.find((item: any) => this.setItemSelected(item));
         if (itemSelected && typeof itemSelected === 'object') return itemSelected[this.propertyLabel];
         return this.selectText as string;

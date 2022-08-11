@@ -1,23 +1,33 @@
 <div
     [ngClass]="{
-      'search-bar--focus': focus,
-      'search-bar--disabled': disabled
+        'search-bar--focus': focus,
+        'search-bar--disabled': disabled
     }"
     class="search-bar"
-  >
-  <div class="search">
-      <input type="text" [disabled]="disabled" #inputSearch (focus)="setFocus(true)" (blur)="setFocus(false)" [(ngModel)]="searchText" class="search__input text" placeholder="{{placeholder}}">
-  </div>
+>
+    <div class="search">
+        <input
+            type="text"
+            [disabled]="disabled"
+            #inputSearch
+            (focus)="setFocus(true)"
+            (blur)="setFocus(false)"
+            [(ngModel)]="searchText"
+            class="search__input text"
+            placeholder="{{ placeholder }}"
+        />
+    </div>
 
-  <ps-icon
-    (mouseover)="isHovered = true"
-    (mouseleave)="isHovered = false"
-    icon="nl-search"
-    [ngClass]="{'focus': focus}"
-    class="icon-search">
-  </ps-icon>
+    <ps-icon
+        (mouseover)="isHovered = true"
+        (mouseleave)="isHovered = false"
+        icon="nl-search"
+        [ngClass]="{ focus: focus }"
+        class="icon-search"
+    >
+    </ps-icon>
 
-  <button *ngIf="isHovered || !disabled" class="icon-clear" (click)="clearText()">
-    <ps-icon icon="icon-times"></ps-icon>
-  </button>
+    <button *ngIf="isHovered || !disabled" class="icon-clear" (click)="clearText()">
+        <ps-icon icon="icon-times"></ps-icon>
+    </button>
 </div>

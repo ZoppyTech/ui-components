@@ -1,34 +1,39 @@
-<div class="multi-select" [ngClass]="{'disabled': disabled}" (mouseenter)="hover = true" (mouseleave)="hover = false">
-  <div class="select" (click)="toggleOpen()">
-    <div class="left-content">
-      <ng-container *ngIf="!values || values?.length === 0; else elseTemplate">
-        <span class="text text--light">{{selectText}}</span>
-      </ng-container>
-      <ng-template #elseTemplate>
-        <span class="text">{{setValueSelectedLabel()}}</span>
-      </ng-template>
+<div class="multi-select" [ngClass]="{ disabled: disabled }" (mouseenter)="hover = true" (mouseleave)="hover = false">
+    <div class="select" (click)="toggleOpen()">
+        <div class="left-content">
+            <ng-container *ngIf="!values || values?.length === 0; else elseTemplate">
+                <span class="text text--light">{{ selectText }}</span>
+            </ng-container>
+            <ng-template #elseTemplate>
+                <span class="text">{{ setValueSelectedLabel() }}</span>
+            </ng-template>
+        </div>
+        <div class="right-content">
+            <ps-icon [ngClass]="{ 'ic-open': open }" icon="icon-arrow"></ps-icon>
+        </div>
     </div>
-    <div class="right-content">
-      <ps-icon icon="icon-arrow"></ps-icon>
-    </div>
-  </div>
-  <div class="menu" *ngIf="open && !disabled">
-    <ps-search-bar *ngIf="enableSearch" (onChanged)="searchBarChanged($event)" [placeholder]="searchPlaceholder || ''" [text]="searchText"></ps-search-bar>
-    <ul>
-      <li *ngIf="selectAll">
-        <ps-checkbox (onToggleCheckbox)="toggleSelectAll($event)">
-          <span class="text">{{selectAllText}}</span>
-        </ps-checkbox>
-      </li>
-      <li *ngFor="let item of items" [ngClass]="{'hidden': item.isHidden}">
-        <ps-checkbox (onToggleCheckbox)="toggleItem($event, item)" [active]="setItemSelected(item)">
-          <span class="text">{{item[propertyLabel]}}</span>
-        </ps-checkbox>
-      </li>
-    </ul>
+    <div class="menu" *ngIf="open && !disabled">
+        <ps-search-bar
+            *ngIf="enableSearch"
+            (onChanged)="searchBarChanged($event)"
+            [placeholder]="searchPlaceholder || ''"
+            [text]="searchText"
+        ></ps-search-bar>
+        <ul>
+            <li *ngIf="selectAll && !noItemsVisible()">
+                <ps-checkbox (onToggleCheckbox)="toggleSelectAll($event)">
+                    <span class="text">{{ selectAllText }}</span>
+                </ps-checkbox>
+            </li>
+            <li *ngFor="let item of items" [ngClass]="{ hidden: item.isHidden }">
+                <ps-checkbox (onToggleCheckbox)="toggleItem($event, item)" [active]="setItemSelected(item)">
+                    <span class="text">{{ item[propertyLabel] }}</span>
+                </ps-checkbox>
+            </li>
+        </ul>
 
-    <div class="no-data" *ngIf="noItemsVisible()">
-      <span class="text text--light">{{noDataText}}</span>
+        <div class="no-data" *ngIf="noItemsVisible()">
+            <span class="text text--light">{{ noDataText }}</span>
+        </div>
     </div>
-  </div>
 </div>

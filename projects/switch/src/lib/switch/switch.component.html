@@ -1,3 +1,14 @@
-<p>
-  switch works!
-</p>
+<div class="container" (click)="toggleSwitch()" (keyup.enter)="toggleSwitchEnter()">
+    <label
+        class="switch"
+        [ngClass]="{ disabled: disabled, checked: active, focused: focused }"
+        (focus)="onFocus()"
+        (blur)="onBlur()"
+        tabindex="1"
+    >
+        <input [ngClass]="{ focused: focused, checked: active }" type="checkbox" />
+    </label>
+    <span class="text">
+        <ng-content></ng-content>
+    </span>
+</div>
