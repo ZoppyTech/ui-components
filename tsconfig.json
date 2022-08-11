@@ -15,6 +15,9 @@
       "confirm-action": [
         "dist/confirm-action"
       ],
+      "dropdown": [
+        "dist/dropdown"
+      ],
       "icon": [
         "dist/icon/icon",
         "dist/icon"
@@ -37,6 +40,9 @@
       "searchbar": [
         "dist/searchbar/searchbar",
         "dist/searchbar"
+      ],
+      "switch": [
+        "dist/switch"
       ],
       "toast": [
         "dist/toast"

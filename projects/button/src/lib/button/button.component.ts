@@ -54,7 +54,19 @@ export class ButtonComponent implements OnInit {
     }
 }
 
-type Style = 'clean' | 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'success' | 'alert' | 'error';
+type Style =
+    | 'clean'
+    | 'primary'
+    | 'secondary'
+    | 'tertiary'
+    | 'quaternary'
+    | 'primary-border'
+    | 'secondary-border'
+    | 'tertiary-border'
+    | 'quaternary-border'
+    | 'success'
+    | 'alert'
+    | 'error';
 
 export class Loadings {
     public static dark: string =

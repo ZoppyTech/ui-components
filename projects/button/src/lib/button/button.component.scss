@@ -65,6 +65,38 @@
   }
 }
 
+.primary-border {
+  background-color: var(--neutral-100);
+  border: 1px solid var(--primary);
+  &:hover {
+    background-color: var(--neutral-200) !important;
+  }
+}
+
+.secondary-border {
+  background-color: var(--neutral-100);
+  border: 1px solid var(--secondary);
+  &:hover {
+    background-color: var(--neutral-200) !important;
+  }
+}
+
+.tertiary-border {
+  background-color: var(--neutral-100);
+  border: 1px solid var(--tertiary);
+  &:hover {
+    background-color: var(--neutral-200) !important;
+  }
+}
+
+.quaternary-border {
+  background-color: var(--neutral-100);
+  border: 1px solid var(--quaternary);
+  &:hover {
+    background-color: var(--neutral-200) !important;
+  }
+}
+
 .alert {
   background-color: var(--warning);
   &:hover {
