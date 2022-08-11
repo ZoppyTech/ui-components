@@ -31,7 +31,7 @@ export class InputComponent implements OnInit, AfterViewInit {
 
     constructor() {}
 
-    ngAfterViewInit() {
+    public ngAfterViewInit() {
         setTimeout(() => {
             this.domComponent = this.rows > 1 ? this.textArea : this.input;
             fromEvent(this.domComponent?.nativeElement, 'keyup')
@@ -47,14 +47,14 @@ export class InputComponent implements OnInit, AfterViewInit {
         });
     }
 
-    onTextChanged(text: string) {
+    public onTextChanged(text: string) {
         this.ngModelChange.emit(text);
     }
 
-    ngOnInit() {}
+    public ngOnInit() {}
 
     public onModelChange(): void {
-        if (this.debounce) return;
+        if (this.disabled) return;
         this.ngModelChange.emit(this.ngModel);
     }
 

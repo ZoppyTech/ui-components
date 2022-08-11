@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { PageInputComponent } from './page-input.component';
+import { UtilizationModule } from 'src/app/components/utilization/utilization.module';
+import { InputModule } from '@lucarrloliveira/input';
 
 describe('PageInputComponent', () => {
     let component: PageInputComponent;
@@ -11,7 +13,8 @@ describe('PageInputComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [PageInputComponent]
+            declarations: [PageInputComponent],
+            imports: [UtilizationModule, InputModule]
         }).compileComponents();
     }));
 

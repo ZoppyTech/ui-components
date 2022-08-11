@@ -8,6 +8,7 @@ import { Property } from 'src/app/components/utilization/utilization.component';
 })
 export class PageCheckboxComponent implements OnInit {
     public properties: Array<Property> = [];
+    public isActive: boolean = false;
 
     public constructor() {}
 

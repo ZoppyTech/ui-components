@@ -10,7 +10,7 @@ export class CheckboxComponent {
     @Input() public disabled: boolean = false;
     @Output() onToggleCheckbox = new EventEmitter();
     @Output() onFocus = new EventEmitter();
-    @Output() onBlur = new EventEmitter()
+    @Output() onBlur = new EventEmitter();
     @Output() public activeChange = new EventEmitter<boolean>();
     public focused: boolean = false;
 
@@ -33,7 +33,7 @@ export class CheckboxComponent {
             this.activeChange.emit(this.active);
             return true;
         }
-        return false
+        return false;
     }
 
     public toggleCheckboxEnter(): boolean {
