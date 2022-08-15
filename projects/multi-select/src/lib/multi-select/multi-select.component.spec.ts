@@ -69,7 +69,7 @@ describe('MultiSelectComponent', () => {
         expect(component.setValueSelectedLabel()).toEqual('apple');
 
         component.values = ['apple', 'orange'];
-        expect(component.setValueSelectedLabel()).toEqual('2 Selected');
+        expect(component.setValueSelectedLabel()).toEqual('2 Selecionados');
     }));
 
     it('should set itens hidden', fakeAsync(() => {
