@@ -1,10 +1,20 @@
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { TooltipComponent } from './tooltip.component';
+import { TooltipDirective } from './tooltip.directive';
+import { TooltipService } from './tooltip.service';
 
 @NgModule({
-    declarations: [TooltipComponent],
+    declarations: [TooltipDirective, TooltipComponent],
     imports: [CommonModule],
-    exports: [TooltipComponent]
+    exports: [TooltipDirective, TooltipComponent],
+    providers: [TooltipService]
 })
-export class TooltipModule {}
+export class TooltipModule {
+    public static forRoot(): ModuleWithProviders<TooltipModule> {
+        return {
+            ngModule: TooltipModule,
+            providers: [TooltipService]
+        };
+    }
+}

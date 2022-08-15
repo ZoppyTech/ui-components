@@ -37,7 +37,7 @@
         &.disabled {
 
             &::before {
-                opacity: 0.5;
+                opacity: 0.9;
             }
 
             input {
@@ -82,7 +82,7 @@
     }
 
     .disabled {
-        opacity: 0.5;
+        opacity: 0.9;
         cursor: not-allowed;
     }
 

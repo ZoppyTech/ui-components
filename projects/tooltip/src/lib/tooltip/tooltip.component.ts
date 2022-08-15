@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TooltipService } from './tooltip.service';
 
 @Component({
     selector: 'ps-tooltip',
@@ -6,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./tooltip.component.scss']
 })
 export class TooltipComponent implements OnInit {
-    constructor() {}
-
-    ngOnInit(): void {}
+    public constructor(public tooltip: TooltipService) {}
+    public ngOnInit(): void {}
 }

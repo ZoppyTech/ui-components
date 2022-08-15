@@ -17,6 +17,7 @@
         "publish:confirmaction": "cd projects/confirm-action && npm version patch && cd ../.. && ng build confirm-action && cd dist/confirm-action && npm publish --access public",
         "publish:input": "cd projects/input && npm version patch && cd ../.. && ng build input && cd dist/input && npm publish --access public",
         "publish:switch": "cd projects/switch && npm version patch && cd ../.. && ng build switch && cd dist/switch && npm publish --access public",
+        "publish:dropdown": "cd projects/dropdown && npm version patch && cd ../.. && ng build dropdown && cd dist/dropdown && npm publish --access public",
         "watch": "ng build --watch --configuration development",
         "prepare": "husky install",
         "pre-commit": "npm run pretty && npm run lint && git add -A && lint-staged",
@@ -35,7 +36,8 @@
         "test:tooltip": "ng test tooltip --watch false --browsers ChromeHeadless",
         "test:confirmaction": "ng test confirm-action --watch false --browsers ChromeHeadless",
         "test:input": "ng test input --watch false --browsers ChromeHeadless",
-        "test:switch": "ng test switch --watch false --browsers ChromeHeadless"
+        "test:switch": "ng test switch --watch false --browsers ChromeHeadless",
+        "test:dropdown": "ng test switch --watch false --browsers ChromeHeadless"
     },
     "private": true,
     "dependencies": {
@@ -49,7 +51,7 @@
         "@angular/router": "~14.1.0",
         "@fontsource/inter": "^4.5.11",
         "@lucarrloliveira/button": "*",
-        "@lucarrloliveira/checkbox": "^0.0.6",
+        "@lucarrloliveira/checkbox": "^0.0.8",
         "@lucarrloliveira/confirm-action": "*",
         "@lucarrloliveira/icon": "*",
         "@lucarrloliveira/input": "*",
@@ -58,6 +60,7 @@
         "@lucarrloliveira/search-bar": "^0.0.6",
         "@lucarrloliveira/toast": "^0.0.3",
         "@lucarrloliveira/switch": "^0.0.3",
+        "@lucarrloliveira/dropdown": "^0.0.2",
         "@lucarrloliveira/tooltip": "*",
         "@lucarrloliveira/visual-identity": "*",
         "ngx-currency": "^2.5.3",

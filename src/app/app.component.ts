@@ -19,7 +19,8 @@ export class AppComponent implements OnInit {
         'tooltip',
         'input',
         'switch',
-        'confirmaction'
+        'confirmaction',
+        'dropdown'
     ];
 
     public constructor(public visualIdentityService: VisualIdentityService, public toast: ToastService) {}

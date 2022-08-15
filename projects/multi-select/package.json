@@ -5,7 +5,7 @@
         "@angular/common": "^14.1.0",
         "@angular/core": "^14.1.0",
         "@lucarrloliveira/visual-identity": "*",
-        "@lucarrloliveira/checkbox": "^0.0.6",
+        "@lucarrloliveira/checkbox": "^0.0.8",
         "@lucarrloliveira/search-bar": "^0.0.6",
         "@lucarrloliveira/icon": "*",
         "@lucarrloliveira/button": "*"

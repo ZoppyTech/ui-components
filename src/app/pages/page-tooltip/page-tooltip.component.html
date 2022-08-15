@@ -1,1 +1,28 @@
-<p>page-tooltip works!</p>
+<app-utilization class="content" [properties]="properties">
+    <div class="components-content">
+        <div
+            class="square"
+            tooltipWidth="350"
+            appTooltip
+            tooltipText="This is a tooltip positioned to the left"
+            tooltipDirection="left"
+        ></div>
+        <div
+            class="square"
+            tooltipWidth="350"
+            appTooltip
+            tooltipText="This is a tooltip positioned to the right"
+            tooltipDirection="right"
+        ></div>
+        <div class="square" tooltipWidth="350" appTooltip tooltipText="This is a tooltip positioned to the top" tooltipDirection="up"></div>
+        <div
+            class="square"
+            tooltipWidth="350"
+            appTooltip
+            tooltipText="This is a tooltip positioned to the bottom"
+            tooltipDirection="down"
+        ></div>
+    </div>
+</app-utilization>
+
+<ps-tooltip></ps-tooltip>

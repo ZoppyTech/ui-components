@@ -10,6 +10,8 @@ import { environment } from 'src/environments/environment';
 import { RouterModule, Routes } from '@angular/router';
 import { ToastModule } from '@lucarrloliveira/toast';
 import { ToastModule as DevToastModule } from 'projects/toast/src/lib/toast/toast.module';
+import { TooltipModule as DevTooltipModule } from 'projects/tooltip/src/lib/tooltip/tooltip.module';
+import { TooltipModule } from '@lucarrloliveira/tooltip';
 
 const routes: Routes = [
     {
@@ -56,6 +58,10 @@ const routes: Routes = [
     {
         path: 'confirm-action',
         loadChildren: () => import('./pages/page-confirm-action/page-confirm-action.module').then((m: any) => m.PageConfirmActionModule)
+    },
+    {
+        path: 'dropdown',
+        loadChildren: () => import('./pages/page-dropdown/page-dropdown.module').then((m: any) => m.PageDropdownModule)
     }
 ];
 
@@ -67,7 +73,8 @@ const routes: Routes = [
         NgxMaskModule.forRoot(),
         RouterModule.forRoot(routes),
         environment.production ? ButtonModule : DevButtonModule,
-        environment.production ? ToastModule : DevToastModule
+        environment.production ? ToastModule : DevToastModule,
+        environment.production ? TooltipModule : DevTooltipModule.forRoot()
     ],
     providers: [VisualIdentityModule],
     bootstrap: [AppComponent]

@@ -1,0 +1,6 @@
+<div class="tooltip" [ngClass]="{ 'show-tooltip': tooltip.isOpen }">
+    <div class="tooltip__content" [ngStyle]="tooltip.tooltipStyle">
+        {{ tooltip.tooltipText }}
+    </div>
+    <div class="arrow" [ngStyle]="tooltip.arrowStyle"></div>
+</div>
