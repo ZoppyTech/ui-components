@@ -15,6 +15,9 @@
       "confirm-action": [
         "dist/confirm-action"
       ],
+      "contact": [
+        "dist/contact"
+      ],
       "dropdown": [
         "dist/dropdown"
       ],
@@ -24,6 +27,9 @@
       ],
       "input": [
         "dist/input"
+      ],
+      "mini-menu": [
+        "dist/mini-menu"
       ],
       "multi-select": [
         "dist/multi-select",

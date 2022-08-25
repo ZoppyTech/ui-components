@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { MultiSelectComponent } from './multi-select.component';
 import { IconModule } from '@lucarrloliveira/icon';
 import { ButtonModule } from '@lucarrloliveira/button';
-import { SearchBarModule } from 'projects/search-bar/src/public-api';
-import { CheckboxModule } from 'projects/checkbox/src/public-api';
+import { SearchBarModule } from '@lucarrloliveira/search-bar';
+import { CheckboxModule } from '@lucarrloliveira/checkbox';
 
 @NgModule({
     imports: [CommonModule, ButtonModule, IconModule, SearchBarModule, CheckboxModule],

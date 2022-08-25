@@ -1,0 +1,13 @@
+<div class="container">
+    <ps-icon
+        (mouseover)="hoverIcon = true"
+        (mouseleave)="hoverIcon = false"
+        [icon]="icon ?? ''"
+        (click)="toggleMenu()"
+        class="menu-ic"
+        [ngClass]="{ disabled: disabled }"
+    ></ps-icon>
+    <div class="panel" (mouseover)="hover = true" (mouseleave)="hover = false" [ngClass]="{ open: isOpen }">
+        <ng-content></ng-content>
+    </div>
+</div>

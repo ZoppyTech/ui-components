@@ -1,0 +1,9 @@
+@import 'src/styles.scss';
+
+.components-content {
+    display: flex;
+
+    ps-contact {
+        margin: 16px;
+    }
+}

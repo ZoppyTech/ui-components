@@ -20,7 +20,9 @@ export class AppComponent implements OnInit {
         'input',
         'switch',
         'confirmaction',
-        'dropdown'
+        'dropdown',
+        `contact`,
+        `mini-menu`
     ];
 
     public constructor(public visualIdentityService: VisualIdentityService, public toast: ToastService) {}

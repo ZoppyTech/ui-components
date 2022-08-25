@@ -1,0 +1,13 @@
+{
+    "name": "@lucarrloliveira/contact",
+    "version": "0.0.4",
+    "peerDependencies": {
+        "@angular/common": "^14.1.0",
+        "@angular/core": "^14.1.0",
+        "@lucarrloliveira/visual-identity": "*",
+        "@lucarrloliveira/icon": "*"
+    },
+    "dependencies": {
+        "tslib": "^2.3.0"
+    }
+}

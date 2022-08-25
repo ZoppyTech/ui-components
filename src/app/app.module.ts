@@ -62,6 +62,14 @@ const routes: Routes = [
     {
         path: 'dropdown',
         loadChildren: () => import('./pages/page-dropdown/page-dropdown.module').then((m: any) => m.PageDropdownModule)
+    },
+    {
+        path: 'contact',
+        loadChildren: () => import('./pages/page-contact/page-contact.module').then((m: any) => m.PageContactModule)
+    },
+    {
+        path: 'mini-menu',
+        loadChildren: () => import('./pages/page-mini-menu/page-mini-menu.module').then((m: any) => m.PageMiniMenuModule)
     }
 ];
 
