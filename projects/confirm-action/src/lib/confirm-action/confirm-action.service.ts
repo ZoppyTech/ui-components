@@ -14,7 +14,6 @@ export class ConfirmActionService {
     }
 
     public open(title: string, text: string, callback: any): void {
-        debugger;
         this.isOpen = true;
         this.title = title;
         this.text = text;

@@ -18,7 +18,6 @@ export class PageConfirmActionComponent implements OnInit {
 
     public open(): void {
         this.confirmAction.open(`Your title`, `Are you sure you want to do this?`, (result: boolean) => {
-            debugger;
             if (result) console.log(`clicked on yes`);
             else console.log(`clicked on no`);
         });
