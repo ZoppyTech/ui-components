@@ -1,134 +1,140 @@
 .ui-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-  border: none;
-  transition: all 0.3s;
-  cursor: pointer;
-
-  &:focus {
-    outline: none;
-    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.25);
-  }
-
-  &__content {
-    width: 100%;
-    height: 100%;
-    padding: 0.4rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    outline: none;
+    border-radius: 12px;
     border: none;
-  }
+    transition: all 0.3s;
+    cursor: pointer;
 
-  &__loading {
-    .image {
-      width: 2rem;
+    &:focus {
+        outline: none;
+        box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.25);
     }
-  }
+
+    &__content {
+        width: 100%;
+        height: 100%;
+        padding: 0.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+        border: none;
+    }
+
+    &__loading {
+        .image {
+            width: 2rem;
+        }
+    }
 }
 
 .clean {
-  background-color: transparent;
-  &:hover {
-    background-color: var(--neutral-200) !important;
-  }
+    background-color: transparent;
+    &:hover {
+        background-color: var(--neutral-200) !important;
+    }
 }
 
 .primary {
-  background-color: var(--primary);
-  &:hover {
-    background-color: var(--primary-800) !important;
-  }
+    background-color: var(--primary);
+    &:hover {
+        background-color: var(--primary-800) !important;
+    }
 }
 
 .secondary {
-  background-color: var(--secondary);
-  &:hover {
-    background-color: var(--secondary-800) !important;
-  }
+    background-color: var(--secondary);
+    &:hover {
+        background-color: var(--secondary-800) !important;
+    }
 }
 
 .tertiary {
-  background-color: var(--tertiary);
-  &:hover {
-    background-color: var(--tertiary-500) !important;
-  }
+    background-color: var(--tertiary);
+    &:hover {
+        background-color: var(--tertiary-500) !important;
+    }
 }
 
 .quaternary {
-  background-color: var(--quaternary);
-  &:hover {
-    background-color: var(--quaternary-800) !important;
-  }
+    background-color: var(--quaternary);
+    &:hover {
+        background-color: var(--quaternary-800) !important;
+    }
+}
+
+.cancel-border {
+    background-color: var(--neutral-100);
+    border: 2px solid var(--neutral-400);
+    &:hover {
+        background-color: var(--neutral-200) !important;
+    }
 }
 
 .primary-border {
-  background-color: var(--neutral-100);
-  border: 1px solid var(--primary);
-  &:hover {
-    background-color: var(--neutral-200) !important;
-  }
+    background-color: var(--neutral-100);
+    border: 1px solid var(--primary);
+    &:hover {
+        background-color: var(--neutral-200) !important;
+    }
 }
 
 .secondary-border {
-  background-color: var(--neutral-100);
-  border: 1px solid var(--secondary);
-  &:hover {
-    background-color: var(--neutral-200) !important;
-  }
+    background-color: var(--neutral-100);
+    border: 1px solid var(--secondary);
+    &:hover {
+        background-color: var(--neutral-200) !important;
+    }
 }
 
 .tertiary-border {
-  background-color: var(--neutral-100);
-  border: 1px solid var(--tertiary);
-  &:hover {
-    background-color: var(--neutral-200) !important;
-  }
+    background-color: var(--neutral-100);
+    border: 1px solid var(--tertiary);
+    &:hover {
+        background-color: var(--neutral-200) !important;
+    }
 }
 
 .quaternary-border {
-  background-color: var(--neutral-100);
-  border: 1px solid var(--quaternary);
-  &:hover {
-    background-color: var(--neutral-200) !important;
-  }
+    background-color: var(--neutral-100);
+    border: 1px solid var(--quaternary);
+    &:hover {
+        background-color: var(--neutral-200) !important;
+    }
 }
 
 .alert {
-  background-color: var(--warning);
-  &:hover {
     background-color: var(--warning);
-  }
+    &:hover {
+        background-color: var(--warning);
+    }
 }
 
 .success {
-  background-color: var(--success);
-  &:hover {
     background-color: var(--success);
-  }
+    &:hover {
+        background-color: var(--success);
+    }
 }
 
 .error {
-  background-color: var(--negative);
-  &:hover {
     background-color: var(--negative);
-  }
+    &:hover {
+        background-color: var(--negative);
+    }
 }
 
-
 .wide {
-  width: 100%;
+    width: 100%;
 }
 
 .round {
-  border-radius: 100%;
+    border-radius: 100%;
 }
 
 .fixed-height {
-  height: 52px;
-  padding: unset;
+    height: 52px;
+    padding: unset;
 }
-

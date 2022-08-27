@@ -64,6 +64,7 @@ type Style =
     | 'secondary-border'
     | 'tertiary-border'
     | 'quaternary-border'
+    | 'cancel-border'
     | 'success'
     | 'alert'
     | 'error';

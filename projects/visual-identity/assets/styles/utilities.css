@@ -207,3 +207,67 @@ li {
 li:hover {
     background-color: var(--neutral-200);
 }
+
+.flex {
+    display: flex;
+}
+
+.align-center {
+    display: flex;
+    align-items: center;
+}
+
+.flex-start {
+    justify-content: flex-start;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.clickable-hover:hover {
+    background-color: var(--neutral-200);
+}
+
+.wide {
+    width: 100%;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.flex-grow {
+    display: flex;
+    flex-grow: 1;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.full-width {
+    width: 100vw;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}

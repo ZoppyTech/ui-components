@@ -15,7 +15,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [CommonModule, UtilizationModule, RouterModule.forChild(routes), environment.production ? TooltipModule : TooltipModuleDev],
+    imports: [CommonModule, UtilizationModule, RouterModule.forChild(routes), environment.production ? TooltipModule : TooltipModule],
     declarations: [PageTooltipComponent]
 })
 export class PageTooltipModule {}

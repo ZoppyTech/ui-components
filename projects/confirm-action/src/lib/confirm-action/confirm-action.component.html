@@ -1,0 +1,21 @@
+<div class="confirm-action" [ngClass]="{ closed: !confirmAction.isOpen }">
+    <div class="left">
+        <div class="icon padding-2 flex flex-center">
+            <ps-icon icon="icon-check"></ps-icon>
+        </div>
+
+        <div class="labels">
+            <span class="text text--bold">{{ confirmAction.title }}</span>
+            <span class="text">{{ confirmAction.text }}</span>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <ps-button (onClick)="confirmAction.confirm()" [wide]="true" type="primary">
+            <span class="text text--100">Sim</span>
+        </ps-button>
+        <ps-button (onClick)="confirmAction.refuse()" button [wide]="true" type="clean">
+            <span class="text">Não</span>
+        </ps-button>
+    </div>
+</div>

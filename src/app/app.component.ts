@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VisualIdentityService, Pallete } from '@lucarrloliveira/visual-identity';
+import { ConfirmActionService } from 'projects/confirm-action/src/lib/confirm-action/confirm-action.service';
 import { ToastService } from 'projects/toast/src/lib/toast/toast.service';
 
 @Component({
@@ -19,13 +20,17 @@ export class AppComponent implements OnInit {
         'tooltip',
         'input',
         'switch',
-        'confirmaction',
+        'confirm-action',
         'dropdown',
         `contact`,
         `mini-menu`
     ];
 
-    public constructor(public visualIdentityService: VisualIdentityService, public toast: ToastService) {}
+    public constructor(
+        public visualIdentityService: VisualIdentityService,
+        public toast: ToastService,
+        public confirmAction: ConfirmActionService
+    ) {}
 
     public ngOnInit(): void {
         this.setBaseColorPallete();

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfirmActionService } from './confirm-action.service';
 
 @Component({
     selector: 'ps-confirm-action',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./confirm-action.component.scss']
 })
 export class ConfirmActionComponent implements OnInit {
-    constructor() {}
+    constructor(public confirmAction: ConfirmActionService) {}
 
     ngOnInit(): void {}
 }

@@ -10,6 +10,8 @@ import { environment } from 'src/environments/environment';
 import { RouterModule, Routes } from '@angular/router';
 import { ToastModule } from '@lucarrloliveira/toast';
 import { ToastModule as DevToastModule } from 'projects/toast/src/lib/toast/toast.module';
+import { ConfirmActionModule } from '@lucarrloliveira/confirm-action';
+import { ConfirmActionModule as DevConfirmActionModule } from 'projects/confirm-action/src/lib/confirm-action/confirm-action.module';
 import { TooltipModule as DevTooltipModule } from 'projects/tooltip/src/lib/tooltip/tooltip.module';
 import { TooltipModule } from '@lucarrloliveira/tooltip';
 
@@ -82,6 +84,7 @@ const routes: Routes = [
         RouterModule.forRoot(routes),
         environment.production ? ButtonModule : DevButtonModule,
         environment.production ? ToastModule : DevToastModule,
+        environment.production ? ConfirmActionModule : DevConfirmActionModule,
         environment.production ? TooltipModule : DevTooltipModule.forRoot()
     ],
     providers: [VisualIdentityModule],

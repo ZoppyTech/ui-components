@@ -22,10 +22,12 @@ export class MiniMenuComponent implements OnInit {
 
     public menuOpened(): void {
         if (this.disabled) return;
+        this.isOpen = true;
         this.onMenuOpened.emit();
     }
     public menuClosed(): void {
         if (this.disabled) return;
+        this.isOpen = false;
         this.onMenuClosed.emit();
     }
 
@@ -37,7 +39,7 @@ export class MiniMenuComponent implements OnInit {
 
     @HostListener('document:click')
     public clicked() {
-        if (this.hover && this.closeOnClick) this.toggleMenu();
-        if (!this.hover && !this.hoverIcon) this.toggleMenu();
+        if (this.hover && this.closeOnClick) this.menuClosed();
+        if (!this.hover && !this.hoverIcon) this.menuClosed();
     }
 }

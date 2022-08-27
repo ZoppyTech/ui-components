@@ -54,7 +54,7 @@
         "@angular/platform-browser-dynamic": "~14.1.0",
         "@angular/router": "~14.1.0",
         "@fontsource/inter": "^4.5.11",
-        "@lucarrloliveira/button": "*",
+        "@lucarrloliveira/button": "^0.0.13",
         "@lucarrloliveira/checkbox": "^0.0.8",
         "@lucarrloliveira/confirm-action": "*",
         "@lucarrloliveira/icon": "*",

@@ -1,7 +1,13 @@
 .container {
     position: relative;
-    height: 32px;
-    width: 32px;
+
+    .ic-content {
+        height: 32px;
+        width: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
     .panel {
         position: absolute;
