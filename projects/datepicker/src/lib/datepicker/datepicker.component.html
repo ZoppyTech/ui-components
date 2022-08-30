@@ -1,0 +1,37 @@
+<div class="container" (mouseenter)="hover = true" (mouseleave)="hover = false">
+    <div class="type-icon clickable" (click)="open = !open" *ngIf="type === 'icon'">
+        <ps-icon icon="icon-edit_calendar"></ps-icon>
+    </div>
+
+    <div class="datepicker-menu" [ngClass]="{ 'menu-open': open }">
+        <div class="header">
+            <div class="btn" (click)="changeMonth(month - 1)">
+                <ps-icon icon="icon-chevron"></ps-icon>
+            </div>
+
+            <span class="text text--bold text--large"> {{ getMonthString() }} {{ year }} </span>
+
+            <div class="btn right" (click)="changeMonth(month + 1)">
+                <ps-icon icon="icon-chevron"></ps-icon>
+            </div>
+        </div>
+
+        <div class="body">
+            <div class="header">
+                <span class="text--500">Seg</span>
+                <span class="text--500">Ter</span>
+                <span class="text--500">Qua</span>
+                <span class="text--500">Qui</span>
+                <span class="text--500">Sex</span>
+                <span class="text--500">Sáb</span>
+                <span class="text--500">Dom</span>
+            </div>
+
+            <div class="days">
+                <div class="day" *ngFor="let calendarDay of calendarDays">
+                    {{ calendarDay.day }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

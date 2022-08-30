@@ -14,13 +14,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [
-        CommonModule,
-        UtilizationModule,
-        RouterModule.forChild(routes),
-        RouterModule.forChild(routes),
-        environment.production ? InputModule : InputModuleDev
-    ],
+    imports: [CommonModule, UtilizationModule, RouterModule.forChild(routes), environment.production ? InputModule : InputModuleDev],
     declarations: [PageInputComponent]
 })
 export class PageInputModule {}

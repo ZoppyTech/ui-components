@@ -62,7 +62,9 @@
     <ps-icon *ngIf="icon" [icon]="icon" [ngStyle]="{ color: iconColor }" [ngClass]="{ 'icon--error': errors.length > 0 }"></ps-icon>
 
     <div class="limit-caracters" *ngIf="maxCharactersAllowed">
-        <span class="text text--small text--500">{{ ngModel && ngModel.length ? ngModel.length : 0 }}/{{ maxCharactersAllowed }}</span>
+        <span class="text text--small text--500"
+            >{{ ngModel && ngModel.toString().length ? ngModel.toString().length : 0 }}/{{ maxCharactersAllowed }}</span
+        >
     </div>
 </div>
 

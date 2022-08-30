@@ -18,6 +18,9 @@
       "contact": [
         "dist/contact"
       ],
+      "datepicker": [
+        "dist/datepicker"
+      ],
       "dropdown": [
         "dist/dropdown"
       ],

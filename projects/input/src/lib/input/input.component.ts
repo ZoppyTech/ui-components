@@ -7,7 +7,7 @@ import { debounceTime, distinctUntilChanged, filter, fromEvent, tap } from 'rxjs
     styleUrls: ['./input.component.scss']
 })
 export class InputComponent implements OnInit, AfterViewInit {
-    @Input() public ngModel: string = '';
+    @Input() public ngModel: string | number = '';
     @Input() public mask: string = '';
     @Input() public type: string = 'text';
     @Input() public rows: number = 1;
@@ -21,7 +21,7 @@ export class InputComponent implements OnInit, AfterViewInit {
     @Input() public showErrors: boolean = false;
     @Output() public onFocus = new EventEmitter();
     @Output() public onBlur = new EventEmitter();
-    @Output() public ngModelChange = new EventEmitter<string>();
+    @Output() public ngModelChange = new EventEmitter<string | number>();
 
     @ViewChild('input') public input?: ElementRef = undefined;
     @ViewChild('textArea') public textArea?: ElementRef = undefined;
@@ -47,7 +47,7 @@ export class InputComponent implements OnInit, AfterViewInit {
         });
     }
 
-    public onTextChanged(text: string) {
+    public onTextChanged(text: string | number) {
         this.ngModelChange.emit(text);
     }
 

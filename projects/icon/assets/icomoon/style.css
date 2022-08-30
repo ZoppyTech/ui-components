@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?qvepwr');
-  src:  url('fonts/icomoon.eot?qvepwr#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?qvepwr') format('truetype'),
-    url('fonts/icomoon.woff?qvepwr') format('woff'),
-    url('fonts/icomoon.svg?qvepwr#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?jncu63');
+  src:  url('fonts/icomoon.eot?jncu63#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?jncu63') format('truetype'),
+    url('fonts/icomoon.woff?jncu63') format('woff'),
+    url('fonts/icomoon.svg?jncu63#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-copy:before {
+  content: "\ead4";
+  color: #c6c6c6;
+}
+.icon-content_copy:before {
+  content: "\ead3";
+  color: #c6c6c6;
+}
+.icon-edit_calendar:before {
+  content: "\ead2";
+  color: #7b3dff;
+}
 .icon-notifications:before {
   content: "\ead0";
   color: #c6c6c6;

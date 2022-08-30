@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Property } from 'src/app/components/utilization/utilization.component';
 
 @Component({
-    selector: 'app-page-input',
-    templateUrl: './page-input.component.html',
-    styleUrls: ['./page-input.component.scss']
+    selector: 'app-page-datepicker',
+    templateUrl: './page-datepicker.component.html',
+    styleUrls: ['./page-datepicker.component.scss']
 })
-export class PageInputComponent implements OnInit {
+export class PageDatepickerComponent implements OnInit {
     public properties: Array<Property> = [];
     public constructor() {}
 

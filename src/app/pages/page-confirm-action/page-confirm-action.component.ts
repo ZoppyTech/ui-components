@@ -7,14 +7,10 @@ import { Property } from 'src/app/components/utilization/utilization.component';
     templateUrl: './page-confirm-action.component.html',
     styleUrls: ['./page-confirm-action.component.scss']
 })
-export class PageConfirmActionComponent implements OnInit {
+export class PageConfirmActionComponent {
     public properties: Array<Property> = [];
 
     public constructor(public confirmAction: ConfirmActionService) {}
-
-    public ngOnInit(): void {
-        console.log('do nothing');
-    }
 
     public open(): void {
         this.confirmAction.open(`Your title`, `Are you sure you want to do this?`, (result: boolean) => {

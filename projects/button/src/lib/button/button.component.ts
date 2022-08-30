@@ -60,6 +60,7 @@ type Style =
     | 'secondary'
     | 'tertiary'
     | 'quaternary'
+    | 'cancel'
     | 'primary-border'
     | 'secondary-border'
     | 'tertiary-border'

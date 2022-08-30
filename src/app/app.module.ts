@@ -72,6 +72,10 @@ const routes: Routes = [
     {
         path: 'mini-menu',
         loadChildren: () => import('./pages/page-mini-menu/page-mini-menu.module').then((m: any) => m.PageMiniMenuModule)
+    },
+    {
+        path: 'datepicker',
+        loadChildren: () => import('./pages/page-datepicker/page-datepicker.module').then((m: any) => m.PageDatepickerModule)
     }
 ];
 

@@ -20,6 +20,7 @@
         "publish:dropdown": "cd projects/dropdown && npm version patch && cd ../.. && ng build dropdown && cd dist/dropdown && npm publish --access public",
         "publish:contact": "cd projects/contact && npm version patch && cd ../.. && ng build contact && cd dist/contact && npm publish --access public",
         "publish:minimenu": "cd projects/mini-menu && npm version patch && cd ../.. && ng build mini-menu && cd dist/mini-menu && npm publish --access public",
+        "publish:datepicker": "cd projects/datepicker && npm version patch && cd ../.. && ng build datepicker && cd dist/datepicker && npm publish --access public",
         "watch": "ng build --watch --configuration development",
         "prepare": "husky install",
         "pre-commit": "npm run pretty && npm run lint && git add -A && lint-staged",
@@ -41,7 +42,8 @@
         "test:switch": "ng test switch --watch false --browsers ChromeHeadless",
         "test:dropdown": "ng test dropdown --watch false --browsers ChromeHeadless",
         "test:contact": "ng test contact --watch false --browsers ChromeHeadless",
-        "test:minimenu": "ng test mini-menu --watch false --browsers ChromeHeadless"
+        "test:minimenu": "ng test mini-menu --watch false --browsers ChromeHeadless",
+        "test:datepicker": "ng test datepicker --watch false --browsers ChromeHeadless"
     },
     "private": true,
     "dependencies": {
@@ -54,10 +56,10 @@
         "@angular/platform-browser-dynamic": "~14.1.0",
         "@angular/router": "~14.1.0",
         "@fontsource/inter": "^4.5.11",
-        "@lucarrloliveira/button": "^0.0.13",
+        "@lucarrloliveira/button": "^0.0.14",
         "@lucarrloliveira/checkbox": "^0.0.8",
         "@lucarrloliveira/confirm-action": "^0.0.4",
-        "@lucarrloliveira/icon": "^0.0.8",
+        "@lucarrloliveira/icon": "^0.0.10",
         "@lucarrloliveira/input": "*",
         "@lucarrloliveira/multi-select": "^0.0.11",
         "@lucarrloliveira/radio-button": "*",
@@ -69,6 +71,7 @@
         "@lucarrloliveira/tooltip": "*",
         "@lucarrloliveira/visual-identity": "*",
         "@lucarrloliveira/mini-menu": "*",
+        "@lucarrloliveira/datepicker": "*",
         "ngx-currency": "^2.5.3",
         "ngx-mask": "^14.0.3",
         "rxjs": "~7.5.6",

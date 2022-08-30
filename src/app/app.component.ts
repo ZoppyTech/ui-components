@@ -23,7 +23,8 @@ export class AppComponent implements OnInit {
         'confirm-action',
         'dropdown',
         `contact`,
-        `mini-menu`
+        `mini-menu`,
+        `datepicker`
     ];
 
     public constructor(

@@ -1,0 +1,75 @@
+.container {
+    position: relative;
+
+    .type-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        ps-icon {
+            font-size: 20px;
+            color: var(--primary);
+        }
+    }
+
+    .datepicker-menu {
+        background-color: var(--neutral-100);
+        box-shadow: 0 2px 6px 0 var(--neutral-200);
+        border-radius: 8px;
+        padding: 16px;
+        height: 420px;
+        width: 392px;
+        position: absolute;
+        transition-duration: 300ms;
+        scale: 0;
+
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .btn {
+                height: 32px;
+                width: 32px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid var(--neutral-300);
+                border-radius: 8px;
+                cursor: pointer;
+            }
+
+            .right {
+                transform: rotateY(180deg);
+            }
+        }
+
+        .body {
+            width: 100%;
+            padding: 8px 0;
+            .header {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .days {
+                display: flex;
+                flex-wrap: wrap;
+
+                .day {
+                    flex-grow: 1;
+                    padding: 8px;
+                    &:hover {
+                        background-color: var(--neutral-200);
+                    }
+                }
+            }
+        }
+    }
+
+    .menu-open {
+        scale: 1;
+    }
+}

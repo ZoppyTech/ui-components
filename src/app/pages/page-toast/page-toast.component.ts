@@ -7,14 +7,10 @@ import { Property } from 'src/app/components/utilization/utilization.component';
     templateUrl: './page-toast.component.html',
     styleUrls: ['./page-toast.component.scss']
 })
-export class PageToastComponent implements OnInit {
+export class PageToastComponent {
     public properties: Array<Property> = [];
 
     public constructor(public toast: ToastService) {}
-
-    public ngOnInit(): void {
-        console.log('do nothing');
-    }
 
     public openToast(type: string): void {
         switch (type) {

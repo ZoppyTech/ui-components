@@ -9,9 +9,7 @@ export class ConfirmActionService {
     public text: string = ``;
     private callback?: any;
 
-    public constructor() {
-        console.log(`instantiate`);
-    }
+    public constructor() {}
 
     public open(title: string, text: string, callback: any): void {
         this.isOpen = true;
