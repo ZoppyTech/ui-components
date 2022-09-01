@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
+import { DateUtil } from './date-util';
 
 @Component({
     selector: 'ps-datepicker',
@@ -8,6 +9,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class DatepickerComponent implements OnInit {
     @Input() public type: DatepickerType = `icon`;
     @Input() public model: Date | undefined = undefined;
+    @Input() public hasFooter: boolean = true;
     @Output() public modelChange: EventEmitter<Date> = new EventEmitter();
 
     public hover: boolean = false;
@@ -17,10 +19,11 @@ export class DatepickerComponent implements OnInit {
     public year: number = 0;
     public calendarDays: Array<CalendarDay> = [];
 
-    constructor() {}
+    public constructor() {}
 
-    ngOnInit() {
+    public ngOnInit() {
         this.initHeaders();
+        this.calendarDays = DateUtil.setCalendarDays(this.calendarDays, this.year, this.month);
     }
 
     private initHeaders(): void {
@@ -62,43 +65,57 @@ export class DatepickerComponent implements OnInit {
     public changeMonth(month: number): void {
         switch (month) {
             case 0:
-                this.month = 12;
+                this.month = 11;
                 this.year--;
                 break;
-            case 13:
-                this.month = 1;
+            case 12:
+                this.month = 0;
                 this.year++;
                 break;
             default:
                 this.month = month;
                 break;
         }
-        this.setCalendarDays();
+        this.calendarDays = DateUtil.setCalendarDays(this.calendarDays, this.year, this.month);
     }
 
-    public setCalendarDays(): void {
-        const initialMonthDate = new Date(this.year, this.month, this.day + 1);
-        const lastMonthDate = new Date(this.year, this.month + 1, 0);
-        console.log('initial', initialMonthDate);
-        console.log(`last`, lastMonthDate);
+    public isSelected(calendarDay: CalendarDay): boolean {
+        if (!this.model) return false;
 
-        console.log(initialMonthDate.getDay());
-        console.log(lastMonthDate.getDay());
+        return (
+            calendarDay.date.getMonth() === this.model.getMonth() &&
+            calendarDay.date.getFullYear() === this.model.getFullYear() &&
+            calendarDay.date.getDate() === this.model.getDate()
+        );
+    }
 
-        for (let i = 1; i <= initialMonthDate.getDay(); i++) {
-            const date = initialMonthDate.setDate(initialMonthDate.getDate() + i);
-            console.log(date);
-            this.calendarDays.push({
-                currentMonth: false,
-                day: date
-            });
+    public selectDate(calendarDay: CalendarDay): void {
+        this.model = calendarDay.date;
+        if (this.hasFooter) return;
+        this.confirmSelectedDate();
+    }
+
+    public confirmSelectedDate(): void {
+        this.modelChange.emit(this.model);
+        this.open = false;
+    }
+
+    public cancel(): void {
+        this.open = false;
+        this.model = undefined;
+    }
+
+    @HostListener('document:click', ['$event']) public onClick() {
+        if (!this.hover && this.open) {
+            this.hasFooter ? this.cancel() : (this.open = false);
         }
     }
 }
 
 type DatepickerType = `icon` | `input`;
 
-interface CalendarDay {
+export interface CalendarDay {
     currentMonth: boolean;
     day: number;
+    date: Date;
 }

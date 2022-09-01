@@ -1,6 +1,5 @@
 .container {
     position: relative;
-
     .type-icon {
         display: flex;
         align-items: center;
@@ -11,17 +10,21 @@
             font-size: 20px;
             color: var(--primary);
         }
+
+        .ic-selected {
+            color: var(--secondary);
+        }
     }
 
     .datepicker-menu {
         background-color: var(--neutral-100);
         box-shadow: 0 2px 6px 0 var(--neutral-200);
+        border: 1px solid var(--neutral-200);
         border-radius: 8px;
         padding: 16px;
-        height: 420px;
-        width: 392px;
         position: absolute;
         transition-duration: 300ms;
+        z-index: 10;
         scale: 0;
 
         .header {
@@ -52,24 +55,67 @@
                 display: flex;
                 justify-content: space-between;
                 width: 100%;
+
+                .item {
+                    flex-grow: 1;
+                    display: flex;
+                    justify-content: center;
+                    width: 48px;
+                    height: 48px;
+                    align-items: center;
+                }
             }
 
             .days {
-                display: flex;
-                flex-wrap: wrap;
+                display: grid;
+                grid-template-columns: repeat(7, 48px);
 
                 .day {
+                    cursor: pointer;
                     flex-grow: 1;
-                    padding: 8px;
+                    width: 48px;
+                    height: 40px;
+                    border-radius: 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                     &:hover {
                         background-color: var(--neutral-200);
                     }
                 }
+
+                .day-selected {
+                    background-color: var(--secondary);
+                    &:hover {
+                        background-color: var(--secondary-800);
+                    }
+
+                    span {
+                        color: var(--neutral-100);
+                    }
+                }
             }
+        }
+
+        .border-bottom {
+            border-bottom: 1px solid var(--neutral-300);
+        }
+
+        .footer {
+            padding-top: 16px;
+            display: grid;
+            grid-gap: 16px;
+            width: 100%;
+            grid-template-columns: 1fr 1fr;
         }
     }
 
     .menu-open {
         scale: 1;
     }
+}
+
+.container-icon {
+    width: 32px;
+    height: 32px;
 }

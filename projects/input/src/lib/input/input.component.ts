@@ -7,7 +7,7 @@ import { debounceTime, distinctUntilChanged, filter, fromEvent, tap } from 'rxjs
     styleUrls: ['./input.component.scss']
 })
 export class InputComponent implements OnInit, AfterViewInit {
-    @Input() public ngModel: string | number = '';
+    @Input() public ngModel: any = '';
     @Input() public mask: string = '';
     @Input() public type: string = 'text';
     @Input() public rows: number = 1;
@@ -19,9 +19,11 @@ export class InputComponent implements OnInit, AfterViewInit {
     @Input() public icon: string = '';
     @Input() public iconColor: string = '';
     @Input() public showErrors: boolean = false;
+    @Input() public iconClick: boolean = false;
     @Output() public onFocus = new EventEmitter();
     @Output() public onBlur = new EventEmitter();
-    @Output() public ngModelChange = new EventEmitter<string | number>();
+    @Output() public ngModelChange = new EventEmitter<any>();
+    @Output() public onIconClicked: EventEmitter<void> = new EventEmitter();
 
     @ViewChild('input') public input?: ElementRef = undefined;
     @ViewChild('textArea') public textArea?: ElementRef = undefined;
@@ -47,7 +49,7 @@ export class InputComponent implements OnInit, AfterViewInit {
         });
     }
 
-    public onTextChanged(text: string | number) {
+    public onTextChanged(text: any) {
         this.ngModelChange.emit(text);
     }
 
@@ -77,5 +79,9 @@ export class InputComponent implements OnInit, AfterViewInit {
             this.onBlur.emit();
             this.focus = false;
         }
+    }
+
+    public iconClicked(): void {
+        this.onIconClicked.emit();
     }
 }

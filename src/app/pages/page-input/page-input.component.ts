@@ -10,6 +10,10 @@ export class PageInputComponent implements OnInit {
     public properties: Array<Property> = [];
     public constructor() {}
 
+    public batata(): void {
+        console.log(`batata`);
+    }
+
     public ngOnInit(): void {
         this.properties = [
             {

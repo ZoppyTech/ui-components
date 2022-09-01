@@ -13,7 +13,7 @@
     outline: none;
     padding-left: 5px;
     width: 100%;
-    font-family: "Inter" !important;
+    font-family: 'Inter' !important;
 
     &.no-border {
         border: none;
@@ -38,24 +38,24 @@
 }
 
 .icon-field {
-  padding-right: 32px;
+    padding-right: 32px;
 }
 
 .content-with-icon {
-  position: relative;
+    position: relative;
 }
 
 ps-icon {
-  position: absolute;
-  right: 16px;
-  top: 16px;
-  bottom: 16px;
-  font-size: 20px;
-  color: var(--neutral-400);
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    bottom: 16px;
+    font-size: 20px;
+    color: var(--neutral-400);
 }
 
 .icon--error {
-  color: var(--negative);
+    color: var(--negative);
 }
 
 .error {
@@ -71,10 +71,10 @@ ps-icon {
 }
 
 .error-list {
-  p {
-    margin-top: unset;
-    margin-bottom: unset;
-  }
+    p {
+        margin-top: unset;
+        margin-bottom: unset;
+    }
 }
 
 .limit-caracters {
@@ -94,6 +94,10 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-input[type="number"] {
+input[type='number'] {
     -moz-appearance: textfield;
+}
+
+.clickable {
+    cursor: pointer;
 }

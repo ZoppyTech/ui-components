@@ -1,6 +1,6 @@
-<div class="container" (mouseenter)="hover = true" (mouseleave)="hover = false">
+<div class="container" (mouseenter)="hover = true" (mouseleave)="hover = false" [ngClass]="{ 'container-icon': type === 'icon' }">
     <div class="type-icon clickable" (click)="open = !open" *ngIf="type === 'icon'">
-        <ps-icon icon="icon-edit_calendar"></ps-icon>
+        <ps-icon [ngClass]="{ 'ic-selected': model }" icon="icon-edit_calendar"></ps-icon>
     </div>
 
     <div class="datepicker-menu" [ngClass]="{ 'menu-open': open }">
@@ -18,20 +18,34 @@
 
         <div class="body">
             <div class="header">
-                <span class="text--500">Seg</span>
-                <span class="text--500">Ter</span>
-                <span class="text--500">Qua</span>
-                <span class="text--500">Qui</span>
-                <span class="text--500">Sex</span>
-                <span class="text--500">Sáb</span>
-                <span class="text--500">Dom</span>
+                <div class="item text--caption text--500">Dom</div>
+                <div class="item text--caption text--500">Seg</div>
+                <div class="item text--caption text--500">Ter</div>
+                <div class="item text--caption text--500">Qua</div>
+                <div class="item text--caption text--500">Qui</div>
+                <div class="item text--caption text--500">Sex</div>
+                <div class="item text--caption text--500">Sáb</div>
             </div>
 
-            <div class="days">
-                <div class="day" *ngFor="let calendarDay of calendarDays">
-                    {{ calendarDay.day }}
+            <div class="days" [ngClass]="{ 'border-bottom': hasFooter }">
+                <div
+                    class="day"
+                    (click)="selectDate(calendarDay)"
+                    [ngClass]="{ 'day-selected': isSelected(calendarDay) }"
+                    *ngFor="let calendarDay of calendarDays"
+                >
+                    <span class="text--caption" [ngClass]="{ 'text--500': !calendarDay.currentMonth }">{{ calendarDay.day }}</span>
                 </div>
             </div>
+        </div>
+
+        <div class="footer" *ngIf="hasFooter">
+            <ps-button (onClick)="cancel()" [wide]="true" type="cancel">
+                <span class="text text--500 text--bold">Cancela</span>
+            </ps-button>
+            <ps-button (onClick)="confirmSelectedDate()" [wide]="true" type="secondary" [disabled]="!model">
+                <span class="text text--100 text--bold">Confirma</span>
+            </ps-button>
         </div>
     </div>
 </div>

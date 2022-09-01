@@ -92,7 +92,7 @@ export class VisualIdentityService {
         let hsp = Math.sqrt(0.299 * (r * r) + 0.587 * (g * g) + 0.114 * (b * b));
         hsp = Math.round(hsp);
 
-        const result: string = hsp > 120 ? 'light' : 'dark';
+        const result: string = hsp > 210 ? 'light' : 'dark';
         return result;
     }
 

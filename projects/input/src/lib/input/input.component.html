@@ -59,7 +59,13 @@
         (mouseleave)="hover = false"
     ></textarea>
 
-    <ps-icon *ngIf="icon" [icon]="icon" [ngStyle]="{ color: iconColor }" [ngClass]="{ 'icon--error': errors.length > 0 }"></ps-icon>
+    <ps-icon
+        *ngIf="icon"
+        (click)="iconClicked()"
+        [icon]="icon"
+        [ngStyle]="{ color: iconColor }"
+        [ngClass]="{ 'icon--error': errors.length > 0, clickable: iconClick }"
+    ></ps-icon>
 
     <div class="limit-caracters" *ngIf="maxCharactersAllowed">
         <span class="text text--small text--500"
