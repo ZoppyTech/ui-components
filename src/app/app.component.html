@@ -1,11 +1,27 @@
 <div class="main">
-    <div class="side-nav">
-        <div class="item" *ngFor="let component of components">
-            <a class="text text--100" [href]="'/' + component"> {{ component.toUpperCase() }}</a>
-        </div>
+    <div class="header">
+        <ps-icon icon="icon-menu" (click)="open = !open"></ps-icon>
     </div>
     <div class="body">
-        <router-outlet></router-outlet>
+        <div class="side-nav" [ngClass]="{ closed: !open }">
+            <div
+                class="item"
+                (mouseenter)="open = true"
+                (mouseleave)="open = false"
+                *ngFor="let component of components"
+                appTooltip
+                tooltipText="{{ component.label }}"
+                [tooltipHidden]="open"
+                [routerLink]="component.route"
+                tooltipDirection="right"
+            >
+                <ps-icon icon="icon-arrow" class="text--secondary"></ps-icon>
+                <span class="text text--secondary margin-left-3"> {{ component.label }}</span>
+            </div>
+        </div>
+        <div class="components-config">
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </div>
 

@@ -10,21 +10,64 @@ import { ToastService } from 'projects/toast/src/lib/toast/toast.service';
 })
 export class AppComponent implements OnInit {
     public loaded: boolean = false;
-    public components: Array<string> = [
-        'button',
-        'checkbox',
-        'searchbar',
-        'radiobutton',
-        'multiselect',
-        'toast',
-        'tooltip',
-        'input',
-        'switch',
-        'confirm-action',
-        'dropdown',
-        `contact`,
-        `mini-menu`,
-        `datepicker`
+    public open: boolean = true;
+    public components: Array<Item> = [
+        {
+            route: 'button',
+            label: 'Button'
+        },
+        {
+            route: 'checkbox',
+            label: 'Checkbox'
+        },
+        {
+            route: 'searchbar',
+            label: 'Search Bar'
+        },
+        {
+            route: 'radiobutton',
+            label: 'Radio Button'
+        },
+        {
+            route: 'multiselect',
+            label: 'Multi Select'
+        },
+        {
+            route: 'toast',
+            label: 'Toast Message'
+        },
+        {
+            route: 'tooltip',
+            label: 'Tooltip'
+        },
+        {
+            route: 'input',
+            label: 'Input'
+        },
+        {
+            route: 'switch',
+            label: 'Switch'
+        },
+        {
+            route: 'dropdown',
+            label: 'Dropdown'
+        },
+        {
+            route: `contact`,
+            label: 'Show Contact Information'
+        },
+        {
+            route: `datepicker`,
+            label: 'Datepicker'
+        },
+        {
+            route: `mini-menu`,
+            label: 'Mini Menu'
+        },
+        {
+            route: `confirm-action`,
+            label: 'Confirm Action'
+        }
     ];
 
     public constructor(
@@ -102,4 +145,9 @@ export class AppComponent implements OnInit {
 
         this.visualIdentityService.setVariables(neutral, primary, secondary, tertiary, quaternary, success, info, warning, negative);
     }
+}
+
+interface Item {
+    route: string;
+    label: string;
 }

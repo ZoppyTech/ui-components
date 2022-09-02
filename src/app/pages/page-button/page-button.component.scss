@@ -2,8 +2,14 @@
 
 .components-content {
     display: flex;
+    flex-direction: column;
 
-    ps-button {
-        padding: 0.5rem;
+    .items {
+        display: flex;
+        flex-wrap: wrap;
+
+        ps-button {
+            padding: 0.5rem;
+        }
     }
 }

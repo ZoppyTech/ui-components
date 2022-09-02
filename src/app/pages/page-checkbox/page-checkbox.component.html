@@ -1,5 +1,14 @@
 <app-utilization class="content" [properties]="properties">
     <div class="components-content">
-        <ps-checkbox [(active)]="isActive"> <span class="text">Click checkbox to change it</span></ps-checkbox>
+        <span class="text--secondary text--bold padding-bottom-2"> Checkbox: </span>
+        <div class="items">
+            <ps-checkbox [(active)]="isActive"> <span class="text">Click checkbox to change it</span></ps-checkbox>
+        </div>
+    </div>
+    <div class="components-content padding-top-3">
+        <span class="text--secondary text--bold padding-bottom-2"> Checkbox disabled: </span>
+        <div class="items">
+            <ps-checkbox [disabled]="true" [(active)]="isActive"> <span class="text">This checkbox is disabled</span></ps-checkbox>
+        </div>
     </div>
 </app-utilization>

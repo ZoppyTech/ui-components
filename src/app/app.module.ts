@@ -14,6 +14,8 @@ import { ConfirmActionModule } from '@lucarrloliveira/confirm-action';
 import { ConfirmActionModule as DevConfirmActionModule } from 'projects/confirm-action/src/lib/confirm-action/confirm-action.module';
 import { TooltipModule as DevTooltipModule } from 'projects/tooltip/src/lib/tooltip/tooltip.module';
 import { TooltipModule } from '@lucarrloliveira/tooltip';
+import { IconModule } from '@lucarrloliveira/icon';
+import { IconModule as DevIconModule } from 'projects/icon/src/lib/icon/icon.module';
 
 const routes: Routes = [
     {
@@ -89,6 +91,7 @@ const routes: Routes = [
         environment.production ? ButtonModule : DevButtonModule,
         environment.production ? ToastModule : DevToastModule,
         environment.production ? ConfirmActionModule : DevConfirmActionModule,
+        environment.production ? IconModule : DevIconModule,
         environment.production ? TooltipModule : DevTooltipModule.forRoot()
     ],
     providers: [VisualIdentityModule],
