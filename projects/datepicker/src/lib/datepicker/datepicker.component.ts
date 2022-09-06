@@ -18,12 +18,15 @@ export class DatepickerComponent implements OnInit {
     public day: number = 0;
     public year: number = 0;
     public calendarDays: Array<CalendarDay> = [];
+    public inputText: string = '';
+    public errors: Array<string> = [];
 
     public constructor() {}
 
     public ngOnInit() {
         this.initHeaders();
         this.calendarDays = DateUtil.setCalendarDays(this.calendarDays, this.year, this.month);
+        this.setInputText();
     }
 
     private initHeaders(): void {
@@ -98,11 +101,38 @@ export class DatepickerComponent implements OnInit {
     public confirmSelectedDate(): void {
         this.modelChange.emit(this.model);
         this.open = false;
+        this.setInputText();
+    }
+
+    public setInputText(): void {
+        if (!this.model || this.type !== 'input') return;
+        this.inputText = DateUtil.formatDate(this.model as Date);
     }
 
     public cancel(): void {
-        this.open = false;
-        this.model = undefined;
+        setTimeout(() => {
+            this.open = false;
+            this.model = undefined;
+            this.inputText = '';
+        });
+    }
+
+    public inputTextChanged(date: string): void {
+        try {
+            const day: number = parseInt(date.substring(0, 2));
+            const month: number = parseInt(date.substring(2, 4));
+            const year: number = parseInt(date.substring(4, 8));
+            debugger;
+            this.model = new Date(`${month}/${day}/${year}`);
+
+            if (!DateUtil.isValidDate(this.model)) {
+                this.errors.push('invalid date');
+                this.cancel();
+            }
+        } catch (ex) {
+            this.errors.push('invalid date');
+            this.cancel();
+        }
     }
 
     @HostListener('document:click', ['$event']) public onClick() {

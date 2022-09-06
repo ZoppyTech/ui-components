@@ -3,6 +3,22 @@
         <ps-icon [ngClass]="{ 'ic-selected': model }" icon="icon-edit_calendar"></ps-icon>
     </div>
 
+    <div class="type-input" *ngIf="type === 'input'">
+        <ps-input
+            mask="00/00/0000"
+            [(ngModel)]="inputText"
+            iconColor="{{ model ? '#7b3dff' : '#dddddd' }}"
+            icon="icon-edit_calendar"
+            [debounce]="500"
+            [iconClick]="true"
+            [errors]="errors"
+            (onFocus)="errors = []"
+            [showErrors]="false"
+            (ngModelChange)="inputTextChanged($event)"
+            (onIconClicked)="open = !open"
+        ></ps-input>
+    </div>
+
     <div class="datepicker-menu" [ngClass]="{ 'menu-open': open }">
         <div class="header">
             <div class="btn" (click)="changeMonth(month - 1)">

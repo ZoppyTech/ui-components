@@ -1,5 +1,14 @@
 <app-utilization class="content" [properties]="properties">
     <div class="components-content">
-        <ps-datepicker></ps-datepicker>
+        <span class="text--secondary text--bold padding-bottom-2"> Type icon: </span>
+        <div class="items">
+            <ps-datepicker></ps-datepicker>
+        </div>
+    </div>
+    <div class="components-content padding-top-3">
+        <span class="text--secondary text--bold padding-bottom-2"> Type input: </span>
+        <div class="items">
+            <ps-datepicker [(model)]="batata" [hasFooter]="false" type="input"></ps-datepicker>
+        </div>
     </div>
 </app-utilization>

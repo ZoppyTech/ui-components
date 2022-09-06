@@ -60,7 +60,7 @@
         "@lucarrloliveira/checkbox": "^0.0.8",
         "@lucarrloliveira/confirm-action": "^0.0.4",
         "@lucarrloliveira/icon": "^0.0.16",
-        "@lucarrloliveira/input": "*",
+        "@lucarrloliveira/input": "^0.0.19",
         "@lucarrloliveira/multi-select": "^0.0.11",
         "@lucarrloliveira/radio-button": "*",
         "@lucarrloliveira/search-bar": "^0.0.6",

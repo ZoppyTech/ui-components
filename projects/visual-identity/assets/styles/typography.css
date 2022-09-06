@@ -114,7 +114,7 @@ h6 {
 }
 
 .text--bold {
-    font-weight: bold;
+    font-weight: 900;
 }
 
 .text--link {
@@ -128,4 +128,19 @@ h6 {
 
 .text--center {
     text-align: center;
+}
+
+@media only screen and (max-width: 576px) {
+    h4 {
+        font-size: 24px;
+        font-family: 'Inter';
+        color: var(--neutral-800);
+    }
+
+    h5,
+    h6 {
+        font-size: 16px;
+        font-family: 'Inter';
+        color: var(--neutral-800);
+    }
 }

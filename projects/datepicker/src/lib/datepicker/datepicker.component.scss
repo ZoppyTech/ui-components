@@ -68,7 +68,8 @@
 
             .days {
                 display: grid;
-                grid-template-columns: repeat(7, 48px);
+                grid-template-columns: repeat(7, 1fr);
+                height: 248px;
 
                 .day {
                     cursor: pointer;
@@ -118,4 +119,15 @@
 .container-icon {
     width: 32px;
     height: 32px;
+}
+
+@media only screen and (max-width: 576px) {
+    .container {
+        .datepicker-menu {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
 }

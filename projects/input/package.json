@@ -1,6 +1,6 @@
 {
     "name": "@lucarrloliveira/input",
-    "version": "0.0.16",
+    "version": "0.0.19",
     "peerDependencies": {
         "@angular/common": "~14.1.0",
         "@angular/core": "~14.1.0",

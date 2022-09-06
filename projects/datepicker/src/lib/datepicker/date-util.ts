@@ -42,4 +42,18 @@ export class DateUtil {
         }
         return calendarDays;
     }
+
+    public static formatDate(date: Date) {
+        const data = new Date(),
+            day = data.getDate().toString(),
+            dayF = day.length === 1 ? '0' + day : day,
+            month = (data.getMonth() + 1).toString(),
+            monthF = month.length === 1 ? '0' + month : month,
+            yearF = data.getFullYear();
+        return dayF + '/' + monthF + '/' + yearF;
+    }
+
+    public static isValidDate(date: Date) {
+        return !isNaN(date.getTime());
+    }
 }

@@ -78,6 +78,10 @@
     color: var(--primary-100);
 }
 
+.primary {
+    color: var(--primary);
+}
+
 .secondary-800 {
     color: var(--secondary-800);
 }
@@ -108,6 +112,10 @@
 
 .secondary-100 {
     color: var(--secondary-100);
+}
+
+.secondary {
+    color: var(--secondary);
 }
 
 .tertiary-800 {
@@ -142,6 +150,10 @@
     color: var(--tertiary-100);
 }
 
+.tertiary {
+    color: var(--tertiary);
+}
+
 .quaternary-800 {
     color: var(--quaternary-800);
 }
@@ -172,6 +184,10 @@
 
 .quaternary-100 {
     color: var(--quaternary-100);
+}
+
+.quaternary {
+    color: var(--quaternary);
 }
 
 bg-.negative {

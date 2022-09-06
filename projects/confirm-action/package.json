@@ -1,6 +1,6 @@
 {
     "name": "@lucarrloliveira/confirm-action",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "peerDependencies": {
         "@angular/common": "^14.1.0",
         "@angular/core": "^14.1.0",

@@ -10,7 +10,7 @@ import { ToastService } from 'projects/toast/src/lib/toast/toast.service';
 })
 export class AppComponent implements OnInit {
     public loaded: boolean = false;
-    public open: boolean = true;
+    public open: boolean = false;
     public components: Array<Item> = [
         {
             route: 'button',

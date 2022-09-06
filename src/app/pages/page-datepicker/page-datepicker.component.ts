@@ -8,6 +8,7 @@ import { Property } from 'src/app/components/utilization/utilization.component';
 })
 export class PageDatepickerComponent implements OnInit {
     public properties: Array<Property> = [];
+    public batata: Date | undefined = undefined;
     public constructor() {}
 
     public ngOnInit(): void {
