@@ -10,6 +10,7 @@ export class DatepickerComponent implements OnInit {
     @Input() public type: DatepickerType = `icon`;
     @Input() public model: Date | undefined = undefined;
     @Input() public hasFooter: boolean = true;
+    @Input() public placeholder: string = '';
     @Output() public modelChange: EventEmitter<Date> = new EventEmitter();
 
     public hover: boolean = false;
@@ -24,12 +25,22 @@ export class DatepickerComponent implements OnInit {
     public constructor() {}
 
     public ngOnInit() {
+        this.initModelStringDate();
         this.initHeaders();
         this.calendarDays = DateUtil.setCalendarDays(this.calendarDays, this.year, this.month);
         this.setInputText();
     }
 
+    private initModelStringDate(): void {
+        if (!this.model || typeof this.model !== 'string') return;
+        this.model = new Date(this.model as string);
+    }
+
     private initHeaders(): void {
+        if (!(this.model instanceof Date) && this.model) {
+            this.model = undefined;
+            return;
+        }
         this.month = this.model ? this.model.getMonth() : new Date().getMonth();
         this.day = this.model ? this.model.getDay() : new Date().getDay();
         this.year = this.model ? this.model.getFullYear() : new Date().getFullYear();
@@ -83,7 +94,7 @@ export class DatepickerComponent implements OnInit {
     }
 
     public isSelected(calendarDay: CalendarDay): boolean {
-        if (!this.model) return false;
+        if (!this.model || !(this.model instanceof Date)) return false;
 
         return (
             calendarDay.date.getMonth() === this.model.getMonth() &&
@@ -122,16 +133,18 @@ export class DatepickerComponent implements OnInit {
             const day: number = parseInt(date.substring(0, 2));
             const month: number = parseInt(date.substring(2, 4));
             const year: number = parseInt(date.substring(4, 8));
-            debugger;
             this.model = new Date(`${month}/${day}/${year}`);
 
             if (!DateUtil.isValidDate(this.model)) {
-                this.errors.push('invalid date');
+                if (this.model) this.errors.push('invalid date');
                 this.cancel();
             }
         } catch (ex) {
-            this.errors.push('invalid date');
+            if (this.model) this.errors.push('invalid date');
             this.cancel();
+        } finally {
+            if (this.model) DateUtil.addHours(this.model, 12);
+            this.modelChange.emit(this.model);
         }
     }
 

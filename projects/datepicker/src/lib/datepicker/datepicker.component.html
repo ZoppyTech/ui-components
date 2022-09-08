@@ -9,11 +9,12 @@
             [(ngModel)]="inputText"
             iconColor="{{ model ? '#7b3dff' : '#dddddd' }}"
             icon="icon-edit_calendar"
-            [debounce]="500"
+            [debounce]="1500"
             [iconClick]="true"
             [errors]="errors"
             (onFocus)="errors = []"
             [showErrors]="false"
+            [placeholder]="placeholder"
             (ngModelChange)="inputTextChanged($event)"
             (onIconClicked)="open = !open"
         ></ps-input>
