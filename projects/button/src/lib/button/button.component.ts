@@ -26,7 +26,9 @@ export class ButtonComponent implements OnInit, AfterViewInit {
         this.lightLoading = this._sanitizer.bypassSecurityTrustResourceUrl(Loadings.light);
     }
     public ngAfterViewInit(): void {
-        this.initializeTheme();
+        setTimeout(() => {
+            this.initializeTheme();
+        });
     }
 
     public ngOnInit(): void {}
