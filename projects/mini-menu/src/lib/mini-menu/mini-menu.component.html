@@ -3,7 +3,7 @@
         <ps-icon [icon]="icon ?? ''" class="menu-ic" [ngClass]="{ disabled: disabled }"></ps-icon>
     </div>
 
-    <div class="panel" (mouseover)="hover = true" (mouseleave)="hover = false" [ngClass]="{ open: isOpen }">
+    <div class="panel" (mouseover)="hover = true" (mouseleave)="hover = false" [ngClass]="{ open: isOpen, close: !isOpen }">
         <ng-content></ng-content>
     </div>
 </div>

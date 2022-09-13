@@ -190,19 +190,19 @@
     color: var(--quaternary);
 }
 
-bg-.negative {
+.bg-negative {
     background-color: var(--negative);
 }
 
-bg-.warning {
+.bg-warning {
     background-color: var(--warning);
 }
 
-bg-.info {
+.bg-info {
     background-color: var(--info);
 }
 
-bg-.success {
+.bg-success {
     background-color: var(--success);
 }
 

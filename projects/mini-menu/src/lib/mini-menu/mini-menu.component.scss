@@ -27,6 +27,10 @@
         border: 1px solid var(--neutral-200);
     }
 
+    .close {
+        pointer-events: none;
+    }
+
     .disabled {
         cursor: not-allowed;
     }
