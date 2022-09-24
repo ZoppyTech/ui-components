@@ -37,27 +37,35 @@ h6 {
 }
 
 .text--800 {
+    font-family: 'Inter';
     color: var(--neutral-800);
 }
 .text--700 {
+    font-family: 'Inter';
     color: var(--neutral-700);
 }
 .text--600 {
+    font-family: 'Inter';
     color: var(--neutral-600);
 }
 .text--500 {
+    font-family: 'Inter';
     color: var(--neutral-500);
 }
 .text--400 {
+    font-family: 'Inter';
     color: var(--neutral-400);
 }
 .text--300 {
+    font-family: 'Inter';
     color: var(--neutral-300);
 }
 .text--200 {
+    font-family: 'Inter';
     color: var(--neutral-200);
 }
 .text--100 {
+    font-family: 'Inter';
     color: var(--neutral-100);
 }
 
@@ -82,34 +90,42 @@ h6 {
 }
 
 .text--negative {
+    font-family: 'Inter';
     color: var(--negative);
 }
 
 .text--warning {
+    font-family: 'Inter';
     color: var(--warning);
 }
 
 .text--info {
+    font-family: 'Inter';
     color: var(--info);
 }
 
 .text--success {
+    font-family: 'Inter';
     color: var(--success);
 }
 
 .text--primary {
+    font-family: 'Inter';
     color: var(--primary);
 }
 
 .text--secondary {
+    font-family: 'Inter';
     color: var(--secondary);
 }
 
 .text--tertiary {
+    font-family: 'Inter';
     color: var(--tertiary);
 }
 
 .text--quaternary {
+    font-family: 'Inter';
     color: var(--quaternary);
 }
 
