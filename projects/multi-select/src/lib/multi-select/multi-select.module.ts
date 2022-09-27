@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MultiSelectComponent } from './multi-select.component';
-import { IconModule } from '@lucarrloliveira/icon';
-import { ButtonModule } from '@lucarrloliveira/button';
-import { SearchBarModule } from '@lucarrloliveira/search-bar';
-import { CheckboxModule } from '@lucarrloliveira/checkbox';
+import { IconModule } from '@ZoppyTech/icon';
+import { ButtonModule } from '@ZoppyTech/button';
+import { SearchBarModule } from '@ZoppyTech/search-bar';
+import { CheckboxModule } from '@ZoppyTech/checkbox';
 
 @NgModule({
     imports: [CommonModule, ButtonModule, IconModule, SearchBarModule, CheckboxModule],

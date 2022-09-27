@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { IconModule } from '@lucarrloliveira/icon';
-import { SearchBarModule } from '@lucarrloliveira/search-bar';
+import { IconModule } from '@ZoppyTech/icon';
+import { SearchBarModule } from '@ZoppyTech/search-bar';
 import { UtilizationModule } from 'src/app/components/utilization/utilization.module';
 import { PageSearchbarComponent } from './page-searchbar.component';
 

@@ -6,7 +6,7 @@ import { ButtonModule } from 'projects/button/src/lib/button/button.module';
 import { ButtonModule as ButtonModuleDev } from 'projects/button/src/lib/button/button.module';
 import { RouterModule, Routes } from '@angular/router';
 import { environment } from 'src/environments/environment';
-import { IconModule } from '@lucarrloliveira/icon';
+import { IconModule } from '@ZoppyTech/icon';
 import { IconModule as IconModuleDev } from 'projects/icon/src/lib/icon/icon.module';
 
 const routes: Routes = [

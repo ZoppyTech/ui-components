@@ -1,9 +1,9 @@
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { MultiSelectComponent } from './multi-select.component';
-import { ButtonModule } from '@lucarrloliveira/button';
-import { IconModule } from '@lucarrloliveira/icon';
-import { SearchBarModule } from '@lucarrloliveira/search-bar';
-import { CheckboxModule } from '@lucarrloliveira/checkbox';
+import { ButtonModule } from '@ZoppyTech/button';
+import { IconModule } from '@ZoppyTech/icon';
+import { SearchBarModule } from '@ZoppyTech/search-bar';
+import { CheckboxModule } from '@ZoppyTech/checkbox';
 
 describe('MultiSelectComponent', () => {
     let component: MultiSelectComponent;

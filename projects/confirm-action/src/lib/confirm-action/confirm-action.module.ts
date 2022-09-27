@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { ButtonModule } from '@lucarrloliveira/button';
-import { IconModule } from '@lucarrloliveira/icon';
-import { VisualIdentityModule } from '@lucarrloliveira/visual-identity';
+import { ButtonModule } from '@ZoppyTech/button';
+import { IconModule } from '@ZoppyTech/icon';
+import { VisualIdentityModule } from '@ZoppyTech/visual-identity';
 import { ConfirmActionComponent } from './confirm-action.component';
 import { ConfirmActionService } from './confirm-action.service';
 

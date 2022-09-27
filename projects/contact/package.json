@@ -1,11 +1,23 @@
 {
-    "name": "@lucarrloliveira/contact",
-    "version": "0.0.4",
+    "name": "@ZoppyTech/contact",
+    "version": "0.1.1",
     "peerDependencies": {
         "@angular/common": "^14.1.0",
         "@angular/core": "^14.1.0",
-        "@lucarrloliveira/visual-identity": "*",
-        "@lucarrloliveira/icon": "*"
+        "@ZoppyTech/visual-identity": "*",
+        "@ZoppyTech/icon": "*"
+    },
+    "description": "Contact component.",
+    "author": {
+        "name": "Lucas Roscoe",
+        "email": "lucas.roscoe@zoppy.com.br"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ZoppyTech/ui-components"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/ZoppyTech"
     },
     "dependencies": {
         "tslib": "^2.3.0"

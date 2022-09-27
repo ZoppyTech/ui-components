@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageDatepickerComponent } from './page-datepicker.component';
-import { DatepickerModule } from '@lucarrloliveira/datepicker';
+import { DatepickerModule } from '@ZoppyTech/datepicker';
 import { DatepickerModule as DatepickerModuleDev } from 'projects/datepicker/src/lib/datepicker/datepicker.module';
 import { RouterModule, Routes } from '@angular/router';
 import { environment } from 'src/environments/environment';

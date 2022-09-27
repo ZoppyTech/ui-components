@@ -4,7 +4,7 @@ import { PageDropdownComponent } from './page-dropdown.component';
 import { UtilizationModule } from 'src/app/components/utilization/utilization.module';
 import { RouterModule, Routes } from '@angular/router';
 import { DropdownModule as DropdownModuleDev } from 'projects/dropdown/src/lib/dropdown/dropdown.module';
-import { DropdownModule } from '@lucarrloliveira/dropdown';
+import { DropdownModule } from '@ZoppyTech/dropdown';
 import { environment } from 'src/environments/environment';
 
 const routes: Routes = [

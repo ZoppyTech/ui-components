@@ -4,7 +4,7 @@ import { PageInputComponent } from './page-input.component';
 import { RouterModule, Routes } from '@angular/router';
 import { UtilizationModule } from 'src/app/components/utilization/utilization.module';
 import { InputModule as InputModuleDev } from 'projects/input/src/lib/input/input.module';
-import { InputModule } from '@lucarrloliveira/input';
+import { InputModule } from '@ZoppyTech/input';
 import { environment } from 'src/environments/environment';
 const routes: Routes = [
     {

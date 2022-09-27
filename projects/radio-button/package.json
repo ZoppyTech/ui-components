@@ -1,12 +1,24 @@
 {
-  "name": "@lucarrloliveira/radio-button",
-  "version": "0.0.2",
-  "peerDependencies": {
-    "@angular/common": "~14.1.0",
-    "@angular/core": "~14.1.0",
-    "@lucarrloliveira/visual-identity": "*"
-  },
-  "dependencies": {
-    "tslib": "^2.3.0"
-  }
+    "name": "@ZoppyTech/radio-button",
+    "version": "0.1.1",
+    "peerDependencies": {
+        "@angular/common": "~14.1.0",
+        "@angular/core": "~14.1.0",
+        "@ZoppyTech/visual-identity": "*"
+    },
+    "description": "Radio button component.",
+    "author": {
+        "name": "Lucas Roscoe",
+        "email": "lucas.roscoe@zoppy.com.br"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ZoppyTech/ui-components"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/ZoppyTech"
+    },
+    "dependencies": {
+        "tslib": "^2.3.0"
+    }
 }

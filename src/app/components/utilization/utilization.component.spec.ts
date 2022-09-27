@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { IconModule } from '@lucarrloliveira/icon';
+import { IconModule } from '@ZoppyTech/icon';
 import { IconModule as IconModuleDev } from 'projects/icon/src/lib/icon/icon.module';
 import { environment } from 'src/environments/environment';
 import { UtilizationComponent } from './utilization.component';

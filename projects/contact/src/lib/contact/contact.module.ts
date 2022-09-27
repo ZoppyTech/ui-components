@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContactComponent } from './contact.component';
-import { VisualIdentityModule } from '@lucarrloliveira/visual-identity';
+import { VisualIdentityModule } from '@ZoppyTech/visual-identity';
 
 @NgModule({
     imports: [CommonModule, VisualIdentityModule],

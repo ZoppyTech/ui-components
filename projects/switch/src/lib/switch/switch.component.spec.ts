@@ -4,8 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { SwitchComponent } from './switch.component';
-import { IconModule } from '@lucarrloliveira/icon';
-import { VisualIdentityModule } from '@lucarrloliveira/visual-identity';
+import { IconModule } from '@ZoppyTech/icon';
+import { VisualIdentityModule } from '@ZoppyTech/visual-identity';
 
 describe('SwitchComponent', () => {
     let component: SwitchComponent;

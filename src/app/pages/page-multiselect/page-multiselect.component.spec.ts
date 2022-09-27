@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { PageMultiSelectComponent } from './page-multiselect.component';
-import { MultiSelectModule } from '@lucarrloliveira/multi-select';
+import { MultiSelectModule } from '@ZoppyTech/multi-select';
 import { RouterTestingModule } from '@angular/router/testing';
 import { UtilizationModule } from 'src/app/components/utilization/utilization.module';
 

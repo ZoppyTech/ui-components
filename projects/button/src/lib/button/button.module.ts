@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from './button.component';
-import { VisualIdentityModule } from '@lucarrloliveira/visual-identity';
+import { VisualIdentityModule } from '@ZoppyTech/visual-identity';
 
 @NgModule({
     declarations: [ButtonComponent],

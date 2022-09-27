@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { Pallete } from '@lucarrloliveira/visual-identity';
+import { Pallete } from '@ZoppyTech/visual-identity';
 
 import { VisualIdentityService } from './visual-identity.service';
 

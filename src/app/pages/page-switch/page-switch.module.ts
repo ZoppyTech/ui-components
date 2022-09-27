@@ -4,7 +4,7 @@ import { PageSwitchComponent } from './page-switch.component';
 import { UtilizationModule } from 'src/app/components/utilization/utilization.module';
 import { RouterModule, Routes } from '@angular/router';
 import { SwitchModule as SwitchModuleDev } from 'projects/switch/src/lib/switch/switch.module';
-import { SwitchModule } from '@lucarrloliveira/switch';
+import { SwitchModule } from '@ZoppyTech/switch';
 import { environment } from 'src/environments/environment';
 
 const routes: Routes = [

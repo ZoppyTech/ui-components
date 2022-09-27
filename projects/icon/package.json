@@ -1,14 +1,25 @@
 {
-  "name": "@lucarrloliveira/icon",
-  "version": "0.0.20",
-  "peerDependencies": {
-    "@angular/common": "~14.1.0",
-    "@angular/core": "~14.1.0",
-    "@lucarrloliveira/visual-identity": "*"
-  },
-  "dependencies": {
-    "tslib": "^2.3.0"
-  },
-  "license": "ISC",
-  "description": "Icon component."
+    "name": "@ZoppyTech/icon",
+    "version": "0.1.1",
+    "peerDependencies": {
+        "@angular/common": "~14.1.0",
+        "@angular/core": "~14.1.0",
+        "@ZoppyTech/visual-identity": "*"
+    },
+    "dependencies": {
+        "tslib": "^2.3.0"
+    },
+    "license": "ISC",
+    "description": "Icon component.",
+    "author": {
+        "name": "Lucas Roscoe",
+        "email": "lucas.roscoe@zoppy.com.br"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ZoppyTech/ui-components"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/ZoppyTech"
+    }
 }

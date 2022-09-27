@@ -5,7 +5,7 @@ import { DebugElement } from '@angular/core';
 
 import { PageInputComponent } from './page-input.component';
 import { UtilizationModule } from 'src/app/components/utilization/utilization.module';
-import { InputModule } from '@lucarrloliveira/input';
+import { InputModule } from '@ZoppyTech/input';
 
 describe('PageInputComponent', () => {
     let component: PageInputComponent;

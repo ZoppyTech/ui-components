@@ -1,14 +1,26 @@
 {
-    "name": "@lucarrloliveira/multi-select",
-    "version": "0.0.11",
+    "name": "@ZoppyTech/multi-select",
+    "version": "0.1.1",
     "peerDependencies": {
         "@angular/common": "^14.1.0",
         "@angular/core": "^14.1.0",
-        "@lucarrloliveira/visual-identity": "*",
-        "@lucarrloliveira/checkbox": "*",
-        "@lucarrloliveira/search-bar": "*",
-        "@lucarrloliveira/icon": "*",
-        "@lucarrloliveira/button": "*"
+        "@ZoppyTech/visual-identity": "*",
+        "@ZoppyTech/checkbox": "*",
+        "@ZoppyTech/search-bar": "*",
+        "@ZoppyTech/icon": "*",
+        "@ZoppyTech/button": "*"
+    },
+    "description": "Multiselect component.",
+    "author": {
+        "name": "Lucas Roscoe",
+        "email": "lucas.roscoe@zoppy.com.br"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ZoppyTech/ui-components"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/ZoppyTech"
     },
     "dependencies": {
         "tslib": "^2.3.0"

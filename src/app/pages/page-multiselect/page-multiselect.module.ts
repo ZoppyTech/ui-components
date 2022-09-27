@@ -4,7 +4,7 @@ import { PageMultiSelectComponent } from './page-multiselect.component';
 import { RouterModule, Routes } from '@angular/router';
 import { UtilizationModule } from 'src/app/components/utilization/utilization.module';
 import { MultiSelectModule as MultiSelectModuleDev } from 'projects/multi-select/src/lib/multi-select/multi-select.module';
-import { MultiSelectModule } from '@lucarrloliveira/multi-select';
+import { MultiSelectModule } from '@ZoppyTech/multi-select';
 import { environment } from 'src/environments/environment';
 
 const routes: Routes = [

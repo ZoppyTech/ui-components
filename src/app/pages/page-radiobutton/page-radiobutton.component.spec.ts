@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { UtilizationModule } from 'src/app/components/utilization/utilization.module';
-import { RadioButtonModule } from '@lucarrloliveira/radio-button';
+import { RadioButtonModule } from '@ZoppyTech/radio-button';
 import { PageRadiobuttonComponent } from './page-radiobutton.component';
 
 describe('PageRadiobuttonComponent', () => {

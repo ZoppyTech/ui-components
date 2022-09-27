@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { VisualIdentityService } from '@lucarrloliveira/visual-identity';
+import { VisualIdentityService } from '@ZoppyTech/visual-identity';
 
 @Component({
     selector: 'ps-contact',

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VisualIdentityService, Pallete } from '@lucarrloliveira/visual-identity';
+import { VisualIdentityService, Pallete } from '@ZoppyTech/visual-identity';
 import { ConfirmActionService } from 'projects/confirm-action/src/lib/confirm-action/confirm-action.service';
 import { ToastService } from 'projects/toast/src/lib/toast/toast.service';
 

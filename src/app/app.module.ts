@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { VisualIdentityModule } from '@lucarrloliveira/visual-identity';
-import { ButtonModule } from '@lucarrloliveira/button';
+import { VisualIdentityModule } from '@ZoppyTech/visual-identity';
+import { ButtonModule } from '@ZoppyTech/button';
 import { ButtonModule as DevButtonModule } from 'projects/button/src/lib/button/button.module';
 import { NgxMaskModule } from 'ngx-mask';
 import { NgxCurrencyModule } from 'ngx-currency';
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
 import { RouterModule, Routes } from '@angular/router';
-import { ToastModule } from '@lucarrloliveira/toast';
+import { ToastModule } from '@ZoppyTech/toast';
 import { ToastModule as DevToastModule } from 'projects/toast/src/lib/toast/toast.module';
-import { ConfirmActionModule } from '@lucarrloliveira/confirm-action';
+import { ConfirmActionModule } from '@ZoppyTech/confirm-action';
 import { ConfirmActionModule as DevConfirmActionModule } from 'projects/confirm-action/src/lib/confirm-action/confirm-action.module';
 import { TooltipModule as DevTooltipModule } from 'projects/tooltip/src/lib/tooltip/tooltip.module';
-import { TooltipModule } from '@lucarrloliveira/tooltip';
-import { IconModule } from '@lucarrloliveira/icon';
+import { TooltipModule } from '@ZoppyTech/tooltip';
+import { IconModule } from '@ZoppyTech/icon';
 import { IconModule as DevIconModule } from 'projects/icon/src/lib/icon/icon.module';
 
 const routes: Routes = [

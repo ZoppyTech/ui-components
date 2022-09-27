@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DropdownComponent } from './dropdown.component';
-import { VisualIdentityModule } from '@lucarrloliveira/visual-identity';
-import { IconModule } from '@lucarrloliveira/icon';
-import { SearchBarModule } from '@lucarrloliveira/search-bar';
+import { VisualIdentityModule } from '@ZoppyTech/visual-identity';
+import { IconModule } from '@ZoppyTech/icon';
+import { SearchBarModule } from '@ZoppyTech/search-bar';
 
 @NgModule({
     imports: [CommonModule, IconModule, VisualIdentityModule, SearchBarModule],

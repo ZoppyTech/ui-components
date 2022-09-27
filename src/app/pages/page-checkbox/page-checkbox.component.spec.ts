@@ -2,8 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { UtilizationModule } from 'src/app/components/utilization/utilization.module';
 import { RouterTestingModule } from '@angular/router/testing';
 import { PageCheckboxComponent } from './page-checkbox.component';
-import { CheckboxModule } from '@lucarrloliveira/checkbox';
-import { IconModule } from '@lucarrloliveira/icon';
+import { CheckboxModule } from '@ZoppyTech/checkbox';
+import { IconModule } from '@ZoppyTech/icon';
 import { environment } from 'src/environments/environment';
 
 describe('PageCheckboxComponent', () => {
