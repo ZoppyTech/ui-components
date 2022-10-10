@@ -1,12 +1,13 @@
 {
     "name": "@ZoppyTech/datepicker",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "peerDependencies": {
         "@angular/common": "^14.1.0",
         "@angular/core": "^14.1.0",
         "@ZoppyTech/visual-identity": "*",
         "@ZoppyTech/icon": "*",
-        "@ZoppyTech/button": "*"
+        "@ZoppyTech/button": "*",
+        "@ZoppyTech/input": "*"
     },
     "description": "Datepicker component.",
     "author": {

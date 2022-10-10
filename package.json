@@ -71,7 +71,7 @@
         "@ZoppyTech/tooltip": "*",
         "@ZoppyTech/visual-identity": "*",
         "@ZoppyTech/mini-menu": "*",
-        "@ZoppyTech/datepicker": "*",
+        "@ZoppyTech/datepicker": "0.1.2",
         "ngx-currency": "^2.5.3",
         "ngx-mask": "^14.0.3",
         "rxjs": "~7.5.6",

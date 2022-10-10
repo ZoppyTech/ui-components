@@ -43,6 +43,11 @@ export class DropdownComponent implements OnInit {
         return true;
     }
 
+    public showValue(): string {
+        if (!this.value) return '';
+        return this.items.find(item => item.value === this.value)?.label ?? '';
+    }
+
     public searchBarChanged(text: string) {
         text = text.toLowerCase().replace(' ', '');
 

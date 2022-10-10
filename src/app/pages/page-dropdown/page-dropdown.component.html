@@ -1,7 +1,7 @@
 <app-utilization class="content" [properties]="properties">
     <div class="components-content">
         {{ initialValue }}
-        <ps-dropdown [items]="itemsPlain" [errors]="['1', '2']" [(value)]="initialValue"></ps-dropdown>
-        <!-- <ps-multi-select [disabled]="false" [items]="itemsPlain" [(values)]="initialValues"></ps-multi-select> -->
+        <!-- <ps-dropdown [items]="itemsPlain" [errors]="['1', '2']" [(value)]="initialValue"></ps-dropdown> -->
+        <ps-dropdown [items]="items" [propertyLabel]="'label'" [propertyValue]="'value'" [(value)]="initialValue"></ps-dropdown>
     </div>
 </app-utilization>

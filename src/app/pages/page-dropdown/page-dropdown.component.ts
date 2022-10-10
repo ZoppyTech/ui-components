@@ -9,6 +9,16 @@ import { Property } from 'src/app/components/utilization/utilization.component';
 export class PageDropdownComponent implements OnInit {
     public properties: Array<Property> = [];
     public itemsPlain: any = ['Banana', 'Apple', 'Grape', 'Watermelon', 'Pineapple', 'Peach', 'Strawberry', 'Blueberry'];
+    public items: any = [
+        { value: 'Banana', label: 'BananaLabel' },
+        { value: 'Apple', label: 'AppleLabel' },
+        { value: 'Grape', label: 'GrapeLabel' },
+        { value: 'Watermelon', label: 'WatermelonLabel' },
+        { value: 'Pineapple', label: 'PineappleLabel' },
+        { value: 'Peach', label: 'PeachLabel' },
+        { value: 'Strawberry', label: 'StrawberryLabel' },
+        { value: 'Blueberry', label: 'BlueberryLabel' }
+    ];
     public initialValue: any = 'Watermelon';
 
     public emptyItemsPlain: any = [];
