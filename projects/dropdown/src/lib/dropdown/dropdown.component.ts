@@ -12,6 +12,7 @@ export class DropdownComponent implements OnInit {
     @Input() public selectText?: string = 'Selecione aqui...';
     @Input() public items: Array<any> = [];
     @Input() public value: any;
+    @Input() public wide: boolean = false;
     @Input() public propertyLabel: string = 'label';
     @Input() public propertyValue: any = 'label';
     @Input() public disabled: boolean = false;

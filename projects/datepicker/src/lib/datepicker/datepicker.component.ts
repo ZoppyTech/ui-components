@@ -11,6 +11,7 @@ export class DatepickerComponent implements OnInit {
     @Input() public model: Date | undefined = undefined;
     @Input() public hasFooter: boolean = true;
     @Input() public placeholder: string = '';
+    @Input() public displayTop: boolean = false;
     @Output() public modelChange: EventEmitter<Date> = new EventEmitter();
 
     public hover: boolean = false;

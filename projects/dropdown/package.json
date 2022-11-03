@@ -1,6 +1,6 @@
 {
     "name": "@ZoppyTech/dropdown",
-    "version": "0.1.4",
+    "version": "0.1.6",
     "peerDependencies": {
         "@angular/common": "^14.1.0",
         "@angular/core": "^14.1.0",
