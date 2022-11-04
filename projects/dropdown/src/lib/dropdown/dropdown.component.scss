@@ -46,7 +46,8 @@
     .menu {
         position: absolute;
         background-color: var(--neutral-100);
-        box-shadow: 0 2px 6px 0 var(--neutral-200);
+        box-shadow: 0 2px 6px 0 var(--neutral-300);
+        border: 1px solid var(--neutral-200);
         max-height: 400px;
         width: 100%;
         display: flex;
@@ -98,6 +99,10 @@
             margin: 16px;
             margin-top: 0;
         }
+    }
+
+    .top {
+        bottom: 3.5rem;
     }
 
     .error {

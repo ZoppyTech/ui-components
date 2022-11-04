@@ -16,6 +16,7 @@ export class DropdownComponent implements OnInit {
     @Input() public propertyLabel: string = 'label';
     @Input() public propertyValue: any = 'label';
     @Input() public disabled: boolean = false;
+    @Input() public displayTop: boolean = false;
     @Input() public errors: Array<string> = [];
     @Output() public valueChange: EventEmitter<any> = new EventEmitter();
 

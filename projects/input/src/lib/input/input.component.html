@@ -1,6 +1,6 @@
 <div class="input-container" [ngClass]="{ 'content-with-icon': icon }">
     <input
-        *ngIf="rows === 1 && mask !== 'number'"
+        *ngIf="rows === 1 && !defaultMasks()"
         [disabled]="disabled"
         [maxlength]="maxCharactersAllowed"
         [ngClass]="{
@@ -22,7 +22,7 @@
     />
 
     <input
-        *ngIf="rows === 1 && mask === 'number'"
+        *ngIf="rows === 1 && mask === 'currency'"
         currencyMask
         #input
         [ngClass]="{
@@ -37,6 +37,27 @@
         (change)="onModelChange()"
         (mouseover)="hover = true"
         (mouseleave)="hover = false"
+        [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"
+    />
+
+    <input
+        *ngIf="rows === 1 && mask === 'percent'"
+        #input
+        [ngClass]="{
+            error: errors.length > 0,
+            'icon-field': icon
+        }"
+        [(ngModel)]="ngModel"
+        class="input"
+        type="text"
+        [disabled]="disabled"
+        (blur)="onInputBlur()"
+        (focus)="onInputFocus()"
+        (change)="onModelChange()"
+        (mouseover)="hover = true"
+        (mouseleave)="hover = false"
+        mask="percent"
+        suffix="%"
     />
 
     <textarea

@@ -84,4 +84,8 @@ export class InputComponent implements OnInit, AfterViewInit {
     public iconClicked(): void {
         this.onIconClicked.emit();
     }
+
+    public defaultMasks(): boolean {
+        return ['currency', 'percent'].includes(this.mask);
+    }
 }

@@ -2,6 +2,12 @@
     <div class="components-content">
         {{ initialValue }}
         <!-- <ps-dropdown [items]="itemsPlain" [errors]="['1', '2']" [(value)]="initialValue"></ps-dropdown> -->
-        <ps-dropdown [items]="items" [propertyLabel]="'label'" [propertyValue]="'value'" [(value)]="initialValue"></ps-dropdown>
+        <ps-dropdown
+            [items]="items"
+            [propertyLabel]="'label'"
+            [displayTop]="true"
+            [propertyValue]="'value'"
+            [(value)]="initialValue"
+        ></ps-dropdown>
     </div>
 </app-utilization>
