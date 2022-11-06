@@ -8,6 +8,7 @@ import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@a
 export class MultiSelectComponent implements OnInit {
     @Input() public enableSearch: boolean = true;
     @Input() public displayTop: boolean = false;
+    @Input() public wide: boolean = false;
     @Input() public selectAll: boolean = true;
     @Input() public noDataText: string = 'Lista vazia';
     @Input() public selectText?: string = 'Selecione...';
