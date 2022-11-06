@@ -2,7 +2,7 @@
     <div class="select" (click)="toggleOpen()">
         <div class="left-content">
             <ng-container *ngIf="!values || values?.length === 0; else elseTemplate">
-                <span class="text text--light">{{ selectText }}</span>
+                <span class="text text--400">{{ selectText }}</span>
             </ng-container>
             <ng-template #elseTemplate>
                 <span class="text">{{ setValueSelectedLabel() }}</span>
@@ -12,7 +12,7 @@
             <ps-icon [ngClass]="{ 'ic-open': open }" icon="icon-arrow"></ps-icon>
         </div>
     </div>
-    <div class="menu" *ngIf="open && !disabled">
+    <div class="menu" [ngClass]="{ top: displayTop }" *ngIf="open && !disabled">
         <ps-search-bar
             *ngIf="enableSearch"
             (onChanged)="searchBarChanged($event)"
