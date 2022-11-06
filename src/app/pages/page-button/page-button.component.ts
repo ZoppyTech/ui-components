@@ -46,7 +46,7 @@ export class PageButtonComponent implements OnInit {
             {
                 name: 'fixedHeight',
                 type: 'boolean',
-                definition: 'Set button height to 32px',
+                definition: 'Set button height to 2rem',
                 defaultValue: 'true'
             },
             {

@@ -2,8 +2,8 @@
     position: relative;
 
     .ic-content {
-        height: 32px;
-        width: 32px;
+        height: 2rem;
+        width: 2rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -11,7 +11,7 @@
 
     .panel {
         position: absolute;
-        top: 32px;
+        top: 2rem;
         z-index: 2;
         right: 0px;
         scale: 0;
@@ -20,8 +20,8 @@
 
     .open {
         scale: 1;
-        padding: 8px;
-        border-radius: 8px;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
         box-shadow: 0 2px 6px 0 rgb(var(--neutral-200));
         background-color: var(--neutral-100);
         border: 1px solid var(--neutral-200);
@@ -37,6 +37,6 @@
 
     .menu-ic {
         color: var(--neutral-400);
-        font-size: 8px;
+        font-size: 0.5rem;
     }
 }

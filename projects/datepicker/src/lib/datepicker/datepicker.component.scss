@@ -4,8 +4,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 32px;
-        height: 32px;
+        width: 2rem;
+        height: 2rem;
         ps-icon {
             font-size: 20px;
             color: var(--primary);
@@ -20,8 +20,8 @@
         background-color: var(--neutral-100);
         box-shadow: 0 2px 6px 0 var(--neutral-200);
         border: 1px solid var(--neutral-200);
-        border-radius: 8px;
-        padding: 16px;
+        border-radius: 0.5rem;
+        padding: 1rem;
         position: absolute;
         transition-duration: 300ms;
         z-index: 10;
@@ -33,13 +33,13 @@
             justify-content: space-between;
             align-items: center;
             .btn {
-                height: 32px;
-                width: 32px;
+                height: 2rem;
+                width: 2rem;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 border: 1px solid var(--neutral-300);
-                border-radius: 8px;
+                border-radius: 0.5rem;
                 cursor: pointer;
             }
 
@@ -50,7 +50,7 @@
 
         .body {
             width: 100%;
-            padding: 8px 0;
+            padding: 0.5rem 0;
             .header {
                 display: flex;
                 justify-content: space-between;
@@ -75,8 +75,8 @@
                     cursor: pointer;
                     flex-grow: 1;
                     width: 48px;
-                    height: 40px;
-                    border-radius: 8px;
+                    height: 2.5rem;
+                    border-radius: 0.5rem;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -103,9 +103,9 @@
         }
 
         .footer {
-            padding-top: 16px;
+            padding-top: 1rem;
             display: grid;
-            grid-gap: 16px;
+            grid-gap: 1rem;
             width: 100%;
             grid-template-columns: 1fr 1fr;
         }
@@ -122,8 +122,8 @@
 }
 
 .container-icon {
-    width: 32px;
-    height: 32px;
+    width: 2rem;
+    height: 2rem;
 }
 
 @media only screen and (max-width: 576px) {

@@ -5,7 +5,7 @@
     max-width: 100%;
     .select {
         border: 1px solid var(--neutral-400);
-        border-radius: 12px;
+        border-radius: 0.75rem;
         height: 52px;
         display: flex;
         &:hover {
@@ -24,7 +24,7 @@
             justify-content: flex-start;
             display: flex;
             align-items: center;
-            padding-left: 8px;
+            padding-left: 0.5rem;
         }
 
         .right-content {
@@ -57,7 +57,7 @@
         z-index: 2;
 
         ps-search-bar {
-            padding: 16px;
+            padding: 1rem;
         }
 
         ul {
@@ -71,9 +71,9 @@
             min-height: 0;
             overflow: auto;
             li {
-                padding: 16px;
-                margin: 8px;
-                width: calc(100% - 16px);
+                padding: 1rem;
+                margin: 0.5rem;
+                width: calc(100% - 1rem);
                 display: unset;
                 display: flex;
                 align-items: center;
@@ -92,12 +92,12 @@
         .no-data {
             display: flex;
             align-items: center;
-            padding: 32px;
-            width: calc(100% - 32px);
+            padding: 2rem;
+            width: calc(100% - 2rem);
             border: 1px dashed var(--neutral-400);
             background-color: var(--neutral-200);
             justify-content: center;
-            margin: 16px;
+            margin: 1rem;
             margin-top: 0;
         }
     }
@@ -154,8 +154,8 @@
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 0.5rem;
+    height: 0.5rem;
 }
 
 ::-webkit-scrollbar-thumb {

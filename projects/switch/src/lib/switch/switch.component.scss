@@ -1,4 +1,4 @@
-.container{
+.container {
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -13,11 +13,12 @@
         background-color: var(--neutral-200);
         height: 24px;
         width: 48px;
-        border-radius: 12px;
+        border-radius: 0.75rem;
         margin: 4px;
-        transition: background-color .1s ease;
+        transition: background-color 0.1s ease;
 
-        &::before, &::after {
+        &::before,
+        &::after {
             content: none;
         }
 
@@ -35,7 +36,6 @@
         }
 
         &.disabled {
-
             &::before {
                 opacity: 0.9;
             }
@@ -46,10 +46,8 @@
         }
 
         &.focused {
-
             outline: none;
             box-shadow: 0px 0px 0px 3px rgba(var(--neutral-100), 0.5), 0px 0px 0px 3px var(--secondary);
-
         }
 
         &::before {
@@ -62,7 +60,7 @@
             height: 20px;
             width: 20px;
             border-radius: 50%;
-            transition: left .1s ease;
+            transition: left 0.1s ease;
         }
 
         input {
@@ -74,10 +72,9 @@
             height: 24px;
             width: 48px;
         }
-
     }
 
-    .text{
+    .text {
         padding-left: 0.4em;
     }
 
@@ -85,5 +82,4 @@
         opacity: 0.9;
         cursor: not-allowed;
     }
-
 }
