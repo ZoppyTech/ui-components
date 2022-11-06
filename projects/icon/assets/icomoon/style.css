@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?5bderq');
-  src:  url('fonts/icomoon.eot?5bderq#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?5bderq') format('truetype'),
-    url('fonts/icomoon.woff?5bderq') format('woff'),
-    url('fonts/icomoon.svg?5bderq#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?mljaoa');
+  src:  url('fonts/icomoon.eot?mljaoa#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?mljaoa') format('truetype'),
+    url('fonts/icomoon.woff?mljaoa') format('woff'),
+    url('fonts/icomoon.svg?mljaoa#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-unpublished:before {
+  content: "\eae1";
+  color: #eb0000;
+}
 .icon-task_alt:before {
   content: "\eadf";
   color: #30e1a1;

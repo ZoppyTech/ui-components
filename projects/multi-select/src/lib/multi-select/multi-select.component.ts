@@ -67,7 +67,7 @@ export class MultiSelectComponent implements OnInit {
 
     public searchBarChanged(text: string) {
         this.items = this.items.map((item: any) => {
-            item.isHidden = !item[this.propertyValue].toLowerCase().includes(text.toLowerCase());
+            item.isHidden = !item[this.propertyLabel].toLowerCase().includes(text.toLowerCase());
             return item;
         });
     }
