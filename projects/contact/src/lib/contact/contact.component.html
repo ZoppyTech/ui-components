@@ -1,4 +1,9 @@
-<div class="contact" [ngStyle]="{ 'background-color': bgColor }" (mouseover)="hover = true" (mouseleave)="hover = false">
+<div
+    class="contact"
+    [ngStyle]="{ 'background-color': bgColor, height: size, width: size }"
+    (mouseover)="hover = true"
+    (mouseleave)="hover = false"
+>
     <span class="initials" [ngClass]="{ 'text--600': labelColor === 'dark', 'text--200': labelColor === 'light' }">{{ initials }}</span>
     <div class="tooltip" *ngIf="tooltip" [ngClass]="{ hover: hover }">
         <span class="text--primary text text--bold">{{ name }}</span>

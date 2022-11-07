@@ -10,6 +10,7 @@ export class ContactComponent implements OnInit {
     @Input() public name: string = ``;
     @Input() public email: string = ``;
     @Input() public tooltip: boolean = true;
+    @Input() public size: string = '3rem';
     public bgColor: string = '#fff';
     public initials: string = '';
     public labelColor: Color = `light`;
