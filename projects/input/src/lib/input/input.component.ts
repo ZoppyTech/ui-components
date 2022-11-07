@@ -19,6 +19,8 @@ export class InputComponent implements OnInit, AfterViewInit {
     @Input() public icon: string = '';
     @Input() public iconColor: string = '';
     @Input() public showErrors: boolean = false;
+    @Input() public selectAll: boolean = false;
+    @Input() public moveMaskedCursor: boolean = true;
     @Input() public iconClick: boolean = false;
     @Output() public onFocus = new EventEmitter();
     @Output() public onBlur = new EventEmitter();
@@ -62,10 +64,11 @@ export class InputComponent implements OnInit, AfterViewInit {
 
     public onInputFocus() {
         if (this.hover && !this.focus) {
+            if (this.selectAll && this.input) this.input?.nativeElement.select();
             this.onFocus.emit();
             this.focus = true;
         }
-        if (this.mask) this.moveCursorToStart();
+        if (this.mask && this.moveMaskedCursor) this.moveCursorToStart();
     }
 
     public moveCursorToStart(): void {

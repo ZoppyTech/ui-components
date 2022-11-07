@@ -2,10 +2,13 @@
     <div class="components-content">
         <ps-input
             [icon]="'icon-alternate_email'"
-            [errors]="['1']"
             (onIconClicked)="batata()"
             [iconClick]="true"
+            [selectAll]="true"
+            type="string"
+            [moveMaskedCursor]="false"
             mask="currency"
+            [(ngModel)]="value"
             [maxCharactersAllowed]="10"
         ></ps-input>
         <ps-input [icon]="'icon-alternate_email'" [errors]="['1']" mask="percent" [maxCharactersAllowed]="10"></ps-input>

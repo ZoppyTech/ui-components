@@ -8,6 +8,7 @@ import { Property } from 'src/app/components/utilization/utilization.component';
 })
 export class PageInputComponent implements OnInit {
     public properties: Array<Property> = [];
+    public value: string = '500';
     public constructor() {}
 
     public batata(): void {
