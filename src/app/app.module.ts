@@ -78,6 +78,10 @@ const routes: Routes = [
     {
         path: 'datepicker',
         loadChildren: () => import('./pages/page-datepicker/page-datepicker.module').then((m: any) => m.PageDatepickerModule)
+    },
+    {
+        path: 'pagination',
+        loadChildren: () => import('./pages/page-pagination/page-pagination.module').then((m: any) => m.PagePaginationModule)
     }
 ];
 

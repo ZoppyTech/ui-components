@@ -21,6 +21,7 @@
         "publish:contact": "cd projects/contact && npm version patch && cd ../.. && ng build contact && cd dist/contact && npm publish --access public",
         "publish:minimenu": "cd projects/mini-menu && npm version patch && cd ../.. && ng build mini-menu && cd dist/mini-menu && npm publish --access public",
         "publish:datepicker": "cd projects/datepicker && npm version patch && cd ../.. && ng build datepicker && cd dist/datepicker && npm publish --access public",
+        "publish:pagination": "cd projects/pagination && npm version patch && cd ../.. && ng build pagination && cd dist/pagination && npm publish --access public",
         "watch": "ng build --watch --configuration development",
         "prepare": "husky install",
         "pre-commit": "npm run pretty && npm run lint && git add -A && lint-staged",
@@ -43,7 +44,8 @@
         "test:dropdown": "ng test dropdown --watch false --browsers ChromeHeadless",
         "test:contact": "ng test contact --watch false --browsers ChromeHeadless",
         "test:minimenu": "ng test mini-menu --watch false --browsers ChromeHeadless",
-        "test:datepicker": "ng test datepicker --watch false --browsers ChromeHeadless"
+        "test:datepicker": "ng test datepicker --watch false --browsers ChromeHeadless",
+        "test:pagination": "ng test pagination --watch false --browsers ChromeHeadless"
     },
     "private": true,
     "dependencies": {
@@ -72,6 +74,7 @@
         "@ZoppyTech/visual-identity": "*",
         "@ZoppyTech/mini-menu": "*",
         "@ZoppyTech/datepicker": "0.1.2",
+        "@ZoppyTech/pagination": "*",
         "ngx-currency": "^2.5.3",
         "ngx-mask": "^14.0.3",
         "rxjs": "~7.5.6",

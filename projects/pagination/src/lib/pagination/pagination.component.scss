@@ -1,0 +1,17 @@
+ps-button {
+    div {
+        width: 32px;
+        margin-top: 4px;
+
+        ps-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+    }
+}
+
+.disabled {
+    ps-icon {
+        color: var(--primary-300) !important;
+    }
+}

@@ -38,6 +38,9 @@
         "dist/multi-select",
         "dist/multi-select/multi-select"
       ],
+      "pagination": [
+        "dist/pagination"
+      ],
       "radio-button": [
         "dist/radio-button/radio-button",
         "dist/radio-button"

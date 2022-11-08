@@ -1,0 +1,18 @@
+<div class="flex-center flex-row">
+    <ps-button type="cancel-border" [ngClass]="{ disabled: page === 1 }" [disabled]="page === 1" (onClick)="move('back')">
+        <div class="flex-center">
+            <ps-icon icon="icon-arrow_back"></ps-icon>
+        </div>
+    </ps-button>
+    <div class="flex-center padding-2">{{ page }}/{{ totalPages }}</div>
+    <ps-button
+        type="cancel-border"
+        [ngClass]="{ disabled: page === totalPages }"
+        [disabled]="page === totalPages"
+        (onClick)="move('forward')"
+    >
+        <div class="flex-center">
+            <ps-icon icon="icon-arrow_forward"></ps-icon>
+        </div>
+    </ps-button>
+</div>

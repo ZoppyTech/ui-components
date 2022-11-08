@@ -1,16 +1,17 @@
 {
-    "name": "@ZoppyTech/icon",
-    "version": "0.1.12",
+    "name": "@ZoppyTech/pagination",
+    "version": "1.0.1",
     "peerDependencies": {
-        "@angular/common": "~14.1.0",
-        "@angular/core": "~14.1.0",
-        "@ZoppyTech/visual-identity": "*"
+        "@angular/common": "^14.1.0",
+        "@angular/core": "^14.1.0",
+        "@ZoppyTech/visual-identity": "*",
+        "@ZoppyTech/icon": "*",
+        "@ZoppyTech/button": "*"
     },
     "dependencies": {
         "tslib": "^2.3.0"
     },
-    "license": "ISC",
-    "description": "Icon component.",
+    "description": "Pagination component.",
     "author": {
         "name": "Lucas Roscoe",
         "email": "lucas.roscoe@zoppy.com.br"

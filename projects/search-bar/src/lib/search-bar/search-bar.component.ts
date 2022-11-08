@@ -11,6 +11,7 @@ export class SearchBarComponent {
     @Input() public text: string = '';
     @Input() public placeholder: string = '';
     @Input() public disabled: boolean = false;
+    @Input() public searchStyle: Style = 'border';
     public searchText: string = '';
     public focus: boolean = false;
     public isHovered: boolean = false;
@@ -36,7 +37,7 @@ export class SearchBarComponent {
     public setFocus(focus: boolean): boolean {
         if (this.disabled) return false;
         this.focus = focus;
-        return true
+        return true;
     }
 
     public onSearchTextChanged(searchText: string): boolean {
@@ -52,3 +53,5 @@ export class SearchBarComponent {
         return true;
     }
 }
+
+type Style = 'border' | 'border-bottom';

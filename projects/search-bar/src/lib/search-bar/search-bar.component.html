@@ -1,7 +1,10 @@
 <div
     [ngClass]="{
         'search-bar--focus': focus,
-        'search-bar--disabled': disabled
+        'search-bar--disabled': disabled,
+        'search-bar--border-bottom': searchStyle === 'border-bottom',
+        'search-bar--border-bottom--focus': focus && searchStyle === 'border-bottom',
+        'search-bar--border-bottom--disabled': disabled && searchStyle === 'border-bottom'
     }"
     class="search-bar"
 >

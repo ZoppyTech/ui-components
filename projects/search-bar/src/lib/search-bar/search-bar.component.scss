@@ -29,6 +29,17 @@
         }
     }
 
+    &--border-bottom {
+        border: 0px;
+        border-bottom: 1px solid var(--neutral-300);
+        border-radius: 0;
+
+        &--focus {
+            border: 0px;
+            border-bottom: solid 2px var(--primary-400);
+        }
+    }
+
     .search {
         grid-column: 1/4;
         width: 100%;

@@ -67,6 +67,10 @@ export class AppComponent implements OnInit {
         {
             route: `confirm-action`,
             label: 'Confirm Action'
+        },
+        {
+            route: `pagination`,
+            label: 'Pagination'
         }
     ];
 
