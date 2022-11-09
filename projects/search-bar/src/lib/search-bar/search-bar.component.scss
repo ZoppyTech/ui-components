@@ -5,7 +5,7 @@
     border: 1px solid var(--neutral-300);
 
     &--focus {
-        border: solid 2px var(--primary-400);
+        border: solid 0.125rem var(--primary-400);
         outline: none;
 
         .icon-search {
@@ -36,7 +36,7 @@
 
         &--focus {
             border: 0px;
-            border-bottom: solid 2px var(--primary-400);
+            border-bottom: solid 0.125rem var(--primary-400);
         }
     }
 
@@ -73,7 +73,7 @@
 
     .icon-search {
         color: var(--neutral-400);
-        font-size: 24px;
+        font-size: 2.5rem;
         grid-column: 1;
         grid-row: 1;
     }
