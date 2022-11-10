@@ -6,7 +6,7 @@
     .select {
         border: 1px solid var(--neutral-400);
         border-radius: 0.75rem;
-        height: 52px;
+        height: 3.25rem;
         display: flex;
         &:hover {
             border: 1px solid var(--primary-400);
@@ -29,7 +29,7 @@
 
         .right-content {
             height: 100%;
-            width: 52px;
+            width: 3.25rem;
             display: flex;
             align-items: center;
             justify-content: center;
