@@ -1,6 +1,6 @@
 {
     "name": "@ZoppyTech/radio-button",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "peerDependencies": {
         "@angular/common": "~14.1.0",
         "@angular/core": "~14.1.0",
