@@ -11,6 +11,7 @@ export class SearchBarComponent {
     @Input() public text: string = '';
     @Input() public placeholder: string = '';
     @Input() public disabled: boolean = false;
+    @Input() public debounce: number = 400;
     @Input() public searchStyle: Style = 'border';
     public searchText: string = '';
     public focus: boolean = false;
@@ -24,7 +25,7 @@ export class SearchBarComponent {
         fromEvent(this.input?.nativeElement, 'input')
             .pipe(
                 filter(Boolean),
-                debounceTime(400),
+                debounceTime(this.debounce),
                 distinctUntilChanged(),
                 tap(() => {
                     this.onSearchTextChanged(this.searchText);
