@@ -1,14 +1,14 @@
 {
     "name": "@ZoppyTech/input",
-    "version": "0.1.12",
+    "version": "0.1.14",
     "peerDependencies": {
-        "@angular/common": "~14.1.0",
-        "@angular/core": "~14.1.0",
+        "@angular/common": "~15.0.0",
+        "@angular/core": "~15.0.0",
         "@angular/forms": "^14.1.1",
         "ngx-currency": "^2.5.3",
         "ngx-mask": "^14.0.3",
-        "@ZoppyTech/visual-identity": "*",
-        "@ZoppyTech/icon": "*"
+        "@ZoppyTech/visual-identity": "0.1.5",
+        "@ZoppyTech/icon": "0.1.18"
     },
     "dependencies": {
         "tslib": "^2.3.0"

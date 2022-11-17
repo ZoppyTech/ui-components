@@ -1,9 +1,9 @@
 {
     "name": "@ZoppyTech/visual-identity",
-    "version": "0.1.3",
+    "version": "0.1.5",
     "peerDependencies": {
-        "@angular/common": "~14.1.0",
-        "@angular/core": "~14.1.0"
+        "@angular/common": "~15.0.0",
+        "@angular/core": "~15.0.0"
     },
     "dependencies": {
         "tslib": "^2.3.0"
