@@ -1,11 +1,16 @@
 {
     "name": "@ZoppyTech/visual-identity",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "peerDependencies": {
         "@angular/common": "~15.0.0",
         "@angular/core": "~15.0.0"
     },
     "dependencies": {
         "tslib": "^2.3.0"
+    },
+    "exports": {
+        "./assets/styles.css": {
+            "default": "./assets/styles.css"
+        }
     }
 }
