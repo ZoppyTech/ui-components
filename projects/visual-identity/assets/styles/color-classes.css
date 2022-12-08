@@ -270,6 +270,10 @@
     background-color: var(--primary-100);
 }
 
+.bg-primary {
+    background-color: var(--primary);
+}
+
 .bg-secondary-800 {
     background-color: var(--secondary-800);
 }
@@ -300,6 +304,10 @@
 
 .bg-secondary-100 {
     background-color: var(--secondary-100);
+}
+
+.bg-secondary {
+    background-color: var(--secondary);
 }
 
 .bg-tertiary-800 {
@@ -334,6 +342,10 @@
     background-color: var(--tertiary-100);
 }
 
+.bg-tertiary {
+    background-color: var(--tertiary);
+}
+
 .bg-quaternary-800 {
     background-color: var(--quaternary-800);
 }
@@ -364,4 +376,8 @@
 
 .bg-quaternary-100 {
     background-color: var(--quaternary-100);
+}
+
+.bg-quaternary {
+    background-color: var(--quaternary);
 }
