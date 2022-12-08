@@ -24,7 +24,7 @@
         disabled: disabled
     }"
 >
-    <div class="ui-button__content">
+    <div class="ui-button__content" *ngIf="!loading">
         <ng-content></ng-content>
     </div>
     <div *ngIf="loading" class="ui-button__loading">
