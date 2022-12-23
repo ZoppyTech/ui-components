@@ -41,6 +41,39 @@
     </div>
 
     <div class="components-content padding-top-3">
+        <span class="text--secondary text--bold padding-bottom-2"> Buttons loading round: </span>
+        <div class="items">
+            <ps-button [round]="true" [loading]="true" (onClick)="clickButton()" type="primary"
+                ><span class="text text--100">Primary button</span></ps-button
+            >
+            <ps-button [round]="true" [loading]="true" (onClick)="clickButton()" type="secondary"
+                ><span class="text text--100">Secondary button</span></ps-button
+            >
+            <ps-button [round]="true" [loading]="true" (onClick)="clickButton()" type="tertiary"
+                ><span class="text text--100">Tertiary button</span></ps-button
+            >
+            <ps-button [round]="true" [loading]="true" (onClick)="clickButton()" type="quaternary"
+                ><span class="text text--100">Quaternary button</span></ps-button
+            >
+            <ps-button [round]="true" [loading]="true" (onClick)="clickButton()" type="alert"
+                ><span class="text text--100">Alert button</span></ps-button
+            >
+            <ps-button [round]="true" [loading]="true" (onClick)="clickButton()" type="success"
+                ><span class="text text--100">Success button</span></ps-button
+            >
+            <ps-button [round]="true" [loading]="true" (onClick)="clickButton()" type="error"
+                ><span class="text text--100">Error button</span></ps-button
+            >
+            <ps-button [round]="true" [loading]="true" (onClick)="clickButton()" type="clean"
+                ><span class="text text--800">Clean button</span></ps-button
+            >
+            <ps-button [round]="true" [loading]="true" (onClick)="clickButton()" type="cancel-border"
+                ><span class="text text--800">Cancel button</span></ps-button
+            >
+        </div>
+    </div>
+
+    <div class="components-content padding-top-3">
         <span class="text--secondary text--bold padding-bottom-2"> Buttons disabled: </span>
         <div class="items">
             <ps-button [disabled]="true" (onClick)="clickButton()" type="primary"

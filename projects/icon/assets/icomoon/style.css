@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?981ev2');
-  src:  url('fonts/icomoon.eot?981ev2#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?981ev2') format('truetype'),
-    url('fonts/icomoon.woff?981ev2') format('woff'),
-    url('fonts/icomoon.svg?981ev2#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?7bna2z');
+  src:  url('fonts/icomoon.eot?7bna2z#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?7bna2z') format('truetype'),
+    url('fonts/icomoon.woff?7bna2z') format('woff'),
+    url('fonts/icomoon.svg?7bna2z#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-confirmation_number:before {
+  content: "\eb01";
+  color: #002e73;
+}
+.icon-local_atm:before {
+  content: "\eb02";
+  color: #002e73;
+}
 .icon-assignment_turned_in:before {
   content: "\eb00";
   color: #7b3dff;

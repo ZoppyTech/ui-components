@@ -48,7 +48,7 @@ export class ButtonComponent implements OnInit, AfterViewInit {
         const bgColor: any = this.getBgColor(this.buttonContainer?.nativeElement);
         console.log(bgColor);
         const brightness: string = this.visualIdentityService.lightOrDark(bgColor);
-        this.isDarkTheme = brightness !== 'dark';
+        this.isDarkTheme = brightness !== 'dark' || this.type === 'clean';
         return true;
     }
 
