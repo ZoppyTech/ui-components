@@ -79,7 +79,7 @@ export class DatepickerComponent implements OnInit {
 
     public changeMonth(month: number): void {
         switch (month) {
-            case 0:
+            case -1:
                 this.month = 11;
                 this.year--;
                 break;
@@ -138,7 +138,8 @@ export class DatepickerComponent implements OnInit {
 
             if (!DateUtil.isValidDate(this.model)) {
                 if (this.model) this.errors.push('invalid date');
-                this.cancel();
+            } else {
+                this.errors = [];
             }
         } catch (ex) {
             if (this.model) this.errors.push('invalid date');
