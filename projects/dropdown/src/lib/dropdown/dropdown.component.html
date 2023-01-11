@@ -5,7 +5,7 @@
                 <span class="text text--400">{{ selectText }}</span>
             </ng-container>
             <ng-template #elseTemplate>
-                <span class="text">{{ showValue() }}</span>
+                <span class="text">{{ value }}</span>
             </ng-template>
         </div>
         <div class="right-content">
@@ -16,6 +16,7 @@
         <ps-search-bar
             *ngIf="enableSearch"
             (onChanged)="searchBarChanged($event)"
+            [debounce]="debounce"
             [placeholder]="searchPlaceholder || ''"
             [text]="searchText"
         ></ps-search-bar>
@@ -25,8 +26,22 @@
             </li>
         </ul>
 
-        <div class="no-data" *ngIf="noItemsVisible()">
+        <div class="no-data" *ngIf="noItemsVisible() && !this.enableAdd">
             <span class="text text--light">{{ noDataText }}</span>
+        </div>
+
+        <div class="padding-3 flex flex-column flex-center add-items" *ngIf="noItemsVisible() && this.enableAdd">
+            <ps-icon icon="icon-manage_search" class="primary"></ps-icon>
+            <span class="text-16 text--primary text--bold margin-y-2">Ops! Item não encontrado</span>
+            <span class="text-14 text--center">Parece que você ainda não cadastrou esse item. Deseja adicioná-lo agora?</span>
+            <div class="flex wide buttons margin-top-3">
+                <ps-button (onClick)="open = false" [wide]="true" type="cancel-border" class="margin-right-2">
+                    <span class="text-14 text--bold">Não</span>
+                </ps-button>
+                <ps-button (onClick)="addItem()" [wide]="true" type="secondary">
+                    <span class="text-14 text--100 text--bold">Sim</span>
+                </ps-button>
+            </div>
         </div>
     </div>
 </div>

@@ -7,6 +7,7 @@ import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@a
 })
 export class DropdownComponent implements OnInit {
     @Input() public enableSearch: boolean = true;
+    @Input() public enableAdd: boolean = false;
     @Input() public noDataText: string = 'Lista vazia';
     @Input() public searchPlaceholder?: string = 'Pesquisar...';
     @Input() public selectText?: string = 'Selecione aqui...';
@@ -17,8 +18,10 @@ export class DropdownComponent implements OnInit {
     @Input() public propertyValue: any = 'label';
     @Input() public disabled: boolean = false;
     @Input() public displayTop: boolean = false;
+    @Input() public debounce: number = 400;
     @Input() public errors: Array<string> = [];
     @Output() public valueChange: EventEmitter<any> = new EventEmitter();
+    @Output() public onItemAdded: EventEmitter<string> = new EventEmitter();
 
     public loaded: boolean = false;
     public searchText: string = '';
@@ -32,13 +35,17 @@ export class DropdownComponent implements OnInit {
     }
 
     public init(): void {
+        debugger;
         setTimeout(() => {
             this.formatItems();
             this.loaded = true;
+            if (!this.enableSearch) this.enableAdd = false;
+            if (this.enableAdd) this.debounce = 0;
         });
     }
 
     public toggleItem(item: any): boolean {
+        debugger;
         this.value = item[this.propertyValue];
         this.valueChange.emit(this.value);
         this.toggleOpen();
@@ -47,10 +54,13 @@ export class DropdownComponent implements OnInit {
 
     public showValue(): string {
         if (!this.value) return '';
-        return this.items.find(item => item.value === this.value)?.label ?? '';
+        const displayed: any = this.items.find(item => item.value === this.value)?.label ?? '';
+        console.log(displayed);
+        return displayed;
     }
 
     public searchBarChanged(text: string) {
+        this.searchText = text;
         text = text.toLowerCase().replace(' ', '');
 
         this.items = this.items.map((item: any) => {
@@ -66,6 +76,19 @@ export class DropdownComponent implements OnInit {
     public toggleOpen() {
         if (this.disabled) this.open = false;
         else this.open = !this.open;
+    }
+
+    public addItem() {
+        setTimeout(() => {
+            const newItem: any = {
+                [this.propertyLabel]: this.searchText,
+                [this.propertyValue]: this.searchText
+            };
+            this.items.push(newItem);
+            this.toggleItem(newItem);
+            this.onItemAdded.emit(this.searchText);
+            this.searchBarChanged('');
+        });
     }
 
     private formatItems(): void {

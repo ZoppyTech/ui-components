@@ -1,6 +1,6 @@
 {
     "name": "@ZoppyTech/icon",
-    "version": "0.1.27",
+    "version": "0.1.28",
     "peerDependencies": {
         "@angular/common": "~15.0.0",
         "@angular/core": "~15.0.0",
