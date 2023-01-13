@@ -25,6 +25,7 @@ export class DropdownComponent implements OnInit {
 
     public loaded: boolean = false;
     public searchText: string = '';
+    public display: string = '';
     public open: boolean = false;
     public hover: boolean = false;
 
@@ -35,7 +36,6 @@ export class DropdownComponent implements OnInit {
     }
 
     public init(): void {
-        debugger;
         setTimeout(() => {
             this.formatItems();
             this.loaded = true;
@@ -45,17 +45,17 @@ export class DropdownComponent implements OnInit {
     }
 
     public toggleItem(item: any): boolean {
-        debugger;
         this.value = item[this.propertyValue];
         this.valueChange.emit(this.value);
         this.toggleOpen();
+        const displayItem: any = this.items.find((item: any) => item[this.propertyValue] === this.value);
+        this.display = displayItem ? displayItem[this.propertyLabel] : '';
         return true;
     }
 
     public showValue(): string {
         if (!this.value) return '';
         const displayed: any = this.items.find(item => item.value === this.value)?.label ?? '';
-        console.log(displayed);
         return displayed;
     }
 
@@ -101,6 +101,8 @@ export class DropdownComponent implements OnInit {
                 };
             });
         }
+        const item: any = this.items.find((item: any) => item[this.propertyValue] === this.value);
+        this.display = item ? item[this.propertyLabel] : '';
     }
 
     @HostListener('document:click', ['$event']) public onClick() {

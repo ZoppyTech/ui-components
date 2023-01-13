@@ -29,8 +29,8 @@ export class ContactComponent implements OnInit {
             return '';
         }
         const names = this.name.toUpperCase().trim().split(' ');
-        if (names.length >= 2) {
-            return names[0][0] + names[1][0];
+        if (names.length < 2) {
+            return names[0].substring(0, 2);
         } else if (names[0].length >= 2) {
             return names[0][0] + names[0][1];
         }
