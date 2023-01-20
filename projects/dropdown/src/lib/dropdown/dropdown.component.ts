@@ -18,10 +18,12 @@ export class DropdownComponent implements OnInit {
     @Input() public propertyValue: any = 'label';
     @Input() public disabled: boolean = false;
     @Input() public displayTop: boolean = false;
+    @Input() public customSearch: boolean = false;
     @Input() public debounce: number = 400;
     @Input() public errors: Array<string> = [];
     @Output() public valueChange: EventEmitter<any> = new EventEmitter();
     @Output() public onItemAdded: EventEmitter<string> = new EventEmitter();
+    @Output() public onSearchTextChanged: EventEmitter<string> = new EventEmitter();
 
     public loaded: boolean = false;
     public searchText: string = '';
@@ -60,6 +62,14 @@ export class DropdownComponent implements OnInit {
     }
 
     public searchBarChanged(text: string) {
+        if (this.customSearch) {
+            this.onSearchTextChanged.emit(text);
+            this.searchText = text;
+            setTimeout(() => {
+                this.init();
+            }, 250);
+            return;
+        }
         this.searchText = text;
         text = text.toLowerCase().replace(' ', '');
 

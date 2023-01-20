@@ -1,11 +1,14 @@
 <app-utilization class="content" [properties]="properties">
     <div class="components-content">
-        <ps-dropdown [items]="itemsPlain" [(value)]="initialValue"></ps-dropdown>
+        <!-- <ps-dropdown [items]="itemsPlain" [(value)]="initialValue"></ps-dropdown> -->
         <ps-dropdown
             [items]="items"
             [propertyLabel]="'label'"
+            [customSearch]="true"
+            (onSearchTextChanged)="searchTextChange($event)"
             [displayTop]="false"
             [enableAdd]="true"
+            [debounce]="1000"
             [propertyValue]="'value'"
             [(value)]="value"
         ></ps-dropdown>

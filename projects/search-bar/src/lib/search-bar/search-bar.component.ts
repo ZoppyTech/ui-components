@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { debug } from 'console';
 import { fromEvent, filter, debounceTime, distinctUntilChanged, tap } from 'rxjs';
 
 @Component({
@@ -28,7 +29,7 @@ export class SearchBarComponent {
                 debounceTime(this.debounce),
                 distinctUntilChanged(),
                 tap(() => {
-                    this.onSearchTextChanged(this.searchText);
+                    this.onChanged.emit(this.searchText);
                     return true;
                 })
             )
@@ -42,7 +43,7 @@ export class SearchBarComponent {
     }
 
     public onSearchTextChanged(searchText: string): boolean {
-        if (this.disabled) return false;
+        if (this.disabled || this.debounce !== 0) return false;
         this.onChanged.emit(searchText);
         return true;
     }

@@ -95,4 +95,11 @@ export class PageDropdownComponent implements OnInit {
     public constructor() {}
 
     public ngOnInit(): void {}
+
+    public searchTextChange(text: string) {
+        this.items = [
+            { value: 'Banana', label: 'BananaLabel' },
+            { value: 'Apple', label: 'AppleLabel' }
+        ];
+    }
 }
