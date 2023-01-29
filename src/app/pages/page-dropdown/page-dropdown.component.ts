@@ -86,7 +86,12 @@ export class PageDropdownComponent implements OnInit {
         { value: 'Strawberry', label: 'StrawberryLabel' },
         { value: 'Blueberry', label: 'BlueberryLabel' }
     ];
+    public booleanItems: any = [
+        { value: true, label: 'Verdadeiro' },
+        { value: false, label: 'Falso' }
+    ];
     public initialValue: any = 'Watermelon';
+    public initialBooleanValue: any = false;
     public value: any = 'Peach';
 
     public emptyItemsPlain: any = [];

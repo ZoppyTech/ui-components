@@ -41,7 +41,6 @@ export class PageSearchbarComponent implements OnInit {
     }
 
     public searchBarTextChanged(text: string): void {
-        debugger;
         if (!text) return;
         alert('Search bar text changed to: ' + text);
     }
