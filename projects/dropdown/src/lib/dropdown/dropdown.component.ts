@@ -8,6 +8,7 @@ import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@a
 export class DropdownComponent implements OnInit {
     @Input() public enableSearch: boolean = true;
     @Input() public enableAdd: boolean = false;
+    @Input() public hasImage: boolean = false;
     @Input() public noDataText: string = 'Lista vazia';
     @Input() public searchPlaceholder?: string = 'Pesquisar...';
     @Input() public selectText?: string = 'Selecione aqui...';
@@ -16,6 +17,7 @@ export class DropdownComponent implements OnInit {
     @Input() public wide: boolean = false;
     @Input() public propertyLabel: string = 'label';
     @Input() public propertyValue: any = 'label';
+    @Input() public propertyImage: any = 'label';
     @Input() public disabled: boolean = false;
     @Input() public displayTop: boolean = false;
     @Input() public customSearch: boolean = false;
@@ -28,6 +30,7 @@ export class DropdownComponent implements OnInit {
     public loaded: boolean = false;
     public searchText: string = '';
     public display: string = '';
+    public displayImage: string = '';
     public open: boolean = false;
     public hover: boolean = false;
 
@@ -52,6 +55,7 @@ export class DropdownComponent implements OnInit {
         this.toggleOpen();
         const displayItem: any = this.items.find((item: any) => item[this.propertyValue] === this.value);
         this.display = displayItem ? displayItem[this.propertyLabel] : '';
+        this.displayImage = displayItem ? displayItem[this.propertyImage] : '';
         return true;
     }
 
@@ -70,11 +74,12 @@ export class DropdownComponent implements OnInit {
             }, 250);
             return;
         }
+        const regexp: RegExp = /[^a-z0-9]/gi;
         this.searchText = text;
-        text = text.toLowerCase().replace(' ', '');
+        text = text.toLowerCase().replace(regexp, '');
 
         this.items = this.items.map((item: any) => {
-            item.isHidden = !item[this.propertyValue].toLowerCase().replace(' ', '').includes(text);
+            item.isHidden = !item[this.propertyLabel].toLowerCase().replace(regexp, '').includes(text);
             return item;
         });
     }
@@ -113,6 +118,7 @@ export class DropdownComponent implements OnInit {
         }
         const item: any = this.items.find((item: any) => item[this.propertyValue] === this.value);
         this.display = item ? item[this.propertyLabel] : '';
+        this.displayImage = item ? item[this.propertyImage] : '';
     }
 
     @HostListener('document:click', ['$event']) public onClick() {

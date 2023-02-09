@@ -5,6 +5,7 @@
                 <span class="text text--400">{{ selectText }}</span>
             </ng-container>
             <ng-template #elseTemplate>
+                <img *ngIf="hasImage" [src]="displayImage" alt="" class="margin-right-2" />
                 <span class="text">{{ display }}</span>
             </ng-template>
         </div>
@@ -22,6 +23,7 @@
         ></ps-search-bar>
         <ul>
             <li *ngFor="let item of items" [ngClass]="{ hidden: item.isHidden }" (click)="toggleItem(item)">
+                <img *ngIf="hasImage" [src]="item[propertyImage]" alt="" class="margin-right-2" />
                 <span class="text">{{ item[propertyLabel] }}</span>
             </li>
         </ul>

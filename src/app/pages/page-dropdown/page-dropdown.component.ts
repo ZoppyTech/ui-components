@@ -90,8 +90,14 @@ export class PageDropdownComponent implements OnInit {
         { value: true, label: 'Verdadeiro' },
         { value: false, label: 'Falso' }
     ];
+    public imageItems: any = [
+        { img: './assets/svg/mastercard.svg', value: 'mastercard', label: 'Mastercard' },
+        { img: './assets/svg/visa.svg', value: 'visa', label: 'Visa' },
+        { img: './assets/svg/american_express.svg', value: 'american_express', label: 'American Express' }
+    ];
     public initialValue: any = 'Watermelon';
     public initialBooleanValue: any = false;
+    public initialImageItem: any = 'mastercard';
     public value: any = 'Peach';
 
     public emptyItemsPlain: any = [];

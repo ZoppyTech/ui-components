@@ -2,8 +2,8 @@
     "name": "@ZoppyTech/search-bar",
     "version": "0.1.8",
     "peerDependencies": {
-        "@angular/common": "~14.1.0",
-        "@angular/core": "~14.1.0",
+        "@angular/common": "~15.0.0",
+        "@angular/core": "~15.0.0",
         "@ZoppyTech/visual-identity": "0.1.5"
     },
     "description": "Searchbar component.",
