@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?lim3lf');
-  src:  url('fonts/icomoon.eot?lim3lf#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?lim3lf') format('truetype'),
-    url('fonts/icomoon.woff?lim3lf') format('woff'),
-    url('fonts/icomoon.svg?lim3lf#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?1tddwa');
+  src:  url('fonts/icomoon.eot?1tddwa#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?1tddwa') format('truetype'),
+    url('fonts/icomoon.woff?1tddwa') format('woff'),
+    url('fonts/icomoon.svg?1tddwa#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-credit_card:before {
+  content: "\eb08";
+  color: #7b3dff;
+}
+.icon-corporate_fare:before {
+  content: "\eb09";
+  color: #9b9b9b;
+}
 .icon-draft:before {
   content: "\eb05";
   color: #002e73;
