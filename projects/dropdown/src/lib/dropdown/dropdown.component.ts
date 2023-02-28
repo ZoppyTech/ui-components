@@ -26,6 +26,7 @@ export class DropdownComponent implements OnInit {
     @Output() public valueChange: EventEmitter<any> = new EventEmitter();
     @Output() public onItemAdded: EventEmitter<string> = new EventEmitter();
     @Output() public onSearchTextChanged: EventEmitter<string> = new EventEmitter();
+    @Output() public onFocus: EventEmitter<string> = new EventEmitter();
 
     public loaded: boolean = false;
     public searchText: string = '';
@@ -91,6 +92,8 @@ export class DropdownComponent implements OnInit {
     public toggleOpen() {
         if (this.disabled) this.open = false;
         else this.open = !this.open;
+
+        if (this.open) this.onFocus.emit();
     }
 
     public addItem() {
