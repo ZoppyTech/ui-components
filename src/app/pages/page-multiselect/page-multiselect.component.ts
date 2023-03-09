@@ -9,6 +9,24 @@ import { Property } from 'src/app/components/utilization/utilization.component';
 export class PageMultiSelectComponent implements OnInit {
     public properties: Array<Property> = [];
     public itemsPlain: any = ['Banana', 'Apple', 'Grape', 'Watermelon', 'Pineapple', 'Peach', 'Strawberry', 'Blueberry'];
+    public items: any = [
+        {
+            name: 'Banana',
+            value: 1
+        },
+        {
+            name: 'Apple',
+            value: 1
+        },
+        {
+            name: 'Grape',
+            value: 1
+        },
+        {
+            name: 'Watermelon',
+            value: 1
+        }
+    ];
     public initialValues: any = ['Watermelon', 'Peach'];
 
     public emptyItemsPlain: any = [];

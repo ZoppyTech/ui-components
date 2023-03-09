@@ -1,5 +1,12 @@
 <app-utilization class="content" [properties]="properties">
     <div class="components-content">
-        <ps-multi-select [disabled]="false" [items]="itemsPlain" [(values)]="initialValues"></ps-multi-select>
+        <!-- <ps-multi-select [disabled]="false" [items]="itemsPlain" [(values)]="initialValues"></ps-multi-select> -->
+        <ps-multi-select
+            [disabled]="false"
+            [items]="items"
+            [propertyLabel]="'name'"
+            [propertyValue]="'id'"
+            [(values)]="emptyInitialValues"
+        ></ps-multi-select>
     </div>
 </app-utilization>
