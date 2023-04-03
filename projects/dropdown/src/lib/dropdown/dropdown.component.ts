@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
     selector: 'ps-dropdown',
@@ -27,9 +27,11 @@ export class DropdownComponent implements OnInit {
     @Output() public onItemAdded: EventEmitter<string> = new EventEmitter();
     @Output() public onSearchTextChanged: EventEmitter<string> = new EventEmitter();
     @Output() public onFocus: EventEmitter<string> = new EventEmitter();
+    @ViewChild('dropdown') public dropdown: any;
 
     public loaded: boolean = false;
     public searchText: string = '';
+    public width: string = '';
     public display: string = '';
     public displayImage: string = '';
     public open: boolean = false;
@@ -47,6 +49,7 @@ export class DropdownComponent implements OnInit {
             this.loaded = true;
             if (!this.enableSearch) this.enableAdd = false;
             if (this.enableAdd) this.debounce = 0;
+            if (this.dropdown) this.width = `${this.dropdown.nativeElement.offsetWidth}px`;
         });
     }
 
@@ -94,6 +97,7 @@ export class DropdownComponent implements OnInit {
         else this.open = !this.open;
 
         if (this.open) this.onFocus.emit();
+        if (this.dropdown) this.width = `${this.dropdown.nativeElement.offsetWidth}px`;
     }
 
     public addItem() {

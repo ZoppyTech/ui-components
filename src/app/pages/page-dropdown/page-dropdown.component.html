@@ -9,6 +9,7 @@
                 (onSearchTextChanged)="searchTextChange($event)"
                 [displayTop]="false"
                 [enableAdd]="true"
+                [wide]="true"
                 [debounce]="1000"
                 [propertyValue]="'value'"
                 [(value)]="value"
@@ -21,6 +22,7 @@
                 [enableSearch]="false"
                 propertyValue="value"
                 propertyLabel="label"
+                [wide]="true"
                 [items]="booleanItems"
                 [(value)]="initialBooleanValue"
             ></ps-dropdown>
@@ -33,6 +35,7 @@
                 [hasImage]="true"
                 propertyImage="img"
                 propertyValue="value"
+                [wide]="true"
                 propertyLabel="label"
                 [items]="imageItems"
                 [(value)]="initialImageItem"

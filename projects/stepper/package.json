@@ -1,16 +1,13 @@
 {
-    "name": "@ZoppyTech/icon",
-    "version": "0.1.39",
+    "name": "@ZoppyTech/stepper",
+    "version": "0.1.4",
     "peerDependencies": {
         "@angular/common": "~15.0.0",
         "@angular/core": "~15.0.0",
-        "@ZoppyTech/visual-identity": "0.1.5"
+        "@ZoppyTech/visual-identity": "0.1.5",
+        "@ZoppyTech/icon": "0.1.39"
     },
-    "dependencies": {
-        "tslib": "^2.3.0"
-    },
-    "license": "ISC",
-    "description": "Icon component.",
+    "description": "Searchbar component.",
     "author": {
         "name": "Lucas Roscoe",
         "email": "lucas.roscoe@zoppy.com.br"
@@ -21,5 +18,8 @@
     },
     "publishConfig": {
         "registry": "https://npm.pkg.github.com/ZoppyTech"
+    },
+    "dependencies": {
+        "tslib": "^2.3.0"
     }
 }

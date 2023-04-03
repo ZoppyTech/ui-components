@@ -615,35 +615,66 @@
             }
         },
         "pagination": {
-          "projectType": "library",
-          "root": "projects/pagination",
-          "sourceRoot": "projects/pagination/src",
-          "prefix": "lib",
-          "architect": {
-            "build": {
-              "builder": "@angular-devkit/build-angular:ng-packagr",
-              "options": {
-                "project": "projects/pagination/ng-package.json"
-              },
-              "configurations": {
-                "production": {
-                  "tsConfig": "projects/pagination/tsconfig.lib.prod.json"
+            "projectType": "library",
+            "root": "projects/pagination",
+            "sourceRoot": "projects/pagination/src",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "options": {
+                        "project": "projects/pagination/ng-package.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "tsConfig": "projects/pagination/tsconfig.lib.prod.json"
+                        },
+                        "development": {
+                            "tsConfig": "projects/pagination/tsconfig.lib.json"
+                        }
+                    },
+                    "defaultConfiguration": "production"
                 },
-                "development": {
-                  "tsConfig": "projects/pagination/tsconfig.lib.json"
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/pagination/src/test.ts",
+                        "tsConfig": "projects/pagination/tsconfig.spec.json",
+                        "karmaConfig": "projects/pagination/karma.conf.js"
+                    }
                 }
-              },
-              "defaultConfiguration": "production"
-            },
-            "test": {
-              "builder": "@angular-devkit/build-angular:karma",
-              "options": {
-                "main": "projects/pagination/src/test.ts",
-                "tsConfig": "projects/pagination/tsconfig.spec.json",
-                "karmaConfig": "projects/pagination/karma.conf.js"
-              }
             }
-          }
+        },
+        "stepper": {
+            "projectType": "library",
+            "root": "projects/stepper",
+            "sourceRoot": "projects/stepper/src",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "options": {
+                        "project": "projects/stepper/ng-package.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "tsConfig": "projects/stepper/tsconfig.lib.prod.json"
+                        },
+                        "development": {
+                            "tsConfig": "projects/stepper/tsconfig.lib.json"
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/stepper/src/test.ts",
+                        "tsConfig": "projects/stepper/tsconfig.spec.json",
+                        "karmaConfig": "projects/stepper/karma.conf.js"
+                    }
+                }
+            }
         }
     },
     "defaultProject": "ui-components",

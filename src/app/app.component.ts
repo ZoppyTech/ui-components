@@ -71,6 +71,10 @@ export class AppComponent implements OnInit {
         {
             route: `pagination`,
             label: 'Pagination'
+        },
+        {
+            route: `stepper`,
+            label: 'Stepper'
         }
     ];
 

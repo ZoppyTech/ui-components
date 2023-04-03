@@ -53,6 +53,9 @@
         "dist/searchbar/searchbar",
         "dist/searchbar"
       ],
+      "stepper": [
+        "dist/stepper"
+      ],
       "switch": [
         "dist/switch"
       ],

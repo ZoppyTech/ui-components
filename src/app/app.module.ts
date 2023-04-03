@@ -82,6 +82,10 @@ const routes: Routes = [
     {
         path: 'pagination',
         loadChildren: () => import('./pages/page-pagination/page-pagination.module').then((m: any) => m.PagePaginationModule)
+    },
+    {
+        path: 'stepper',
+        loadChildren: () => import('./pages/page-stepper/page-stepper.module').then((m: any) => m.PageStepperModule)
     }
 ];
 

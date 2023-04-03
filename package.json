@@ -16,6 +16,7 @@
         "publish:minimenu": "cd projects/mini-menu && npm version patch && cd ../.. && ng build mini-menu && cd dist/mini-menu && npm publish --access public",
         "publish:multiselect": "cd projects/multi-select && npm version patch && cd ../.. && ng build multi-select && cd dist/multi-select && npm publish --access public",
         "publish:pagination": "cd projects/pagination && npm version patch && cd ../.. && ng build pagination && cd dist/pagination && npm publish --access public",
+        "publish:stepper": "cd projects/stepper && npm version patch && cd ../.. && ng build stepper && cd dist/stepper && npm publish --access public",
         "publish:radiobutton": "cd projects/radio-button && npm version patch && cd ../.. && ng build radio-button && cd dist/radio-button && npm publish --access public",
         "publish:searchbar": "cd projects/search-bar && npm version patch && cd ../.. && ng build search-bar && cd dist/search-bar && npm publish --access public",
         "publish:switch": "cd projects/switch && npm version patch && cd ../.. && ng build switch && cd dist/switch && npm publish --access public",
@@ -45,7 +46,8 @@
         "test:contact": "ng test contact --watch false --browsers ChromeHeadless",
         "test:minimenu": "ng test mini-menu --watch false --browsers ChromeHeadless",
         "test:datepicker": "ng test datepicker --watch false --browsers ChromeHeadless",
-        "test:pagination": "ng test pagination --watch false --browsers ChromeHeadless"
+        "test:pagination": "ng test pagination --watch false --browsers ChromeHeadless",
+        "test:stepper": "ng test stepper --watch false --browsers ChromeHeadless"
     },
     "private": true,
     "dependencies": {
@@ -75,6 +77,7 @@
         "@ZoppyTech/toast": "0.1.6",
         "@ZoppyTech/tooltip": "0.1.3",
         "@ZoppyTech/visual-identity": "0.1.6",
+        "@ZoppyTech/stepper": "0.1.2",
         "ngx-currency": "^2.5.3",
         "ngx-mask": "^14.0.3",
         "rxjs": "~7.5.6",

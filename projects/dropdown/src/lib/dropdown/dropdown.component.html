@@ -1,6 +1,6 @@
 <div class="background mobile" *ngIf="open"></div>
 
-<div class="dropdown" [ngClass]="{ disabled: disabled, wide: wide }" (mouseenter)="hover = true" (mouseleave)="hover = false">
+<div class="dropdown" #dropdown [ngClass]="{ disabled: disabled, wide: wide }" (mouseenter)="hover = true" (mouseleave)="hover = false">
     <div class="select" (click)="toggleOpen()" [ngClass]="{ error: errors.length > 0 }">
         <div class="left-content">
             <ng-container *ngIf="!display; else elseTemplate">
@@ -15,7 +15,7 @@
             <ps-icon [ngClass]="{ 'ic-open': open }" icon="icon-arrow"></ps-icon>
         </div>
     </div>
-    <div class="menu" [ngClass]="{ top: displayTop }" *ngIf="open && !disabled">
+    <div class="menu" [ngClass]="{ top: displayTop }" *ngIf="open && !disabled" [ngStyle]="{ width: width }">
         <ps-search-bar
             *ngIf="enableSearch"
             (onChanged)="searchBarChanged($event)"
