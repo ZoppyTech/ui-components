@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?b1abh8');
-  src:  url('fonts/icomoon.eot?b1abh8#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?b1abh8') format('truetype'),
-    url('fonts/icomoon.woff?b1abh8') format('woff'),
-    url('fonts/icomoon.svg?b1abh8#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?idnt0m');
+  src:  url('fonts/icomoon.eot?idnt0m#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?idnt0m') format('truetype'),
+    url('fonts/icomoon.woff?idnt0m') format('woff'),
+    url('fonts/icomoon.svg?idnt0m#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,71 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-manage_accounts:before {
+  content: "\eb1e";
+}
+.icon-assignment_ind:before {
+  content: "\eb1f";
+  color: #a8afba;
+}
+.icon-star:before {
+  content: "\eb20";
+}
+.icon-register_reports:before {
+  content: "\eb21";
+}
+.icon-mastercard .path1:before {
+  content: "\eb13";
+  color: rgb(54, 54, 54);
+}
+.icon-mastercard .path2:before {
+  content: "\eb14";
+  margin-left: -1.3330078125em;
+  color: rgb(255, 95, 0);
+}
+.icon-mastercard .path3:before {
+  content: "\eb15";
+  margin-left: -1.3330078125em;
+  color: rgb(235, 0, 27);
+}
+.icon-mastercard .path4:before {
+  content: "\eb16";
+  margin-left: -1.3330078125em;
+  color: rgb(247, 158, 27);
+}
+.icon-mastercard .path5:before {
+  content: "\eb17";
+  margin-left: -1.3330078125em;
+  color: rgb(247, 158, 27);
+}
+.icon-visa .path1:before {
+  content: "\eb18";
+  color: rgb(0, 87, 159);
+}
+.icon-visa .path2:before {
+  content: "\eb19";
+  margin-left: -1.3330078125em;
+  color: rgb(255, 255, 255);
+}
+.icon-visa .path3:before {
+  content: "\eb1a";
+  margin-left: -1.3330078125em;
+  color: rgb(242, 174, 20);
+}
+.icon-american_express .path1:before {
+  content: "\eb1b";
+  color: rgb(0, 111, 207);
+}
+.icon-american_express .path2:before {
+  content: "\eb1c";
+  margin-left: -1.3330078125em;
+  color: rgb(255, 255, 255);
+}
+.icon-american_express .path3:before {
+  content: "\eb1d";
+  margin-left: -1.3330078125em;
+  color: rgb(0, 111, 207);
+}
 .icon-inbox_fill:before {
   content: "\eb0d";
 }

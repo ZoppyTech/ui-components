@@ -1,3 +1,5 @@
+<div class="background mobile" *ngIf="open"></div>
+
 <div class="container" (mouseenter)="hover = true" (mouseleave)="hover = false" [ngClass]="{ 'container-icon': type === 'icon' }">
     <div class="type-icon clickable" (click)="open = !open" *ngIf="type === 'icon'">
         <ps-icon [ngClass]="{ 'ic-selected': model }" icon="icon-edit_calendar"></ps-icon>

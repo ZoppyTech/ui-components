@@ -1,6 +1,5 @@
 .dropdown {
     position: relative;
-    background-color: var(--neutral-100);
     width: 20rem;
     max-width: 100%;
     .select {
@@ -10,7 +9,6 @@
         display: flex;
         &:hover {
             border: 1px solid var(--primary-400);
-            background-color: var(--neutral-200);
 
             .right-content {
                 ps-icon {
@@ -185,6 +183,16 @@
 }
 
 @media only screen and (max-width: 576px) {
+    .background {
+        position: fixed;
+        pointer-events: none;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba($color: #000000, $alpha: 0.3);
+    }
+
     .dropdown {
         .menu {
             position: fixed;
