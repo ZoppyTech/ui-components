@@ -88,6 +88,8 @@
         [ngClass]="{ 'icon--error': errors.length > 0, clickable: iconClick }"
     ></ps-icon>
 
+    <img *ngIf="img" [src]="img" (click)="imgClicked()" alt="" class="image" [ngClass]="{ clickable: iconClick }" />
+
     <div class="limit-caracters" *ngIf="maxCharactersAllowed">
         <span class="text text--small text--500"
             >{{ ngModel && ngModel.toString().length ? ngModel.toString().length : 0 }}/{{ maxCharactersAllowed }}</span

@@ -28,6 +28,7 @@ export class DropdownComponent implements OnInit {
     @Output() public onSearchTextChanged: EventEmitter<string> = new EventEmitter();
     @Output() public onFocus: EventEmitter<string> = new EventEmitter();
     @ViewChild('dropdown') public dropdown: any;
+    @ViewChild('menu') public menu: any;
 
     public loaded: boolean = false;
     public searchText: string = '';
@@ -49,7 +50,13 @@ export class DropdownComponent implements OnInit {
             this.loaded = true;
             if (!this.enableSearch) this.enableAdd = false;
             if (this.enableAdd) this.debounce = 0;
-            if (this.dropdown) this.width = `${this.dropdown.nativeElement.offsetWidth}px`;
+            this.setPosition();
+        });
+    }
+
+    private setPosition(): void {
+        setTimeout(() => {
+            if (this.dropdown) this.width = window.screen.width < 576 ? '100vw' : `${this.dropdown.nativeElement.offsetWidth}px`;
         });
     }
 
@@ -95,9 +102,8 @@ export class DropdownComponent implements OnInit {
     public toggleOpen() {
         if (this.disabled) this.open = false;
         else this.open = !this.open;
-
         if (this.open) this.onFocus.emit();
-        if (this.dropdown) this.width = `${this.dropdown.nativeElement.offsetWidth}px`;
+        this.setPosition();
     }
 
     public addItem() {

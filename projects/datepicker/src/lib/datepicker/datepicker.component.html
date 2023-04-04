@@ -1,7 +1,13 @@
 <div class="background mobile" *ngIf="open"></div>
 
-<div class="container" (mouseenter)="hover = true" (mouseleave)="hover = false" [ngClass]="{ 'container-icon': type === 'icon' }">
-    <div class="type-icon clickable" (click)="open = !open" *ngIf="type === 'icon'">
+<div
+    class="container"
+    #datepicker
+    (mouseenter)="hover = true"
+    (mouseleave)="hover = false"
+    [ngClass]="{ 'container-icon': type === 'icon' }"
+>
+    <div class="type-icon clickable" (click)="toggle()" *ngIf="type === 'icon'">
         <ps-icon [ngClass]="{ 'ic-selected': model }" icon="icon-edit_calendar"></ps-icon>
     </div>
 
@@ -18,11 +24,11 @@
             [showErrors]="false"
             [placeholder]="placeholder"
             (ngModelChange)="inputTextChanged($event)"
-            (onIconClicked)="open = !open"
+            (onIconClicked)="toggle()"
         ></ps-input>
     </div>
 
-    <div class="datepicker-menu" [ngClass]="{ 'menu-open': open, top: displayTop }">
+    <div class="datepicker-menu" [ngClass]="{ 'menu-open': open, top: displayTop }" [ngStyle]="{ width: width }">
         <div class="header">
             <div class="btn" (click)="changeMonth(month - 1)">
                 <ps-icon icon="icon-chevron"></ps-icon>

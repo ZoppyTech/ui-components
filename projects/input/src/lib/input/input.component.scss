@@ -4,6 +4,7 @@
 
 .input-container {
     width: 100%;
+    position: relative;
 }
 
 .input {
@@ -45,13 +46,18 @@
     position: relative;
 }
 
-ps-icon {
+ps-icon,
+img {
     position: absolute;
     right: 1rem;
     top: 1rem;
     bottom: 1rem;
     font-size: 1.25rem;
     color: var(--neutral-400);
+}
+
+img {
+    height: 1.25rem;
 }
 
 .icon--error {

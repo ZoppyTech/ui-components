@@ -14,6 +14,8 @@ export class ButtonComponent implements OnInit, AfterViewInit {
     @Input() public round: boolean = false;
     @Input() public loading: boolean = false;
     @Input() public fixedHeight: boolean = true;
+    @Input() public loadingText: string = '';
+    @Input() public theme: string = '';
     @Output() onClick = new EventEmitter<boolean>();
     @ViewChild('buttonContainer') buttonContainer: any;
 
@@ -28,7 +30,7 @@ export class ButtonComponent implements OnInit, AfterViewInit {
     public ngAfterViewInit(): void {
         setTimeout(() => {
             this.initializeTheme();
-        });
+        }, 1000);
     }
 
     public ngOnInit(): void {}
@@ -45,8 +47,8 @@ export class ButtonComponent implements OnInit, AfterViewInit {
     }
 
     public defineColorTheme(): boolean {
+        if (this.theme) this.isDarkTheme = this.theme === 'dark';
         const bgColor: any = this.getBgColor(this.buttonContainer?.nativeElement);
-        console.log(bgColor);
         const brightness: string = this.visualIdentityService.lightOrDark(bgColor);
         this.isDarkTheme = brightness !== 'dark' || this.type === 'clean';
         return true;

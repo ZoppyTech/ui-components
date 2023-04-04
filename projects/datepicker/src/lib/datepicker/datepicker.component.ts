@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { DateUtil } from './date-util';
 
 @Component({
@@ -13,6 +13,7 @@ export class DatepickerComponent implements OnInit {
     @Input() public placeholder: string = '';
     @Input() public displayTop: boolean = false;
     @Output() public modelChange: EventEmitter<Date> = new EventEmitter();
+    @ViewChild('datepicker') public datepicker: any;
 
     public hover: boolean = false;
     public open: boolean = false;
@@ -22,6 +23,7 @@ export class DatepickerComponent implements OnInit {
     public calendarDays: Array<CalendarDay> = [];
     public inputText: string = '';
     public errors: Array<string> = [];
+    public width: string = '';
 
     public constructor() {}
 
@@ -30,6 +32,18 @@ export class DatepickerComponent implements OnInit {
         this.initHeaders();
         this.calendarDays = DateUtil.setCalendarDays(this.calendarDays, this.year, this.month);
         this.setInputText();
+        if (this.datepicker) this.width = window.screen.width < 576 ? '100vw' : `${this.datepicker.nativeElement.offsetWidth}px`;
+    }
+
+    public toggle(): void {
+        if (this.datepicker)
+            this.width =
+                window.screen.width < 576
+                    ? '100vw'
+                    : this.datepicker.nativeElement.offsetWidth < 350
+                    ? '25rem'
+                    : `${this.datepicker.nativeElement.offsetWidth}px`;
+        this.open = !this.open;
     }
 
     private initModelStringDate(): void {

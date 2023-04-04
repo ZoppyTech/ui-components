@@ -15,7 +15,7 @@
             <ps-icon [ngClass]="{ 'ic-open': open }" icon="icon-arrow"></ps-icon>
         </div>
     </div>
-    <div class="menu" [ngClass]="{ top: displayTop }" *ngIf="open && !disabled" [ngStyle]="{ width: width }">
+    <div class="menu" #menu [ngClass]="{ hidden: !open || disabled, 'display-top': displayTop }" [ngStyle]="{ width: width }">
         <ps-search-bar
             *ngIf="enableSearch"
             (onChanged)="searchBarChanged($event)"
