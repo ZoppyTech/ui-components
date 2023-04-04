@@ -1,11 +1,11 @@
 {
     "name": "@ZoppyTech/datepicker",
-    "version": "0.1.13",
+    "version": "0.1.15",
     "peerDependencies": {
         "@angular/common": "~15.0.0",
         "@angular/core": "~15.0.0",
-        "@ZoppyTech/visual-identity": "^0.1.5",
-        "@ZoppyTech/icon": "^0.1.18",
+        "@ZoppyTech/visual-identity": "0.1.8",
+        "@ZoppyTech/icon": "0.1.40",
         "@ZoppyTech/button": "0.1.6",
         "@ZoppyTech/input": "^0.1.14"
     },

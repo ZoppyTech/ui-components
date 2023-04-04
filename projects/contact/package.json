@@ -1,11 +1,11 @@
 {
     "name": "@ZoppyTech/contact",
-    "version": "0.1.8",
+    "version": "0.1.10",
     "peerDependencies": {
         "@angular/common": "~15.0.0",
         "@angular/core": "~15.0.0",
-        "@ZoppyTech/visual-identity": "0.1.5",
-        "@ZoppyTech/icon": "0.1.18"
+        "@ZoppyTech/visual-identity": "0.1.8",
+        "@ZoppyTech/icon": "0.1.40"
     },
     "description": "Contact component.",
     "author": {

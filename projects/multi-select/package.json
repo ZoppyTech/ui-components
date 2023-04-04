@@ -1,13 +1,13 @@
 {
     "name": "@ZoppyTech/multi-select",
-    "version": "0.1.11",
+    "version": "0.1.12",
     "peerDependencies": {
         "@angular/common": "~15.0.0",
         "@angular/core": "~15.0.0",
-        "@ZoppyTech/visual-identity": "0.1.5",
+        "@ZoppyTech/visual-identity": "0.1.8",
         "@ZoppyTech/checkbox": "*",
         "@ZoppyTech/search-bar": "*",
-        "@ZoppyTech/icon": "0.1.18",
+        "@ZoppyTech/icon": "0.1.40",
         "@ZoppyTech/button": "*"
     },
     "description": "Multiselect component.",
