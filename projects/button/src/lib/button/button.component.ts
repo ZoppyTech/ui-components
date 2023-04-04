@@ -35,9 +35,8 @@ export class ButtonComponent implements OnInit, AfterViewInit {
 
     public ngOnInit(): void {}
 
-    public initializeTheme(): boolean {
+    public initializeTheme(): void {
         this.defineColorTheme();
-        return true;
     }
 
     public click(): boolean {
@@ -46,12 +45,14 @@ export class ButtonComponent implements OnInit, AfterViewInit {
         return true;
     }
 
-    public defineColorTheme(): boolean {
-        if (this.theme) this.isDarkTheme = this.theme === 'dark';
+    public defineColorTheme(): void {
+        if (this.theme) {
+            this.isDarkTheme = this.theme === 'dark';
+            return;
+        }
         const bgColor: any = this.getBgColor(this.buttonContainer?.nativeElement);
         const brightness: string = this.visualIdentityService.lightOrDark(bgColor);
         this.isDarkTheme = brightness !== 'dark' || this.type === 'clean';
-        return true;
     }
 
     public getBgColor(element: any): any {
