@@ -53,6 +53,9 @@
         "dist/searchbar/searchbar",
         "dist/searchbar"
       ],
+      "selector": [
+        "dist/selector"
+      ],
       "stepper": [
         "dist/stepper"
       ],

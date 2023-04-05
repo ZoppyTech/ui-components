@@ -1,0 +1,13 @@
+<ul>
+    <li
+        *ngFor="let item of items; let index = index"
+        class="clickable flex"
+        (click)="select(item)"
+        [ngClass]="{ selected: value === item[propertyValue], last: index === items.length - 1 }"
+    >
+        <div class="flex flex-center icon-content">
+            <ps-icon [icon]="item[propertyIcon]"></ps-icon>
+        </div>
+        <span class="text">{{ item[propertyLabel] }}</span>
+    </li>
+</ul>

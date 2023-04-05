@@ -75,6 +75,10 @@ export class AppComponent implements OnInit {
         {
             route: `stepper`,
             label: 'Stepper'
+        },
+        {
+            route: `selector`,
+            label: 'Selector'
         }
     ];
 

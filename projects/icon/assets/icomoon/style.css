@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?v6uit4');
-  src:  url('fonts/icomoon.eot?v6uit4#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?v6uit4') format('truetype'),
-    url('fonts/icomoon.woff?v6uit4') format('woff'),
-    url('fonts/icomoon.svg?v6uit4#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?40hwyx');
+  src:  url('fonts/icomoon.eot?40hwyx#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?40hwyx') format('truetype'),
+    url('fonts/icomoon.woff?40hwyx') format('woff'),
+    url('fonts/icomoon.svg?40hwyx#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,30 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-add_shopping_cart:before {
+  content: "\eb23";
+  color: #727c8c;
+}
+.icon-follow:before {
+  content: "\eb24";
+  color: #727c8c;
+}
+.icon-giftback:before {
+  content: "\eb25";
+  color: #727c8c;
+}
+.icon-handshake:before {
+  content: "\eb26";
+  color: #727c8c;
+}
+.icon-mix_products:before {
+  content: "\eb27";
+  color: #727c8c;
+}
+.icon-time_count:before {
+  content: "\eb28";
+  color: #727c8c;
+}
 .icon-info-inverted:before {
   content: "\eb22";
   color: #7b3dff;
