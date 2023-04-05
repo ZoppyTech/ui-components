@@ -17,7 +17,7 @@ export class DropdownComponent implements OnInit {
     @Input() public wide: boolean = false;
     @Input() public propertyLabel: string = 'label';
     @Input() public propertyValue: any = 'label';
-    @Input() public propertyImage: any = 'label';
+    @Input() public propertyImage: any = '';
     @Input() public disabled: boolean = false;
     @Input() public displayTop: boolean = false;
     @Input() public customSearch: boolean = false;

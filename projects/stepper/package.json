@@ -1,6 +1,6 @@
 {
     "name": "@ZoppyTech/stepper",
-    "version": "0.1.5",
+    "version": "0.1.7",
     "peerDependencies": {
         "@angular/common": "~15.0.0",
         "@angular/core": "~15.0.0",

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StepperItem } from 'projects/stepper/src/public-api';
 import { Property } from 'src/app/components/utilization/utilization.component';
 
 @Component({
@@ -8,7 +9,28 @@ import { Property } from 'src/app/components/utilization/utilization.component';
 })
 export class PageStepperComponent implements OnInit {
     public properties: Array<Property> = [];
-    public items: string[] = ['Sobre você', 'Planos', 'Dados cadastrais', 'Pagamento'];
+    public items: StepperItem[] = [
+        {
+            label: 'Sobre você',
+            value: 'about_you',
+            index: 0
+        },
+        {
+            label: 'Planos',
+            value: 'plans',
+            index: 1
+        },
+        {
+            label: 'Dados cadastrais',
+            value: 'data',
+            index: 2
+        },
+        {
+            label: 'Pagamento',
+            value: 'payment',
+            index: 3
+        }
+    ];
 
     public constructor() {}
 
