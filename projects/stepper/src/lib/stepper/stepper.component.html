@@ -3,7 +3,7 @@
 
     <div class="item clickable flex" (click)="select(item)" *ngFor="let item of items; let index = index">
         <div class="flex flex-center flex-column">
-            <div class="circle flex flex-center" [ngClass]="{ selected: selected === index, before: selected > index }">
+            <div class="circle flex flex-center" [ngClass]="{ selected: checkIsSelected(item), before: checkIsBefore(item) }">
                 <span class="text-24">{{ index + 1 }}</span>
             </div>
             <span class="text--bold margin-top-1" [ngClass]="{ 'text--800': selected === index, 'text--500': selected !== index }">{{

@@ -21,6 +21,18 @@ export class StepperComponent implements OnInit {
         }
     }
 
+    public checkIsSelected(item: StepperItem): boolean {
+        if (!this.value) return false;
+        return this.value === item.value;
+    }
+
+    public checkIsBefore(item: StepperItem): boolean {
+        if (!this.value) return false;
+        const selected: number = this.items.findIndex((stepItem: StepperItem) => stepItem.value === this.value);
+        const current: number = this.items.findIndex((stepItem: StepperItem) => stepItem.value === item.value);
+        return current < selected;
+    }
+
     public select(item: StepperItem): void {
         this.onChangeSelected.emit(item.value);
         this.selected = this.items.findIndex((stepperItem: StepperItem) => item.value === stepperItem.value);
