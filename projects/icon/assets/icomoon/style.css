@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?40hwyx');
-  src:  url('fonts/icomoon.eot?40hwyx#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?40hwyx') format('truetype'),
-    url('fonts/icomoon.woff?40hwyx') format('woff'),
-    url('fonts/icomoon.svg?40hwyx#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?x3cgo0');
+  src:  url('fonts/icomoon.eot?x3cgo0#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?x3cgo0') format('truetype'),
+    url('fonts/icomoon.woff?x3cgo0') format('woff'),
+    url('fonts/icomoon.svg?x3cgo0#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,27 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-waiting-event:before {
+  content: "\eb29";
+}
+.icon-timer:before {
+  content: "\eb2a";
+}
+.icon-dot:before {
+  content: "\eb2b";
+}
+.icon-groups:before {
+  content: "\eb2c";
+}
+.icon-outbound:before {
+  content: "\eb2d";
+}
+.icon-more:before {
+  content: "\eb2e";
+}
+.icon-support_agent:before {
+  content: "\eb2f";
+}
 .icon-add_shopping_cart:before {
   content: "\eb23";
   color: #727c8c;
