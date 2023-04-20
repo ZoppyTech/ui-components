@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { TemplateInputUtil } from '../../template-input.util';
 
 @Component({
     selector: 'ps-template-input',
@@ -14,9 +15,14 @@ export class TemplateInputComponent {
     @Output() public onFocus = new EventEmitter();
     @Output() public onBlur = new EventEmitter();
 
+    @ViewChild('divEditable') public declare divEditableRef: ElementRef;
+
     public focus: boolean = false;
     public hover: boolean = false;
     public open: boolean = false;
+    public bold: boolean = false;
+    public italic: boolean = false;
+    public strikeThrough: boolean = false;
     public tabSelected: number = 0;
 
     public tabs: Array<Tab> = [
@@ -153,9 +159,38 @@ export class TemplateInputComponent {
         }
     }
 
-    public onModelChange(): void {
+    public get divEditable() {
+        return this.divEditableRef?.nativeElement;
+    }
+
+    public onModelChange(event: any): void {
+        const caretPosition: number = this.getCaretPosition();
+        const textAdded: string = event.data;
+        debugger;
+
+        // if (this.bold && this.italic) input.html[caretPosition - 1] = `<i><b>${textAdded}</i></b>`;
+        if (this.bold) {
+            const strongElement: HTMLElement = document.createElement('strong');
+            strongElement.innerHTML = textAdded;
+            TemplateInputUtil.pasteHtmlAtCaret(strongElement.innerHTML);
+            debugger;
+        }
+
+        // else if (this.italic) input.html[caretPosition - 1] = `<i>${textAdded}</i>`;
+
+        debugger;
+
+        console.log(caretPosition);
         if (this.disabled) return;
         this.ngModelChange.emit(this.ngModel);
+    }
+
+    public getCaretPosition() {
+        const sel: any = document.getSelection();
+        sel.modify('extend', 'backward', 'paragraphboundary');
+        var pos = sel.toString().length;
+        if (sel.anchorNode != undefined) sel.collapseToEnd();
+        return pos;
     }
 
     public toggleOpen(): void {
@@ -172,6 +207,21 @@ export class TemplateInputComponent {
         this.ngModel += parameter.value;
         this.ngModelChange.emit(this.ngModel);
         this.open = false;
+    }
+
+    public toggleBold(): void {
+        this.bold = !this.bold;
+        //this is *
+    }
+
+    public toggleItalic(): void {
+        this.italic = !this.italic;
+        //this is underline
+    }
+
+    public toggleStrikeThrough(): void {
+        this.strikeThrough = !this.strikeThrough;
+        //this is ~
     }
 }
 

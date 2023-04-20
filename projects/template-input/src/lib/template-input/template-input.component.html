@@ -1,55 +1,63 @@
 <div class="template-input">
     <div class="header">
-        <div class="parameters">
+        <div class="parameters flex align-center">
             <div class="bg" (click)="clickBg()" *ngIf="open"></div>
+
             <div (mouseover)="hover = true" (mouseleave)="hover = false" class="insert flex space-between" (click)="toggleOpen()">
                 <span class="text neutral-500 text-12">Inserir</span>
                 <ps-icon [ngClass]="{ 'ic-open': open }" icon="icon-arrow"></ps-icon>
             </div>
-            <div (mouseover)="hover = true" (mouseleave)="hover = false" class="menu padding-2 flex flex-column" *ngIf="open">
-                <span class="text text--bold neutral-600">Parâmetros</span>
-                <span class="neutral-600 text-12 margin-y-1">
-                    Exemplo, ao clicar em <b>primeiro nome</b>, você irá inserir na mensagem o primeiro nome do seu cliente.
-                </span>
 
-                <ul class="flex wide tabs">
-                    <li
-                        class="flex-grow clickable"
-                        *ngFor="let tab of tabs; let index = index"
-                        [ngClass]="{ 'tab-selected': index === tabSelected }"
-                        (click)="tabSelected = index"
-                    >
-                        <ps-icon class="neutral-500 margin-right-1" [icon]="tab.icon"></ps-icon>
-                        <span class="text-12 neutral-500">{{ tab.label }}</span>
-                    </li>
-                </ul>
+            <ps-button (onClick)="toggleBold()" [fixedHeight]="false" [type]="bold ? 'secondary' : 'clean'">
+                <ps-icon [ngClass]="{ 'neutral-100': bold, 'neutral-600': !bold }" icon="icon-format_bold"></ps-icon>
+            </ps-button>
 
-                <ul>
-                    <li
-                        class="clickable padding-1 flex align-center margin-y-1"
-                        *ngFor="let parameter of parameters"
-                        [ngClass]="{ hidden: tabSelected !== parameter.tab }"
-                        (click)="addParameter(parameter)"
-                    >
-                        <span class="text-12 text--bold">{{ parameter.label }}</span>
-                        <span class="text-12 neutral-600 margin-left-1">{{ parameter.value }}</span>
-                    </li>
-                </ul>
-            </div>
+            <ps-button (onClick)="toggleItalic()" [fixedHeight]="false" [type]="italic ? 'secondary' : 'clean'">
+                <ps-icon [ngClass]="{ 'neutral-100': italic, 'neutral-600': !italic }" icon="icon-format_italic"></ps-icon>
+            </ps-button>
+        </div>
+        <div (mouseover)="hover = true" (mouseleave)="hover = false" class="menu padding-2 flex flex-column" *ngIf="open">
+            <span class="text text--bold neutral-600">Parâmetros</span>
+            <span class="neutral-600 text-12 margin-y-2">
+                Exemplo, ao clicar em <b>primeiro nome</b>, você irá inserir na mensagem o primeiro nome do seu cliente.
+            </span>
+
+            <ul class="flex wide tabs">
+                <li
+                    class="flex-grow clickable"
+                    *ngFor="let tab of tabs; let index = index"
+                    [ngClass]="{ 'tab-selected': index === tabSelected }"
+                    (click)="tabSelected = index"
+                >
+                    <ps-icon class="neutral-500 margin-right-1" [icon]="tab.icon"></ps-icon>
+                    <span class="text-12 neutral-500">{{ tab.label }}</span>
+                </li>
+            </ul>
+
+            <ul>
+                <li
+                    class="clickable padding-1 flex align-center margin-y-1"
+                    *ngFor="let parameter of parameters"
+                    [ngClass]="{ hidden: tabSelected !== parameter.tab }"
+                    (click)="addParameter(parameter)"
+                >
+                    <span class="text-12 text--bold">{{ parameter.label }}</span>
+                    <span class="text-12 neutral-600 margin-left-1">{{ parameter.value }}</span>
+                </li>
+            </ul>
         </div>
     </div>
-    <textarea
-        [disabled]="disabled"
-        [rows]="8"
-        #textArea
-        class="input"
-        [ngModelOptions]="{ standalone: true }"
-        [placeholder]="placeholder"
+    <div
+        contentEditable="true"
+        #divEditable
+        id="ps-template-input"
+        class="input textarea"
         (blur)="onInputBlur()"
         (focus)="onInputFocus()"
-        (change)="onModelChange()"
-        [(ngModel)]="ngModel"
+        (input)="onModelChange($event)"
         (mouseover)="hover = true"
         (mouseleave)="hover = false"
-    ></textarea>
+    ></div>
+
+    {{ ngModel }}
 </div>
