@@ -41,100 +41,100 @@ export class TemplateInputComponent {
     public parameters: TemplateParameter[] = [
         {
             label: 'Primeiro Nome',
-            value: 'client_first_name',
+            value: '{{client_first_name}}',
             tab: 0
         },
         {
             label: 'Último Nome',
-            value: 'client_last_name',
+            value: '{{client_last_name}}',
             tab: 0
         },
         {
             label: 'Idade',
-            value: 'age',
+            value: '{{age}}',
             tab: 0
         },
         {
             label: 'Dia do Aniversário',
-            value: 'birthday_day',
+            value: '{{birthday_day}}',
             tab: 0
         },
         {
             label: 'Mês do Aniversário',
-            value: 'birthday_month',
+            value: '{{birthday_month}}',
             tab: 0
         },
         {
             label: 'Data da Última Compra',
-            value: 'last_purchase_date',
+            value: '{{last_purchase_date}}',
             tab: 0
         },
         {
             label: 'Lista dos Produtos da Última Compra',
-            value: 'product_list',
+            value: '{{product_list}}',
             tab: 0
         },
 
         {
             label: 'Código do Giftback',
-            value: 'nps_link',
+            value: '{{nps_link}}',
             tab: 1
         },
         {
             label: 'Valor do Giftback',
-            value: 'nps_product_rating',
+            value: '{{nps_product_rating}}',
             tab: 1
         },
         {
             label: 'Data de Expiração do Giftback',
-            value: 'nps_rating',
+            value: '{{nps_rating}}',
             tab: 1
         },
         {
             label: 'Valor Mínimo da compra do Giftback',
-            value: 'nps_service_rating',
+            value: '{{nps_service_rating}}',
             tab: 1
         },
         {
             label: 'Valor Percentual do Giftback',
-            value: 'giftback_percent_value',
+            value: '{{giftback_percent_value}}',
             tab: 1
         },
 
         {
             label: 'Link do NPS',
-            value: 'nps_link',
+            value: '{{nps_link}}',
             tab: 2
         },
         {
             label: 'NPS de Produto',
-            value: 'nps_product_rating',
+            value: '{{nps_product_rating}}',
             tab: 2
         },
         {
             label: 'NPS Geral',
-            value: 'nps_rating',
+            value: '{{nps_rating}}',
             tab: 2
         },
         {
             label: 'NPS de Serviço',
-            value: 'nps_service_rating',
+            value: '{{nps_service_rating}}',
             tab: 2
         },
 
         {
             label: 'Nome da Empresa',
-            value: 'company_name',
+            value: '{{company_name}}',
             tab: 3
         },
         {
             label: 'Nome do Vendedor Responsável',
-            value: 'seller_name',
+            value: '{{seller_name}}',
             tab: 3
         },
         {
             label: 'Link da sua Loja Virtual',
-            value: 'store_url',
+            value: '{{store_url}}',
             tab: 3
         }
     ];
@@ -165,6 +165,12 @@ export class TemplateInputComponent {
 
     public clickBg(): void {
         if (this.hover) return;
+        this.open = false;
+    }
+
+    public addParameter(parameter: TemplateParameter): void {
+        this.ngModel += parameter.value;
+        this.ngModelChange.emit(this.ngModel);
         this.open = false;
     }
 }

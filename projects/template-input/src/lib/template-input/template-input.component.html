@@ -29,9 +29,10 @@
                         class="clickable padding-1 flex align-center margin-y-1"
                         *ngFor="let parameter of parameters"
                         [ngClass]="{ hidden: tabSelected !== parameter.tab }"
+                        (click)="addParameter(parameter)"
                     >
                         <span class="text-12 text--bold">{{ parameter.label }}</span>
-                        <span class="text-12 neutral-600 margin-left-1">{{ '{{' + parameter.value + '}}' }}</span>
+                        <span class="text-12 neutral-600 margin-left-1">{{ parameter.value }}</span>
                     </li>
                 </ul>
             </div>
