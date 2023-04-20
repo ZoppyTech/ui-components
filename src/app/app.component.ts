@@ -79,6 +79,10 @@ export class AppComponent implements OnInit {
         {
             route: `selector`,
             label: 'Selector'
+        },
+        {
+            route: `template-input`,
+            label: 'Template Input do Whatsapp'
         }
     ];
 

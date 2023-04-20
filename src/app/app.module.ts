@@ -90,6 +90,10 @@ const routes: Routes = [
     {
         path: 'selector',
         loadChildren: () => import('./pages/page-selector/page-selector.module').then((m: any) => m.PageSelectorModule)
+    },
+    {
+        path: 'template-input',
+        loadChildren: () => import('./pages/page-template-input/page-template-input.module').then((m: any) => m.PageTemplateInputModule)
     }
 ];
 
