@@ -1,6 +1,6 @@
 import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { ToastService } from '@ZoppyTech/toast';
-import { TemplateInputUtil } from '../../template-input.util';
+import { TemplateInputUtil } from './template-input.util';
 
 @Component({
     selector: 'ps-template-input',
