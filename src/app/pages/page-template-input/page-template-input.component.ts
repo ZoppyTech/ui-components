@@ -9,6 +9,8 @@ import { Property } from 'src/app/components/utilization/utilization.component';
 export class PageTemplateInputComponent implements OnInit {
     public properties: Array<Property> = [];
 
+    public batata: string = '';
+
     public constructor() {}
 
     public ngOnInit(): void {

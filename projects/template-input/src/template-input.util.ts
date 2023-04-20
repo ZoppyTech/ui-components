@@ -1,5 +1,5 @@
 export class TemplateInputUtil {
-    public static pasteHtmlAtCaret(html: string) {
+    public static pasteHtmlAtCaret(html: string): boolean {
         let sel: any, range: any;
         if (window.getSelection) {
             // IE9 and non-IE
@@ -27,9 +27,12 @@ export class TemplateInputUtil {
                     range.collapse(true);
                     sel.removeAllRanges();
                     sel.addRange(range);
+                    return true;
                 }
+                return false;
             }
         }
+        return false;
     }
 
     public static setCaretPosition(ctrl: any, pos: any) {

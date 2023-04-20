@@ -4,6 +4,7 @@
 
 .template-input {
     position: relative;
+
     .header {
         position: absolute;
         top: 0;
@@ -13,6 +14,16 @@
         display: flex;
         align-items: center;
         padding: 0.5rem;
+        background-color: white;
+        border: 1px solid var(--neutral-300);
+        border-top-right-radius: 0.25rem;
+        border-top-left-radius: 0.25rem;
+        border-bottom: unset;
+
+        &--focus {
+            border: solid 1px var(--secondary-600);
+            border-bottom: unset;
+        }
 
         .parameters {
             display: flex;
@@ -48,6 +59,29 @@
             }
         }
 
+        .emoji-open {
+            .insert {
+                z-index: unset;
+            }
+
+            .emoji-button {
+                z-index: 2;
+                border: 1px solid var(--neutral-300);
+                background-color: var(--neutral-100);
+                border-radius: 0.75rem;
+            }
+        }
+
+        .menu-open {
+            .insert {
+                z-index: 2;
+            }
+
+            .emoji-button {
+                z-index: unset;
+            }
+        }
+
         .menu {
             border: 1px solid var(--neutral-300);
             border-radius: 0.75rem;
@@ -79,6 +113,23 @@
                     padding: 0.5rem;
                     flex-grow: 1;
                 }
+            }
+        }
+
+        .emojis {
+            width: 30rem;
+            height: 25rem;
+            overflow: auto;
+            border: 1px solid var(--neutral-300);
+            background-color: var(--neutral-100);
+            top: 3rem;
+            left: 18.5rem;
+
+            ul {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                max-height: 20rem;
             }
         }
     }

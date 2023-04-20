@@ -21,12 +21,186 @@ export class TemplateInputComponent {
     public focus: boolean = false;
     public hover: boolean = false;
     public open: boolean = false;
+    public openIcon: boolean = false;
     public bold: boolean = false;
     public italic: boolean = false;
     public strikeThrough: boolean = false;
     public tabSelected: number = 0;
 
     public constructor(private readonly toastService: ToastService) {}
+
+    public emojis: Array<string> = [
+        '🙂',
+        '😀',
+        '😃',
+        '😁',
+        '😅',
+        '😂',
+        '🙃',
+        '😉',
+        '😊',
+        '😇',
+        '😎',
+        '🤓',
+        '🧐',
+        '🥳',
+        '🥰',
+        '😍',
+        '🤩',
+        '😘',
+        '😗',
+        '😙',
+        '😋',
+        '😛',
+        '😜',
+        '🤪',
+        '😝',
+        '🤑',
+        '🤗',
+        '🤭',
+        '🤫',
+        '🤔',
+        '😐',
+        '🤐',
+        '🤨',
+        '🤒',
+        '🤕',
+        '🤢',
+        '🥵',
+        '🥶',
+        '🥴',
+        '😵',
+        '🤯',
+        '😕',
+        '😟',
+        '🙁',
+        '😮',
+        '😯',
+        '😲',
+        '😳',
+        '🥺',
+        '😦',
+        '😧',
+        '😨',
+        '😰',
+        '😥',
+        '😢',
+        '😭',
+        '😱',
+        '😖',
+        '😣',
+        '😞',
+        '😓',
+        '😩',
+        '😫',
+        '🥱',
+        '😤',
+        '😡',
+        '😠',
+        '🤬',
+        '😈',
+        '👿',
+        '💀',
+        '☠',
+        '💩',
+        '🤡',
+        '👹',
+        '👺',
+        '👻',
+        '👽',
+        '👾',
+        '🤖',
+        '💋',
+        '💌',
+        '💘',
+        '💝',
+        '💖',
+        '💗',
+        '💓',
+        '💞',
+        '💕',
+        '💟',
+        '❣',
+        '💔',
+        '❤️‍🔥',
+        '❤️‍🩹',
+        '❤',
+        '🧡',
+        '💛',
+        '💚',
+        '💙',
+        '💜',
+        '🤎',
+        '🖤',
+        '🤍',
+        '💯',
+        '💢',
+        '💥',
+        '💫',
+        '💦',
+        '💨',
+        '🕳',
+        '💣',
+        '💬',
+        '👁️‍🗨️',
+        '🗨',
+        '🗯',
+        '💭',
+        '💤',
+        '👋',
+        '🤚',
+        '🖐',
+        '✋',
+        '🖖',
+        '👌',
+        '🤌',
+        '🤏',
+        '✌',
+        '🤞',
+        '🤟',
+        '🤘',
+        '🤙',
+        '👈',
+        '👉',
+        '👆',
+        '👇',
+        '🖕',
+        '☝',
+        '🫵',
+        '👍',
+        '👎',
+        '✊',
+        '👊',
+        '🤛',
+        '🤜',
+        '👏',
+        '🙌',
+        '👐',
+        '🤲',
+        '🤝',
+        '🙏',
+        '✍',
+        '💅',
+        '🤳',
+        '💪',
+        '🦾',
+        '🦵',
+        '🦿',
+        '🦶',
+        '👂',
+        '🦻',
+        '👃',
+        '🧠',
+        '👣',
+        '🫀',
+        '🫁',
+        '🦷',
+        '🦴',
+        '👀',
+        '👁',
+        '👅',
+        '👄'
+    ];
 
     public tabs: Array<Tab> = [
         {
@@ -168,6 +342,8 @@ export class TemplateInputComponent {
 
     public onModelChange(event: any): void {
         if (this.disabled) return;
+        debugger;
+        this.ngModel = this.divEditable.innerText;
         this.ngModelChange.emit(this.ngModel);
     }
 
@@ -184,30 +360,61 @@ export class TemplateInputComponent {
         this.open = !this.open;
     }
 
+    public toggleOpenEmoji(): void {
+        if (this.disabled) return;
+        this.openIcon = !this.openIcon;
+    }
+
     public clickBg(): void {
         if (this.hover) return;
         this.open = false;
     }
 
+    public clickBgIcon(): void {
+        if (this.hover) return;
+        this.openIcon = false;
+    }
+
     public addParameter(parameter: TemplateParameter): void {
-        this.ngModel += parameter.value;
+        if (this.focus) TemplateInputUtil.pasteHtmlAtCaret(parameter.value);
+        else this.divEditable.innerText += parameter.value;
+
+        this.ngModel = this.divEditable.innerText;
         this.ngModelChange.emit(this.ngModel);
         this.open = false;
     }
 
+    public addEmoji(emoji: string): void {
+        if (this.focus) TemplateInputUtil.pasteHtmlAtCaret(emoji);
+        else this.divEditable.innerText += emoji;
+
+        this.ngModel = this.divEditable.innerText;
+        this.ngModelChange.emit(this.ngModel);
+        this.openIcon = false;
+    }
+
     public toggleBold(): void {
         this.bold = !this.bold;
-        TemplateInputUtil.pasteHtmlAtCaret('*');
+        if (this.focus) TemplateInputUtil.pasteHtmlAtCaret('*');
+        else this.divEditable.innerText += '*';
+        this.ngModel = this.divEditable.innerText;
+        this.ngModelChange.emit(this.ngModel);
     }
 
     public toggleItalic(): void {
         this.italic = !this.italic;
-        TemplateInputUtil.pasteHtmlAtCaret('_');
+        if (this.focus) TemplateInputUtil.pasteHtmlAtCaret('_');
+        else this.divEditable.innerText += '_';
+        this.ngModel = this.divEditable.innerText;
+        this.ngModelChange.emit(this.ngModel);
     }
 
     public toggleLineThrough(): void {
         this.strikeThrough = !this.strikeThrough;
-        TemplateInputUtil.pasteHtmlAtCaret('-');
+        if (this.focus) TemplateInputUtil.pasteHtmlAtCaret('-');
+        else this.divEditable.innerText += '-';
+        this.ngModel = this.divEditable.innerText;
+        this.ngModelChange.emit(this.ngModel);
     }
 
     public batata(): string {
