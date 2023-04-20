@@ -28,6 +28,9 @@
         "dist/icon/icon",
         "dist/icon"
       ],
+      "infinite-scroll": [
+        "dist/infinite-scroll"
+      ],
       "input": [
         "dist/input"
       ],

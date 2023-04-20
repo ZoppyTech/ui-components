@@ -94,6 +94,10 @@ const routes: Routes = [
     {
         path: 'template-input',
         loadChildren: () => import('./pages/page-template-input/page-template-input.module').then((m: any) => m.PageTemplateInputModule)
+    },
+    {
+        path: 'infinite-scroll',
+        loadChildren: () => import('./pages/page-infinite-scroll/page-infinite-scroll.module').then((m: any) => m.PageInfiniteScrollModule)
     }
 ];
 

@@ -141,3 +141,11 @@
     bottom: 0;
     background-color: rgba($color: #000000, $alpha: 0.3);
 }
+
+#textEditorField * {
+    font-family: unset;
+}
+
+#textEditorField b {
+    font-weight: bold;
+}

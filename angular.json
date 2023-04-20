@@ -739,6 +739,39 @@
               }
             }
           }
+        },
+        "infinite-scroll": {
+          "projectType": "library",
+          "root": "projects/infinite-scroll",
+          "sourceRoot": "projects/infinite-scroll/src",
+          "prefix": "lib",
+          "architect": {
+            "build": {
+              "builder": "@angular-devkit/build-angular:ng-packagr",
+              "options": {
+                "project": "projects/infinite-scroll/ng-package.json"
+              },
+              "configurations": {
+                "production": {
+                  "tsConfig": "projects/infinite-scroll/tsconfig.lib.prod.json"
+                },
+                "development": {
+                  "tsConfig": "projects/infinite-scroll/tsconfig.lib.json"
+                }
+              },
+              "defaultConfiguration": "production"
+            },
+            "test": {
+              "builder": "@angular-devkit/build-angular:karma",
+              "options": {
+                "tsConfig": "projects/infinite-scroll/tsconfig.spec.json",
+                "polyfills": [
+                  "zone.js",
+                  "zone.js/testing"
+                ]
+              }
+            }
+          }
         }
     },
     "defaultProject": "ui-components",

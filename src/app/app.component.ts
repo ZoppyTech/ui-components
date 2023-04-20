@@ -83,6 +83,10 @@ export class AppComponent implements OnInit {
         {
             route: `template-input`,
             label: 'Template Input do Whatsapp'
+        },
+        {
+            route: `infinite-scroll`,
+            label: 'Infinite Scroll'
         }
     ];
 

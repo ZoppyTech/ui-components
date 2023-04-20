@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { ToastService } from '@ZoppyTech/toast';
 import { TemplateInputUtil } from '../../template-input.util';
 
 @Component({
@@ -24,6 +25,8 @@ export class TemplateInputComponent {
     public italic: boolean = false;
     public strikeThrough: boolean = false;
     public tabSelected: number = 0;
+
+    public constructor(private readonly toastService: ToastService) {}
 
     public tabs: Array<Tab> = [
         {
@@ -164,23 +167,6 @@ export class TemplateInputComponent {
     }
 
     public onModelChange(event: any): void {
-        const caretPosition: number = this.getCaretPosition();
-        const textAdded: string = event.data;
-        debugger;
-
-        // if (this.bold && this.italic) input.html[caretPosition - 1] = `<i><b>${textAdded}</i></b>`;
-        if (this.bold) {
-            const strongElement: HTMLElement = document.createElement('strong');
-            strongElement.innerHTML = textAdded;
-            TemplateInputUtil.pasteHtmlAtCaret(strongElement.innerHTML);
-            debugger;
-        }
-
-        // else if (this.italic) input.html[caretPosition - 1] = `<i>${textAdded}</i>`;
-
-        debugger;
-
-        console.log(caretPosition);
         if (this.disabled) return;
         this.ngModelChange.emit(this.ngModel);
     }
@@ -211,17 +197,21 @@ export class TemplateInputComponent {
 
     public toggleBold(): void {
         this.bold = !this.bold;
-        //this is *
+        TemplateInputUtil.pasteHtmlAtCaret('*');
     }
 
     public toggleItalic(): void {
         this.italic = !this.italic;
-        //this is underline
+        TemplateInputUtil.pasteHtmlAtCaret('_');
     }
 
-    public toggleStrikeThrough(): void {
+    public toggleLineThrough(): void {
         this.strikeThrough = !this.strikeThrough;
-        //this is ~
+        TemplateInputUtil.pasteHtmlAtCaret('-');
+    }
+
+    public batata(): string {
+        return this.divEditable?.innerHTML;
     }
 }
 
@@ -235,3 +225,5 @@ interface TemplateParameter {
     value: string;
     tab: number;
 }
+
+type Style = 'bold' | 'italic' | 'line-through';

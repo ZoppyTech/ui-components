@@ -1,22 +1,19 @@
 {
-    "name": "@ZoppyTech/template-input",
-    "version": "0.0.5",
+    "name": "@ZoppyTech/infinite-scroll",
+    "version": "0.0.3",
     "peerDependencies": {
         "@angular/common": "^15.0.0",
         "@angular/core": "^15.0.0",
         "@ZoppyTech/visual-identity": "0.1.8",
-        "@ZoppyTech/icon": "0.1.46",
-        "@ZoppyTech/mini-menu": "0.1.3",
-        "@ZoppyTech/input": "0.1.14",
-        "@ZoppyTech/toast": "0.1.6"
+        "@ZoppyTech/icon": "0.1.46"
     },
     "dependencies": {
         "tslib": "^2.3.0"
     },
-    "description": "Template Input component.",
+    "description": "Infinite Scroll component.",
     "author": {
-        "name": "Lucas Roscoe",
-        "email": "lucas.roscoe@zoppy.com.br"
+        "name": "Daniel Leão",
+        "email": "daniel.leao@zoppy.com.br"
     },
     "repository": {
         "type": "git",

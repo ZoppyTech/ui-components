@@ -32,6 +32,19 @@ export class TemplateInputUtil {
         }
     }
 
+    public static setCaretPosition(ctrl: any, pos: any) {
+        if (ctrl.setSelectionRange) {
+            ctrl.focus();
+            ctrl.setSelectionRange(pos, pos);
+        } else if (ctrl.createTextRange) {
+            var range = ctrl.createTextRange();
+            range.collapse(true);
+            range.moveEnd('character', pos);
+            range.moveStart('character', pos);
+            range.select();
+        }
+    }
+
     public static removeCharacter(text: string, index: number) {
         return text.slice(0, index) + text.slice(index + 1);
     }

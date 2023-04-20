@@ -8,12 +8,40 @@
                 <ps-icon [ngClass]="{ 'ic-open': open }" icon="icon-arrow"></ps-icon>
             </div>
 
-            <ps-button (onClick)="toggleBold()" [fixedHeight]="false" [type]="bold ? 'secondary' : 'clean'">
+            <ps-button
+                appTooltip
+                tooltipText="Texto entre asteriscos é reconhecido como negrito"
+                tooltipDirection="down"
+                tooltipWidth="230"
+                (onClick)="toggleBold()"
+                [fixedHeight]="false"
+                [type]="bold ? 'secondary' : 'clean'"
+            >
                 <ps-icon [ngClass]="{ 'neutral-100': bold, 'neutral-600': !bold }" icon="icon-format_bold"></ps-icon>
             </ps-button>
 
-            <ps-button (onClick)="toggleItalic()" [fixedHeight]="false" [type]="italic ? 'secondary' : 'clean'">
+            <ps-button
+                appTooltip
+                tooltipText="Texto entre underscore é reconhecido como itálico"
+                tooltipDirection="down"
+                tooltipWidth="230"
+                (onClick)="toggleItalic()"
+                [fixedHeight]="false"
+                [type]="italic ? 'secondary' : 'clean'"
+            >
                 <ps-icon [ngClass]="{ 'neutral-100': italic, 'neutral-600': !italic }" icon="icon-format_italic"></ps-icon>
+            </ps-button>
+
+            <ps-button
+                appTooltip
+                tooltipText="Texto entre hífen é reconhecido como rasurado"
+                tooltipDirection="down"
+                tooltipWidth="230"
+                (onClick)="toggleLineThrough()"
+                [fixedHeight]="false"
+                [type]="strikeThrough ? 'secondary' : 'clean'"
+            >
+                <ps-icon [ngClass]="{ 'neutral-100': strikeThrough, 'neutral-600': !strikeThrough }" icon="icon-format_italic"></ps-icon>
             </ps-button>
         </div>
         <div (mouseover)="hover = true" (mouseleave)="hover = false" class="menu padding-2 flex flex-column" *ngIf="open">
@@ -50,6 +78,7 @@
     <div
         contentEditable="true"
         #divEditable
+        spellcheck="false"
         id="ps-template-input"
         class="input textarea"
         (blur)="onInputBlur()"
@@ -58,6 +87,6 @@
         (mouseover)="hover = true"
         (mouseleave)="hover = false"
     ></div>
-
-    {{ ngModel }}
 </div>
+
+<ps-tooltip></ps-tooltip>
