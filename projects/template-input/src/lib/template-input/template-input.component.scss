@@ -29,6 +29,11 @@
             display: flex;
             align-items: center;
 
+            .insert-open,
+            .emoji-open {
+                z-index: 4 !important;
+            }
+
             .insert {
                 display: flex;
                 justify-content: space-between;
@@ -89,6 +94,7 @@
             background-color: var(--neutral-100);
             position: absolute;
             top: 3rem;
+            z-index: 4;
             left: 0.5rem;
 
             .tabs {
@@ -124,6 +130,7 @@
             background-color: var(--neutral-100);
             top: 3rem;
             left: 18.5rem;
+            z-index: 4;
 
             ul {
                 width: 100%;
@@ -191,6 +198,7 @@
     top: 0;
     bottom: 0;
     background-color: rgba($color: #000000, $alpha: 0.3);
+    z-index: 3;
 }
 
 #textEditorField * {

@@ -4,8 +4,14 @@
             <div class="bg" (click)="clickBg()" *ngIf="open"></div>
             <div class="bg" (click)="clickBgIcon()" *ngIf="openIcon"></div>
 
-            <div (mouseover)="hover = true" (mouseleave)="hover = false" class="insert flex space-between" (click)="toggleOpen()">
-                <span class="text neutral-500 text-12">Inserir</span>
+            <div
+                [ngClass]="{ 'insert-open': open }"
+                (mouseover)="hover = true"
+                (mouseleave)="hover = false"
+                class="insert flex space-between"
+                (click)="toggleOpen()"
+            >
+                <span class="text neutral-500 text-12">Inserir variáveis</span>
                 <ps-icon [ngClass]="{ 'ic-open': open }" icon="icon-arrow"></ps-icon>
             </div>
 
@@ -13,6 +19,7 @@
                 appTooltip
                 tooltipText="Texto entre asteriscos é reconhecido como negrito"
                 tooltipDirection="down"
+                *ngIf="type === 'text'"
                 tooltipWidth="200"
                 (onClick)="toggleBold()"
                 [fixedHeight]="false"
@@ -26,6 +33,7 @@
                 tooltipText="Texto entre underscore é reconhecido como itálico"
                 tooltipDirection="down"
                 tooltipWidth="200"
+                *ngIf="type === 'text'"
                 (onClick)="toggleItalic()"
                 [fixedHeight]="false"
                 [type]="italic ? 'secondary' : 'clean'"
@@ -38,6 +46,7 @@
                 tooltipText="Texto entre hífen é reconhecido como rasurado"
                 tooltipDirection="down"
                 tooltipWidth="200"
+                *ngIf="type === 'text'"
                 (onClick)="toggleLineThrough()"
                 [fixedHeight]="false"
                 [type]="strikeThrough ? 'secondary' : 'clean'"
@@ -52,7 +61,9 @@
                 [fixedHeight]="false"
                 type="clean"
                 class="emoji-button"
+                [ngClass]="{ 'emoji-open': openIcon }"
                 (onClick)="toggleOpenEmoji()"
+                *ngIf="type === 'text'"
                 (mouseover)="hover = true"
                 (mouseleave)="hover = false"
             >
@@ -111,5 +122,4 @@
         (mouseleave)="hover = false"
     ></div>
 </div>
-{{ focus }}
 <ps-tooltip></ps-tooltip>

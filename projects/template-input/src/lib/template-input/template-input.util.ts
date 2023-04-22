@@ -1,6 +1,7 @@
 export class TemplateInputUtil {
-    public static pasteHtmlAtCaret(html: string): boolean {
-        let sel: any, range: any;
+    public static pasteHtmlAtCaret(html: string): void {
+        let sel: any;
+        let range: any;
         if (window.getSelection) {
             // IE9 and non-IE
             sel = window.getSelection();
@@ -8,11 +9,9 @@ export class TemplateInputUtil {
                 range = sel.getRangeAt(0);
                 range.deleteContents();
 
-                // Range.createContextualFragment() would be useful here but is
-                // non-standard and not supported in all browsers (IE9, for one)
-                let el = document.createElement('div');
+                let el: any = document.createElement('div');
                 el.innerHTML = html;
-                let frag = document.createDocumentFragment(),
+                let frag: any = document.createDocumentFragment(),
                     node,
                     lastNode;
                 while ((node = el.firstChild)) {
@@ -20,32 +19,26 @@ export class TemplateInputUtil {
                 }
                 range.insertNode(frag);
 
-                // Preserve the selection
                 if (lastNode) {
                     range = range.cloneRange();
                     range.setStartAfter(lastNode);
                     range.collapse(true);
                     sel.removeAllRanges();
                     sel.addRange(range);
-                    return true;
                 }
-                return false;
             }
+        } else if (document.getSelection() && document.getSelection()?.type != 'Control') {
+            (document as any).getSelection()?.createRange()?.pasteHTML(html);
         }
-        return false;
     }
 
-    public static setCaretPosition(ctrl: any, pos: any) {
-        if (ctrl.setSelectionRange) {
-            ctrl.focus();
-            ctrl.setSelectionRange(pos, pos);
-        } else if (ctrl.createTextRange) {
-            var range = ctrl.createTextRange();
-            range.collapse(true);
-            range.moveEnd('character', pos);
-            range.moveStart('character', pos);
-            range.select();
-        }
+    public static getCaretPos(divEditable: any) {}
+
+    public static setCurrentCursorPosition(divEditable: any) {
+        divEditable.focus();
+        document.execCommand('selectAll', false, undefined);
+        document.getSelection()?.collapseToEnd();
+        console.log(`executou aqui?????`);
     }
 
     public static removeCharacter(text: string, index: number) {

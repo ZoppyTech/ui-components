@@ -1,0 +1,6 @@
+.components-content {
+    height: calc(100vh - 350px);
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+}

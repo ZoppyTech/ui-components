@@ -1,6 +1,17 @@
 <app-utilization class="content" [properties]="properties">
     <div class="components-content">
-        <ps-template-input [(ngModel)]="batata"></ps-template-input>
+        <div class="flex flex-column flex-grow padding-right-3">
+            <span class="text--bold margin-bottom-1">Header</span>
+            <ps-template-input type="header" class="margin-bottom-2" [(ngModel)]="headerText"></ps-template-input>
+            <span class="text--bold margin-bottom-1">Body</span>
+            <ps-template-input class="margin-bottom-2" [(ngModel)]="bodyText"></ps-template-input>
+            <span class="text--bold margin-bottom-1">Footer</span>
+            <ps-input [(ngModel)]="footerText"></ps-input>
+            <span class="text--bold margin-y-1">Call To Action</span>
+            <ps-input [(ngModel)]="ctaLabel"></ps-input>
+        </div>
+        <div class="tall">
+            <ps-preview [bodyText]="bodyText" [footerText]="footerText" [headerText]="headerText" [ctaLabel]="ctaLabel"></ps-preview>
+        </div>
     </div>
-    aaaaaaaaaaaaaaaaaaa {{ batata }}
 </app-utilization>

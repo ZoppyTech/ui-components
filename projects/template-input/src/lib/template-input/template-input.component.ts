@@ -11,6 +11,7 @@ export class TemplateInputComponent {
     @Input() public ngModel: any = '';
     @Input() public disabled: boolean = false;
     @Input() public placeholder: string = '';
+    @Input() public type: InputType = 'text';
 
     @Output() public ngModelChange = new EventEmitter<any>();
     @Output() public onFocus = new EventEmitter();
@@ -342,7 +343,6 @@ export class TemplateInputComponent {
 
     public onModelChange(event: any): void {
         if (this.disabled) return;
-        debugger;
         this.ngModel = this.divEditable.innerText;
         this.ngModelChange.emit(this.ngModel);
     }
@@ -376,8 +376,8 @@ export class TemplateInputComponent {
     }
 
     public addParameter(parameter: TemplateParameter): void {
-        if (this.focus) TemplateInputUtil.pasteHtmlAtCaret(parameter.value);
-        else this.divEditable.innerText += parameter.value;
+        if (!this.focus) TemplateInputUtil.setCurrentCursorPosition(this.divEditable);
+        TemplateInputUtil.pasteHtmlAtCaret(parameter.value);
 
         this.ngModel = this.divEditable.innerText;
         this.ngModelChange.emit(this.ngModel);
@@ -385,8 +385,8 @@ export class TemplateInputComponent {
     }
 
     public addEmoji(emoji: string): void {
-        if (this.focus) TemplateInputUtil.pasteHtmlAtCaret(emoji);
-        else this.divEditable.innerText += emoji;
+        if (!this.focus) TemplateInputUtil.setCurrentCursorPosition(this.divEditable);
+        TemplateInputUtil.pasteHtmlAtCaret(emoji);
 
         this.ngModel = this.divEditable.innerText;
         this.ngModelChange.emit(this.ngModel);
@@ -394,31 +394,30 @@ export class TemplateInputComponent {
     }
 
     public toggleBold(): void {
+        if (!this.focus) TemplateInputUtil.setCurrentCursorPosition(this.divEditable);
+        TemplateInputUtil.pasteHtmlAtCaret('*');
+
         this.bold = !this.bold;
-        if (this.focus) TemplateInputUtil.pasteHtmlAtCaret('*');
-        else this.divEditable.innerText += '*';
         this.ngModel = this.divEditable.innerText;
         this.ngModelChange.emit(this.ngModel);
     }
 
     public toggleItalic(): void {
+        if (!this.focus) TemplateInputUtil.setCurrentCursorPosition(this.divEditable);
+        TemplateInputUtil.pasteHtmlAtCaret('_');
+
         this.italic = !this.italic;
-        if (this.focus) TemplateInputUtil.pasteHtmlAtCaret('_');
-        else this.divEditable.innerText += '_';
         this.ngModel = this.divEditable.innerText;
         this.ngModelChange.emit(this.ngModel);
     }
 
     public toggleLineThrough(): void {
+        if (!this.focus) TemplateInputUtil.setCurrentCursorPosition(this.divEditable);
+        TemplateInputUtil.pasteHtmlAtCaret('-');
+
         this.strikeThrough = !this.strikeThrough;
-        if (this.focus) TemplateInputUtil.pasteHtmlAtCaret('-');
-        else this.divEditable.innerText += '-';
         this.ngModel = this.divEditable.innerText;
         this.ngModelChange.emit(this.ngModel);
-    }
-
-    public batata(): string {
-        return this.divEditable?.innerHTML;
     }
 }
 
@@ -434,3 +433,4 @@ interface TemplateParameter {
 }
 
 type Style = 'bold' | 'italic' | 'line-through';
+type InputType = 'text' | 'header';

@@ -9,7 +9,10 @@ import { Property } from 'src/app/components/utilization/utilization.component';
 export class PageTemplateInputComponent implements OnInit {
     public properties: Array<Property> = [];
 
-    public batata: string = '';
+    public bodyText: string = '';
+    public headerText: string = '';
+    public footerText: string = '';
+    public ctaLabel: string = '';
 
     public constructor() {}
 

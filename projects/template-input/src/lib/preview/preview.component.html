@@ -1,0 +1,17 @@
+<div class="preview">
+    <span class="text-16 text--bold">Preview</span>
+    <div class="message margin-top-2">
+        <div class="header" *ngIf="headerText">
+            <span class="text text-16 text--bold" [innerHTML]="headerText"></span>
+        </div>
+        <div class="body margin-y-1" *ngIf="bodyText">
+            <span class="text" [innerHTML]="bodyText"></span>
+        </div>
+        <div class="footer margin-top-1 text-12 neutral-400" [innerHTML]="footerText" *ngIf="footerText"></div>
+
+        <div class="cta" *ngIf="ctaLabel">
+            <ps-icon icon="icon-open_new"></ps-icon>
+            <span class="text">{{ ctaLabel }}</span>
+        </div>
+    </div>
+</div>

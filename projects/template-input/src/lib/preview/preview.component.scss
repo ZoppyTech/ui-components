@@ -1,0 +1,40 @@
+.preview {
+    width: 20rem;
+    background-image: url('./../../../assets/wpp-wallpaper.jpeg');
+    height: 100%;
+    padding: 1rem;
+
+    .message {
+        padding: 0.75rem;
+        background-color: var(--neutral-100);
+        border-radius: 0.5rem;
+        border: 1px solid var(--neutral-300);
+    }
+    .header {
+        margin-bottom: 0.5rem;
+    }
+
+    .body {
+    }
+
+    .footer {
+        padding: 0.75rem 0.35rem;
+    }
+
+    .cta {
+        border-top: 1px solid var(--neutral-300);
+        padding-top: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span,
+        ps-icon {
+            color: #00a5f4 !important;
+        }
+
+        ps-icon {
+            margin-right: 0.25rem;
+            margin-top: 1px;
+        }
+    }
+}

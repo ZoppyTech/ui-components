@@ -5,7 +5,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { UtilizationModule } from 'src/app/components/utilization/utilization.module';
 import { TemplateInputModule as TemplateInputModuleDev } from 'projects/template-input/src/lib/template-input/template-input.module';
 import { TemplateInputModule } from '@ZoppyTech/template-input';
+import { PreviewModule } from '@ZoppyTech/template-input';
+import { PreviewModule as PreviewModuleDev } from 'projects/template-input/src/lib/preview/preview.module';
 import { environment } from 'src/environments/environment';
+import { InputModule } from '@ZoppyTech/input';
 
 const routes: Routes = [
     {
@@ -20,7 +23,9 @@ const routes: Routes = [
         CommonModule,
         UtilizationModule,
         RouterModule.forChild(routes),
-        environment.production ? TemplateInputModule : TemplateInputModuleDev
+        InputModule,
+        environment.production ? TemplateInputModule : TemplateInputModuleDev,
+        environment.production ? PreviewModule : PreviewModuleDev
     ]
 })
 export class PageTemplateInputModule {}
