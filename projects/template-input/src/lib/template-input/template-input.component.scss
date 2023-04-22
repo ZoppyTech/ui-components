@@ -54,6 +54,10 @@
                 .ic-open {
                     transform: rotate(90deg);
                 }
+
+                span {
+                    font-size: 0.75rem;
+                }
             }
 
             ps-button {
@@ -170,8 +174,12 @@
 
     .textarea {
         padding: 3.5rem 1rem 1rem 1rem !important;
-        height: 12.5rem;
+        height: 10.5rem;
         overflow: auto;
+    }
+
+    .textarea--header {
+        height: 8.5rem;
     }
 
     .clickable {

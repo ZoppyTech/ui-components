@@ -1,6 +1,9 @@
 .components-content {
-    height: calc(100vh - 350px);
+    height: calc(100vh - 170px);
     display: flex;
     flex-direction: row;
-    overflow: auto;
+    .fields {
+        overflow: auto;
+        height: 100%;
+    }
 }

@@ -11,14 +11,28 @@
         border: 1px solid var(--neutral-300);
     }
     .header {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.75rem;
+        pre {
+            white-space: pre-wrap;
+            margin: unset;
+        }
     }
 
     .body {
+        pre {
+            font-size: 14px;
+            white-space: pre-wrap;
+            line-height: 18px;
+            margin: unset;
+        }
     }
 
     .footer {
-        padding: 0.75rem 0.35rem;
+        font-size: 12px;
+    }
+
+    .variable {
+        background-color: rgba($color: #000000, $alpha: 0.1);
     }
 
     .cta {
@@ -27,6 +41,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        font-size: 13px;
+        margin-top: 0.5rem;
+        cursor: pointer;
         span,
         ps-icon {
             color: #00a5f4 !important;

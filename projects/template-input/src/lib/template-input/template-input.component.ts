@@ -261,22 +261,22 @@ export class TemplateInputComponent {
 
         {
             label: 'Código do Giftback',
-            value: '{{nps_link}}',
+            value: '{{giftback_code}}',
             tab: 1
         },
         {
             label: 'Valor do Giftback',
-            value: '{{nps_product_rating}}',
+            value: '{{giftback_amount}}',
             tab: 1
         },
         {
             label: 'Data de Expiração do Giftback',
-            value: '{{nps_rating}}',
+            value: '{{giftback_expiry_date}}',
             tab: 1
         },
         {
             label: 'Valor Mínimo da compra do Giftback',
-            value: '{{nps_service_rating}}',
+            value: '{{giftback_minimum_purchase_value}}',
             tab: 1
         },
         {

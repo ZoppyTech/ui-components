@@ -178,6 +178,14 @@ h6 {
     font-weight: 900;
 }
 
+.text--italic {
+    font-style: italic;
+}
+
+.text--strike-through {
+    text-decoration: line-through;
+}
+
 .text--link {
     text-decoration: none !important;
 }

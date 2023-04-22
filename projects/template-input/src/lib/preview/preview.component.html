@@ -1,13 +1,13 @@
 <div class="preview">
     <span class="text-16 text--bold">Preview</span>
-    <div class="message margin-top-2">
+    <div class="message margin-y-2 margin-bottom-2" *ngIf="headerText || bodyText || footerText || ctaLabel">
         <div class="header" *ngIf="headerText">
-            <span class="text text-16 text--bold" [innerHTML]="headerText"></span>
+            <pre class="text text-16 text--bold" [innerHTML]="processText(headerText)"></pre>
         </div>
-        <div class="body margin-y-1" *ngIf="bodyText">
-            <span class="text" [innerHTML]="bodyText"></span>
+        <div class="body" *ngIf="bodyText">
+            <pre class="text neutral-700" [innerHTML]="processText(bodyText)"></pre>
         </div>
-        <div class="footer margin-top-1 text-12 neutral-400" [innerHTML]="footerText" *ngIf="footerText"></div>
+        <div class="footer text-12 neutral-500 margin-top-2" [innerHTML]="footerText" *ngIf="footerText"></div>
 
         <div class="cta" *ngIf="ctaLabel">
             <ps-icon icon="icon-open_new"></ps-icon>

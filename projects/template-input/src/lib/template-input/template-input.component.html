@@ -115,6 +115,7 @@
         spellcheck="false"
         id="ps-template-input"
         class="input textarea"
+        [ngClass]="{ 'textarea--header': type === 'header' }"
         (blur)="onInputBlur()"
         (focus)="onInputFocus()"
         (input)="onModelChange($event)"
