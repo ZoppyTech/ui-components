@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { ToastService } from '@ZoppyTech/toast';
 import { TemplateInputUtil } from './template-input.util';
 
@@ -7,7 +7,7 @@ import { TemplateInputUtil } from './template-input.util';
     templateUrl: './template-input.component.html',
     styleUrls: ['./template-input.component.scss']
 })
-export class TemplateInputComponent {
+export class TemplateInputComponent implements OnInit {
     @Input() public ngModel: any = '';
     @Input() public disabled: boolean = false;
     @Input() public placeholder: string = '';
@@ -29,6 +29,11 @@ export class TemplateInputComponent {
     public tabSelected: number = 0;
 
     public constructor(private readonly toastService: ToastService) {}
+    public ngOnInit(): void {
+        setTimeout(() => {
+            if (this.divEditable) this.divEditable.innerText = this.ngModel;
+        });
+    }
 
     public emojis: Array<string> = [
         '🙂',

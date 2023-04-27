@@ -9,7 +9,8 @@ import { Property } from 'src/app/components/utilization/utilization.component';
 export class PageTemplateInputComponent implements OnInit {
     public properties: Array<Property> = [];
 
-    public bodyText: string = '';
+    public bodyText: string =
+        'Olá {{client_first_name}}, tudo bem?\n\nAqui é o {{seller_name}}, da {{company_name}}, estou te chamando pra saber como foi sua experiência com a gente e se posso ajudar em algo! \n            \nUm abraço!';
     public headerText: string = '';
     public footerText: string = '';
     public ctaLabel: string = '';
