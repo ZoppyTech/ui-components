@@ -30,7 +30,6 @@ export class PreviewComponent {
                   ));
         }
 
-        console.log(bolds);
         for (const bold of bolds) {
             text = text.replace(bold, `<span class="text--bold">${bold.replace('*', '').replace('*', '')}</span>`);
         }
