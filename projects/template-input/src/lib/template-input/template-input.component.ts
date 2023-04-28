@@ -336,7 +336,7 @@ export class TemplateInputComponent implements OnInit {
     }
 
     public onInputFocus() {
-        if (this.hover && !this.focus) {
+        if (!this.focus) {
             this.onFocus.emit();
             this.focus = true;
         }
