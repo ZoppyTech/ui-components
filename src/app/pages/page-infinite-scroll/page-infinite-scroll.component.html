@@ -1,5 +1,14 @@
 <app-utilization class="content" [properties]="properties">
     <div class="components-content">
-        <ps-infinite-scroll></ps-infinite-scroll>
+        <div class="infinite-scroll-container">
+            <ps-infinite-scroll [loading]="isLoading" (scrolled)="onScroll()">
+                <div *ngFor="let card of cards" class="cards">
+                    <div class="card">
+                        <span>{{ card.title }}</span>
+                        <span>{{ card.text }}</span>
+                    </div>
+                </div>
+            </ps-infinite-scroll>
+        </div>
     </div>
 </app-utilization>
