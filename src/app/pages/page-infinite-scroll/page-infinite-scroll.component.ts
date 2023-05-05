@@ -13,16 +13,24 @@ export class PageInfiniteScrollComponent implements OnInit {
     public cards: Array<any> = new Array<any>();
     public isLoading = false;
 
-    public constructor() {
-        for (let i: number = 0; i < 3; ++i) {
-            this.cards.push({ title: `Title Card ${this.cardCounter++}`, text: 'Infinite scroll is amazing ;)' });
-        }
+    public constructor() {}
+
+    public ngOnInit(): void {
+        this.isLoading = true;
+        setTimeout(() => {
+            for (let i: number = 0; i < 6; ++i) {
+                this.cards.push({ title: `Title Card ${this.cardCounter++}`, text: 'Infinite scroll is amazing ;)' });
+            }
+            this.simulationCounter++;
+            this.isLoading = false;
+        }, 2000);
     }
 
-    public ngOnInit(): void {}
-
     public onScroll(): boolean {
-        if (this.simulationCounter === 4) {
+        if (this.simulationCounter === 0) {
+            return true;
+        }
+        if (this.simulationCounter === 5) {
             return true;
         }
         this.simulationCounter++;
