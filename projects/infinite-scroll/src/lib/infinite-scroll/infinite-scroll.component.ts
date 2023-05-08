@@ -17,15 +17,15 @@ export class InfiniteScrollComponent {
 
     private declare observer: IntersectionObserver;
 
-    constructor(private host: ElementRef, private _sanitizer: DomSanitizer, private visualIdentityService: VisualIdentityService) {
+    public constructor(private host: ElementRef, private _sanitizer: DomSanitizer, private visualIdentityService: VisualIdentityService) {
         this.darkLoading = this._sanitizer.bypassSecurityTrustResourceUrl(LoadingsUrl.dark);
     }
 
-    get element() {
+    public get element() {
         return this.host.nativeElement;
     }
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         const options = {
             root: this.isHostScrollable() ? this.host.nativeElement : null,
             ...this.options
@@ -36,18 +36,19 @@ export class InfiniteScrollComponent {
         }, options);
     }
 
-    ngAfterViewInit(): void {
+    public ngAfterViewInit(): void {
+        this.anchor.nativeElement.style.width = '100%';
+        this.anchor.nativeElement.style.height = '1px';
         this.observer.observe(this.anchor.nativeElement);
+    }
+
+    public ngOnDestroy() {
+        this.observer.disconnect();
     }
 
     private isHostScrollable() {
         const style = window.getComputedStyle(this.element);
-
         return style.getPropertyValue('overflow') === 'auto' || style.getPropertyValue('overflow-y') === 'scroll';
-    }
-
-    ngOnDestroy() {
-        this.observer.disconnect();
     }
 }
 
