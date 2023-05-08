@@ -1,14 +1,13 @@
 {
-    "name": "input-file",
+    "name": "@ZoppyTech/input-file",
     "version": "0.0.1",
     "peerDependencies": {
         "@angular/common": "^15.0.0",
-        "@angular/core": "^15.0.0"
+        "@angular/core": "^15.0.0",
+        "@ZoppyTech/visual-identity": "0.1.8",
+        "@ZoppyTech/icon": "0.1.40"
     },
-    "dependencies": {
-        "tslib": "^2.3.0"
-    },
-    "description": "Toast component.",
+    "description": "Input file component.",
     "author": {
         "name": "Lucas Roscoe",
         "email": "lucas.roscoe@zoppy.com.br"
