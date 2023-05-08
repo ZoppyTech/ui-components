@@ -7,6 +7,8 @@ import { TemplateInputModule as TemplateInputModuleDev } from 'projects/template
 import { TemplateInputModule } from '@ZoppyTech/template-input';
 import { PreviewModule } from '@ZoppyTech/template-input';
 import { PreviewModule as PreviewModuleDev } from 'projects/template-input/src/lib/preview/preview.module';
+import { InputFileModule } from '@ZoppyTech/input-file';
+import { InputFileModule as InputFileModuleDev } from 'projects/input-file/src/lib/input-file/input-file.module';
 import { environment } from 'src/environments/environment';
 import { InputModule } from '@ZoppyTech/input';
 
@@ -25,7 +27,8 @@ const routes: Routes = [
         RouterModule.forChild(routes),
         InputModule,
         environment.production ? TemplateInputModule : TemplateInputModuleDev,
-        environment.production ? PreviewModule : PreviewModuleDev
+        environment.production ? PreviewModule : PreviewModuleDev,
+        environment.production ? InputFileModule : InputFileModuleDev
     ]
 })
 export class PageTemplateInputModule {}

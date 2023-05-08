@@ -87,6 +87,10 @@ export class AppComponent implements OnInit {
         {
             route: `infinite-scroll`,
             label: 'Infinite Scroll'
+        },
+        {
+            route: `input-file`,
+            label: 'Input File'
         }
     ];
 

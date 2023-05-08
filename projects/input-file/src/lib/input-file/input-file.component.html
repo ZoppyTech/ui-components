@@ -1,1 +1,16 @@
-<p>input-file works!</p>
+<div DragAndDrop class="input-file padding-3 flex flex-center flex-column" (fileDropped)="onFileDropped($event)">
+    <ps-icon icon="icon-upload-doc"></ps-icon>
+    <h4 class="text text--bold">{{ title }}</h4>
+    <span class="text neutral-600"> {{ subtitle }}</span>
+
+    <label for="fileDropRef" class="clickable send flex flex-center" *ngIf="!file">
+        <span class="text--bold text--secondary">Enviar arquivo</span>
+        <ps-icon class="secondary" icon="icon-upload"></ps-icon>
+    </label>
+
+    <div class="item padding-1" *ngIf="file">
+        <span class="text">{{ file.name }}</span>
+        <ps-icon class="clickable" (click)="removeFile()" icon="icon-bin"></ps-icon>
+    </div>
+    <input id="fileDropRef" type="file" #fileDropRef multiple (change)="fileBrowseHandler($event)" />
+</div>

@@ -26,6 +26,7 @@
         "publish:tooltip": "cd projects/tooltip && npm version patch && cd ../.. && ng build tooltip && cd dist/tooltip && npm publish --access public",
         "publish:visualidentity": "cd projects/visual-identity && npm version patch && cd ../.. && ng build visual-identity && cd dist/visual-identity && npm publish --access public",
         "publish:templateinput": "cd projects/template-input && npm version patch && cd ../.. && ng build template-input && cd dist/template-input && npm publish --access public",
+        "publish:inputfile": "cd projects/input-file && npm version patch && cd ../.. && ng build input-file && cd dist/input-file && npm publish --access public",
         "watch": "ng build --watch --configuration development",
         "prepare": "husky install",
         "pre-commit": "npm run pretty && npm run lint && git add -A && lint-staged",
@@ -53,7 +54,8 @@
         "test:pagination": "ng test pagination --watch false --browsers ChromeHeadless",
         "test:stepper": "ng test stepper --watch false --browsers ChromeHeadless",
         "test:selector": "ng test selector --watch false --browsers ChromeHeadless",
-        "test:infinitescroll": "ng test infinite-scroll --watch false --browsers ChromeHeadless"
+        "test:infinitescroll": "ng test infinite-scroll --watch false --browsers ChromeHeadless",
+        "test:inputfile": "ng test input-file --watch false --browsers ChromeHeadless"
     },
     "private": true,
     "dependencies": {
@@ -72,7 +74,7 @@
         "@ZoppyTech/contact": "0.1.5",
         "@ZoppyTech/datepicker": "0.1.7",
         "@ZoppyTech/dropdown": "0.1.14",
-        "@ZoppyTech/icon": "0.1.49",
+        "@ZoppyTech/icon": "0.1.51",
         "@ZoppyTech/input": "0.1.14",
         "@ZoppyTech/mini-menu": "0.1.3",
         "@ZoppyTech/multi-select": "0.1.9",
@@ -88,6 +90,7 @@
         "@ZoppyTech/tooltip": "0.1.3",
         "@ZoppyTech/visual-identity": "0.1.9",
         "@ZoppyTech/utilities": "1.0.128",
+        "@ZoppyTech/input-file": "0.0.3",
         "lit-element": "^3.3.1",
         "ngx-currency": "^2.5.3",
         "ngx-mask": "^14.0.3",

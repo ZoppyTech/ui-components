@@ -2,7 +2,15 @@
     <div class="components-content">
         <div class="flex flex-column flex-grow padding-right-3 fields">
             <span class="text--bold margin-bottom-1">Header</span>
-            <ps-template-input type="header" class="margin-bottom-2" [(ngModel)]="headerText"></ps-template-input>
+            <!-- <ps-template-input type="header" class="margin-bottom-2" [(ngModel)]="headerText"></ps-template-input> -->
+            <ps-input-file
+                (invalidFileUploaded)="onInvalidFileUpload()"
+                (fileChange)="onFileChange($event)"
+                [file]="headerFile"
+                [title]="'Insira o arquivo'"
+                class="margin-bottom-2"
+                [extensions]="['.jpg', '.jpeg', '.png']"
+            ></ps-input-file>
             <span class="text--bold margin-bottom-1">Body</span>
             <ps-template-input class="margin-bottom-2" [(ngModel)]="bodyText"></ps-template-input>
             <span class="text--bold margin-bottom-1">Footer</span>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastService } from 'projects/toast/src/lib/toast/toast.service';
 import { Property } from 'src/app/components/utilization/utilization.component';
 
 @Component({
@@ -11,13 +12,30 @@ export class PageTemplateInputComponent implements OnInit {
 
     public bodyText: string =
         'Olá {{client_first_name}}, tudo bem?\n\nAqui é o {{seller_name}}, da {{company_name}}, estou te chamando pra saber como foi sua experiência com a gente e se posso ajudar em algo! \n            \nUm abraço!';
-    public headerText: string = 'image';
-    public headerType: string = 'image';
+    public headerText: string = '';
+    public headerType: string = 'text';
     public footerText: string = '';
     public ctaLabel: string = '';
-    public headerUrl: string = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/PNG_Test.png/477px-PNG_Test.png?20230418144955';
+    public headerUrl: string = '';
+    public headerFile: File | null = null;
 
-    public constructor() {}
+    public constructor(private readonly toast: ToastService) {}
+
+    public onFileChange(file: File | undefined) {
+        if (!file) {
+            this.headerText = '';
+            this.headerUrl = '';
+            return;
+        }
+
+        this.headerText = 'image';
+        this.headerType = 'image';
+        this.headerUrl = URL.createObjectURL(file);
+    }
+
+    public onInvalidFileUpload(): void {
+        this.toast.error('Formato de arquivo não permitido', 'Erro!');
+    }
 
     public ngOnInit(): void {
         this.properties = [
