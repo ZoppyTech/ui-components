@@ -9,6 +9,7 @@ export class InputFileComponent implements OnInit {
     @Input() public file: File | null = null;
     @Input() public extensions: Extension[] = [];
     @Input() public title: string = '';
+    @Input() public icon: string = 'icon-upload-doc';
 
     public subtitle: string = '';
 
@@ -33,7 +34,8 @@ export class InputFileComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        this.subtitle = 'Formatos de arquivo aceitos: ' + this.extensions.join(', ');
+        const extensionsFormatted: string[] = this.extensions.map((ext: string) => ext.replace('.', ''));
+        this.subtitle = 'Formatos de arquivo aceitos: ' + extensionsFormatted.join(', ');
     }
 
     public removeFile(): void {

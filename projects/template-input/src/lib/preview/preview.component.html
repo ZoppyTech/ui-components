@@ -2,8 +2,8 @@
     <span class="text-16 text--bold">Preview</span>
     <div class="message margin-y-2 margin-bottom-2" *ngIf="headerText || bodyText || footerText || ctaLabel">
         <div class="header" *ngIf="headerText">
-            <iframe [src]="headerUrl | safeResource" frameborder="0" *ngIf="headerType === 'video'"></iframe>
-            <img [src]="headerUrl | safeResource" *ngIf="headerType === 'image'" alt="" />
+            <iframe [src]="headerUrl | safeResource" frameborder="0" *ngIf="headerType === 'video' && headerUrl"></iframe>
+            <img [src]="headerUrl | safeResource" *ngIf="headerType === 'image' && headerUrl" alt="" />
             <pre
                 class="text text-16 text--bold"
                 *ngIf="headerType === 'text'"
