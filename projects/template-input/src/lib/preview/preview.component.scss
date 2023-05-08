@@ -5,7 +5,7 @@
     padding: 1rem;
 
     .message {
-        padding: 0.75rem;
+        padding: 0.25rem;
         background-color: var(--neutral-100);
         border-radius: 0.5rem;
         border: 1px solid var(--neutral-300);
@@ -15,10 +15,20 @@
         pre {
             white-space: pre-wrap;
             margin: unset;
+            line-break: anywhere;
+            padding: 0.5rem;
+            padding-bottom: 0;
+        }
+
+        iframe,
+        img {
+            width: 100%;
+            height: 10.25rem;
         }
     }
 
     .body {
+        padding: 0.5rem;
         pre {
             font-size: 14px;
             white-space: pre-wrap;

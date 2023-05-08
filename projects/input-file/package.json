@@ -1,0 +1,24 @@
+{
+    "name": "input-file",
+    "version": "0.0.1",
+    "peerDependencies": {
+        "@angular/common": "^15.0.0",
+        "@angular/core": "^15.0.0"
+    },
+    "dependencies": {
+        "tslib": "^2.3.0"
+    },
+    "description": "Toast component.",
+    "author": {
+        "name": "Lucas Roscoe",
+        "email": "lucas.roscoe@zoppy.com.br"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ZoppyTech/ui-components"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/ZoppyTech"
+    },
+    "license": "ISC"
+}

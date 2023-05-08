@@ -11,7 +11,14 @@
             <ps-input [(ngModel)]="ctaLabel"></ps-input>
         </div>
         <div class="tall">
-            <ps-preview [bodyText]="bodyText" [footerText]="footerText" [headerText]="headerText" [ctaLabel]="ctaLabel"></ps-preview>
+            <ps-preview
+                [bodyText]="bodyText"
+                [headerType]="headerType"
+                [footerText]="footerText"
+                [headerText]="headerText"
+                [headerUrl]="headerUrl"
+                [ctaLabel]="ctaLabel"
+            ></ps-preview>
         </div>
     </div>
 </app-utilization>

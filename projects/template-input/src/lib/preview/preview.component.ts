@@ -8,9 +8,11 @@ import { MessageTemplateUtil, StringUtil } from '@ZoppyTech/utilities';
 })
 export class PreviewComponent {
     @Input() public headerText: string = '';
+    @Input() public headerType: string = 'text';
     @Input() public bodyText: string = '';
     @Input() public footerText: string = '';
     @Input() public ctaLabel: string = '';
+    @Input() public headerUrl: string = '';
 
     public processText(text: string): string {
         const variables: string[] = StringUtil.getAllBetween('{{', '}}', text);

@@ -34,6 +34,9 @@
       "input": [
         "dist/input"
       ],
+      "input-file": [
+        "dist/input-file"
+      ],
       "mini-menu": [
         "dist/mini-menu"
       ],
