@@ -1,11 +1,11 @@
 {
     "name": "@ZoppyTech/input-file",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "peerDependencies": {
         "@angular/common": "^15.0.0",
         "@angular/core": "^15.0.0",
         "@ZoppyTech/visual-identity": "0.1.8",
-        "@ZoppyTech/icon": "0.1.40"
+        "@ZoppyTech/icon": "0.1.51"
     },
     "description": "Input file component.",
     "author": {
