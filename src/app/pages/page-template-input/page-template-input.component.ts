@@ -11,7 +11,7 @@ export class PageTemplateInputComponent implements OnInit {
     public properties: Array<Property> = [];
 
     public bodyText: string =
-        'Olá {{client_first_name}}, tudo bem?\n\nAqui é o {{seller_name}}, da {{company_name}}, estou te chamando pra saber como foi sua experiência com a gente e se posso ajudar em algo! \n            \nUm abraço!';
+        'Olá {{client_first_name}}, tudo bem?\n \nAqui é o {{seller_name}}, da {{company_name}}, estou te chamando pra saber como foi sua experiência com a gente e se posso ajudar em algo! \n            \nUm abraço!';
     public headerText: string = '';
     public headerType: string = 'text';
     public footerText: string = '';

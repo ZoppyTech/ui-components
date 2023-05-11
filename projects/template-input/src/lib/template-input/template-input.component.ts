@@ -27,11 +27,29 @@ export class TemplateInputComponent implements OnInit {
     public italic: boolean = false;
     public strikeThrough: boolean = false;
     public tabSelected: number = 0;
+    public caretPosition: number = 0;
 
     public constructor(private readonly toastService: ToastService) {}
     public ngOnInit(): void {
         setTimeout(() => {
-            if (this.divEditable) this.divEditable.innerText = this.ngModel;
+            if (this.divEditable) {
+                this.divEditable.innerText = this.ngModel;
+
+                this.divEditable.addEventListener('click', (e: any) => {
+                    this.setCaretPosition();
+                });
+                this.divEditable.addEventListener('keydown', (e: any) => {
+                    this.setCaretPosition();
+                });
+            }
+        });
+    }
+
+    public setCaretPosition(): void {
+        setTimeout(() => {
+            this.caretPosition = TemplateInputUtil.getCaretPosition(this.divEditable)
+                ? (TemplateInputUtil.getCaretPosition(this.divEditable) as any)
+                : 0;
         });
     }
 
@@ -340,6 +358,7 @@ export class TemplateInputComponent implements OnInit {
             this.onFocus.emit();
             this.focus = true;
         }
+        this.setCaretPosition();
     }
 
     public get divEditable() {
@@ -381,8 +400,10 @@ export class TemplateInputComponent implements OnInit {
     }
 
     public addParameter(parameter: TemplateParameter): void {
-        if (!this.focus) TemplateInputUtil.setCurrentCursorPosition(this.divEditable);
-        TemplateInputUtil.pasteHtmlAtCaret(parameter.value);
+        this.divEditable.innerText =
+            this.divEditable.innerText.substring(0, this.caretPosition) +
+            parameter.value +
+            this.divEditable.innerText.substring(this.caretPosition, this.divEditable.innerText.length - 1);
 
         this.ngModel = this.divEditable.innerText;
         this.ngModelChange.emit(this.ngModel);

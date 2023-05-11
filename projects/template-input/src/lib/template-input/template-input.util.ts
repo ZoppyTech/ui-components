@@ -31,8 +31,23 @@ export class TemplateInputUtil {
             (document as any).getSelection()?.createRange()?.pasteHTML(html);
         }
     }
+    public static getCaretPosition(target: any): number {
+        if (target.isContentEditable || document.designMode === 'on') {
+            target.focus();
+            const _range = (document.getSelection() as any).getRangeAt(0);
+            if (!_range.collapsed) {
+                return 0;
+            }
+            const range: any = _range.cloneRange();
+            const temp: any = document.createTextNode('\0');
+            range.insertNode(temp);
+            const caretposition = target.innerText.indexOf('\0');
+            temp.parentNode.removeChild(temp);
+            return caretposition;
+        }
 
-    public static getCaretPos(divEditable: any) {}
+        return 0;
+    }
 
     public static setCurrentCursorPosition(divEditable: any) {
         divEditable.focus();
