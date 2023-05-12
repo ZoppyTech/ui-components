@@ -23,9 +23,6 @@ export class PreviewComponent {
         for (const bold of bolds) {
             text = text.replace(bold, `<span class="text--bold">${bold.replace('*', '').replace('*', '')}</span>`);
         }
-        for (const italic of italics) {
-            text = text.replace(italic, `<span class="text--italic">${italic.replace('_', '').replace('_', '')}</span>`);
-        }
         for (const strikethrough of strikethroughs) {
             text = text.replace(
                 strikethrough,
@@ -43,6 +40,9 @@ export class PreviewComponent {
                       `{{${variable}}}`,
                       `<span class="text--negative">{{${MessageTemplateUtil.findFriendlyParameterTextForWhatsapp(variable)}}}</span>`
                   ));
+        }
+        for (const italic of italics) {
+            text = text.replace(italic, `<span class="text--italic">${italic.replace('_', '').replace('_', '')}</span>`);
         }
 
         return text;

@@ -8,7 +8,7 @@ import { Property } from 'src/app/components/utilization/utilization.component';
 })
 export class PageDatepickerComponent implements OnInit {
     public properties: Array<Property> = [];
-    public batata: any = '1990-11-08T14:00:00.000Z';
+    public batata: any = new Date();
     public constructor() {}
 
     public ngOnInit(): void {
