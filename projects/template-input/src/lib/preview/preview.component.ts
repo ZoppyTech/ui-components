@@ -20,18 +20,6 @@ export class PreviewComponent {
         const italics: string[] = text.match(/\_(.*?)\_/g) ?? [];
         const strikethroughs: string[] = text.match(/\-(.*?)\-/g) ?? [];
 
-        for (const variable of variables) {
-            MessageTemplateUtil.validateTemplateParameter(variable)
-                ? (text = text.replace(
-                      `{{${variable}}}`,
-                      `<span class="text--info">{{${MessageTemplateUtil.findFriendlyParameterTextForWhatsapp(variable)}}}</span>`
-                  ))
-                : (text = text.replace(
-                      `{{${variable}}}`,
-                      `<span class="text--negative">{{${MessageTemplateUtil.findFriendlyParameterTextForWhatsapp(variable)}}}</span>`
-                  ));
-        }
-
         for (const bold of bolds) {
             text = text.replace(bold, `<span class="text--bold">${bold.replace('*', '').replace('*', '')}</span>`);
         }
@@ -43,6 +31,18 @@ export class PreviewComponent {
                 strikethrough,
                 `<span class="text--strike-through">${strikethrough.replace('-', '').replace('-', '')}</span>`
             );
+        }
+
+        for (const variable of variables) {
+            MessageTemplateUtil.validateTemplateParameter(variable)
+                ? (text = text.replace(
+                      `{{${variable}}}`,
+                      `<span class="text--info">{{${MessageTemplateUtil.findFriendlyParameterTextForWhatsapp(variable)}}}</span>`
+                  ))
+                : (text = text.replace(
+                      `{{${variable}}}`,
+                      `<span class="text--negative">{{${MessageTemplateUtil.findFriendlyParameterTextForWhatsapp(variable)}}}</span>`
+                  ));
         }
 
         return text;
