@@ -53,7 +53,6 @@ export class TemplateInputUtil {
         divEditable.focus();
         document.execCommand('selectAll', false, undefined);
         document.getSelection()?.collapseToEnd();
-        console.log(`executou aqui?????`);
     }
 
     public static removeCharacter(text: string, index: number) {

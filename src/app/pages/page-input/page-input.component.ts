@@ -11,10 +11,6 @@ export class PageInputComponent implements OnInit {
     public value: string = '500';
     public constructor() {}
 
-    public batata(): void {
-        console.log(`batata`);
-    }
-
     public ngOnInit(): void {
         this.properties = [
             {

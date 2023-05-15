@@ -8,7 +8,6 @@ export class DragAndDropDirective {
     @Output() fileDropped = new EventEmitter<any>();
 
     @HostListener('dragover', ['$event']) onDragOver(evt: any) {
-        console.log('colocou encima');
         evt.preventDefault();
         evt.stopPropagation();
         this.fileOver = true;

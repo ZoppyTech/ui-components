@@ -28,8 +28,7 @@ export class TimepickerComponent implements OnInit {
 
     public changed(value: string): void {
         if (!value || value.length !== 4) {
-            this.model = undefined;
-            this.modelChange.emit(this.model);
+            return;
         }
 
         const hour: number = value.includes(':') ? parseInt(value.split(':')[0]) : parseInt(value.substring(0, 2));
@@ -46,7 +45,10 @@ export class TimepickerComponent implements OnInit {
         }
 
         this.time = `${hour < 10 ? '0' + hour : hour}:${minute < 10 ? '0' + minute : minute}`;
-        this.model?.setHours(hour, minute);
-        this.modelChange.emit(this.model);
+
+        if (this.model) {
+            this.model = new Date(this.model.getFullYear(), this.model.getMonth(), this.model.getDate(), hour, minute, 0, 0);
+            this.modelChange.emit(this.model);
+        }
     }
 }
