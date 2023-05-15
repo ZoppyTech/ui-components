@@ -28,7 +28,12 @@
         ></ps-input>
     </div>
 
-    <div class="datepicker-menu" [ngClass]="{ 'menu-open': open, top: displayTop }" [ngStyle]="{ width: width }">
+    <div
+        class="datepicker-menu"
+        #datepickerMenu
+        [ngClass]="{ 'menu-open': open, top: displayTop }"
+        [ngStyle]="{ width: width, top: calculateHeight() }"
+    >
         <div class="header">
             <div class="btn" (click)="changeMonth(month - 1)">
                 <ps-icon icon="icon-chevron"></ps-icon>

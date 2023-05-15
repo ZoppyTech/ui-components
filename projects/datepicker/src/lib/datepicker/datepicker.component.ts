@@ -14,6 +14,7 @@ export class DatepickerComponent implements OnInit {
     @Input() public displayTop: boolean = false;
     @Output() public modelChange: EventEmitter<Date> = new EventEmitter();
     @ViewChild('datepicker') public datepicker: any;
+    @ViewChild('datepickerMenu') public datepickerMenu: any;
 
     public hover: boolean = false;
     public open: boolean = false;
@@ -59,6 +60,12 @@ export class DatepickerComponent implements OnInit {
         this.month = this.model ? this.model.getMonth() : new Date().getMonth();
         this.day = this.model ? this.model.getDay() : new Date().getDay();
         this.year = this.model ? this.model.getFullYear() : new Date().getFullYear();
+    }
+
+    public calculateHeight(): string {
+        if (!this.displayTop) return '0px';
+        const height: number = -(this.datepickerMenu?.nativeElement?.offsetHeight + 10) ?? 0;
+        return height + 'px';
     }
 
     public getMonthString(): string {

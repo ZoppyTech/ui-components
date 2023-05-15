@@ -7,7 +7,7 @@ import { Property } from 'src/app/components/utilization/utilization.component';
     styleUrls: ['./page-timepicker.component.scss']
 })
 export class PageTimepickerComponent {
-    public model: Date | null = new Date();
+    public model: Date | undefined = new Date();
     public properties: Array<Property> = [];
 
     public ngOnInit(): void {
