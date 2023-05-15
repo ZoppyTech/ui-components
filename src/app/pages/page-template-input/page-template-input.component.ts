@@ -10,11 +10,19 @@ import { Property } from 'src/app/components/utilization/utilization.component';
 export class PageTemplateInputComponent implements OnInit {
     public properties: Array<Property> = [];
 
-    public bodyText: string = `Ei {{client_first_name}}! Tudo bão?
+    public bodyText: string = `Ei {{client_first_name}}! Tudo bem?
 
-Sou a Zoppy, parceira da *Bendizê*!
+Sou a Joana, parceira da *{{company_name}}*!
 
-Você ganhou *{{giftback_amount}} de cashback* para uma próxima compra no site! 👏`;
+Você ganhou *{{giftback_amount}} de cashback* para uma próxima compra! 😱
+
+Ele pode ser utilizado até o dia {{giftback_expiry_date}} e sua compra mínima deve ser de {{giftback_minimum_purchase_value}}
+
+Para resgatar, basta utilizar o cupom *{{giftback_code}}* na sua próxima compra em nosso site!
+
+Te aguardamos! 😁
+
+Aproveitando, {{client_first_name}}, caso não deseje receber mensagens com descontos personalizados, basta responder "não quero"`;
     public headerText: string = '';
     public headerType: string = 'text';
     public footerText: string = '';

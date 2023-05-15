@@ -71,6 +71,9 @@
       "template-input": [
         "dist/template-input"
       ],
+      "timepicker": [
+        "dist/timepicker"
+      ],
       "toast": [
         "dist/toast"
       ],

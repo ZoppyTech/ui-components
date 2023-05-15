@@ -91,6 +91,10 @@ export class AppComponent implements OnInit {
         {
             route: `input-file`,
             label: 'Input File'
+        },
+        {
+            route: `timepicker`,
+            label: 'Timepicker'
         }
     ];
 

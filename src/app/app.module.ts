@@ -102,6 +102,10 @@ const routes: Routes = [
     {
         path: 'input-file',
         loadChildren: () => import('./pages/page-input-file/page-input-file.module').then((m: any) => m.PageInputFileModule)
+    },
+    {
+        path: 'timepicker',
+        loadChildren: () => import('./pages/page-timepicker/page-timepicker.module').then((m: any) => m.PageTimepickerModule)
     }
 ];
 

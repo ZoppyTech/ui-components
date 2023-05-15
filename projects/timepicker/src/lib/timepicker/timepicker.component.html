@@ -1,0 +1,21 @@
+<div class="container" #datepicker (mouseenter)="hover = true" (mouseleave)="hover = false">
+    <div class="type-input">
+        <ps-input
+            mask="00:00"
+            [(ngModel)]="time"
+            iconColor="{{ model ? '#7b3dff' : '#dddddd' }}"
+            [debounce]="1500"
+            [iconClick]="false"
+            [icon]="'icon-timer'"
+            [debounce]="800"
+            [selectAll]="true"
+            [moveMaskedCursor]="false"
+            iconPosition="left"
+            [errors]="errors"
+            (onFocus)="errors = []"
+            [showErrors]="false"
+            [placeholder]="placeholder"
+            (ngModelChange)="changed($event)"
+        ></ps-input>
+    </div>
+</div>

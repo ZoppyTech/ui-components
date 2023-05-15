@@ -1,15 +1,17 @@
 {
-    "name": "@ZoppyTech/datepicker",
-    "version": "0.1.17",
+    "name": "@ZoppyTech/timepicker",
+    "version": "0.0.4",
     "peerDependencies": {
-        "@angular/common": "~15.0.0",
-        "@angular/core": "~15.0.0",
+        "@angular/common": "^15.0.0",
+        "@angular/core": "^15.0.0",
         "@ZoppyTech/visual-identity": "0.1.8",
-        "@ZoppyTech/icon": "0.1.40",
-        "@ZoppyTech/button": "0.1.6",
-        "@ZoppyTech/input": "^0.1.14"
+        "@ZoppyTech/icon": "0.1.48",
+        "@ZoppyTech/input": "0.1.14"
     },
-    "description": "Datepicker component.",
+    "dependencies": {
+        "tslib": "^2.3.0"
+    },
+    "description": "Template Input component.",
     "author": {
         "name": "Lucas Roscoe",
         "email": "lucas.roscoe@zoppy.com.br"
@@ -21,7 +23,5 @@
     "publishConfig": {
         "registry": "https://npm.pkg.github.com/ZoppyTech"
     },
-    "dependencies": {
-        "tslib": "^2.3.0"
-    }
+    "license": "ISC"
 }

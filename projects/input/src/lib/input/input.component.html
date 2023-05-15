@@ -7,8 +7,10 @@
             error: errors.length > 0,
             'icon-field': icon
         }"
+        ngDefaultControl
         #input
         class="input"
+        name="input"
         [ngModelOptions]="{ standalone: true }"
         [placeholder]="placeholder"
         [(ngModel)]="ngModel"
@@ -25,12 +27,14 @@
         *ngIf="rows === 1 && mask === 'currency'"
         currencyMask
         #input
+        ngDefaultControl
         [ngClass]="{
             error: errors.length > 0,
             'icon-field': icon
         }"
         [(ngModel)]="ngModel"
         class="input"
+        name="input"
         [disabled]="disabled"
         (blur)="onInputBlur()"
         (focus)="onInputFocus()"
@@ -47,8 +51,10 @@
             error: errors.length > 0,
             'icon-field': icon
         }"
+        ngDefaultControl
         [(ngModel)]="ngModel"
         class="input"
+        name="input"
         type="text"
         [disabled]="disabled"
         (blur)="onInputBlur()"
@@ -67,9 +73,11 @@
         [ngClass]="{
             error: errors.length > 0
         }"
+        ngDefaultControl
         [rows]="rows"
         #textArea
         class="input"
+        name="input"
         [ngModelOptions]="{ standalone: true }"
         [placeholder]="placeholder"
         (blur)="onInputBlur()"
