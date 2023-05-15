@@ -59,10 +59,12 @@ export class InputFileComponent implements OnInit {
                 return this.extensions.includes('.mpeg');
             case 'video/ogg':
                 return this.extensions.includes('.ogv');
+            case 'text/csv':
+                return this.extensions.includes('.csv');
             default:
                 return false;
         }
     }
 }
 
-export type Extension = '.jpg' | '.jpeg' | '.png' | '.avi' | '.mp4' | '.mpeg' | '.ogv';
+export type Extension = '.jpg' | '.jpeg' | '.png' | '.avi' | '.mp4' | '.mpeg' | '.ogv' | '.csv';

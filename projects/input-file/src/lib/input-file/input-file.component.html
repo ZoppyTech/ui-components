@@ -12,5 +12,5 @@
         <span class="text">{{ file.name }}</span>
         <ps-icon class="clickable" (click)="removeFile()" icon="icon-bin"></ps-icon>
     </div>
-    <input id="fileDropRef" type="file" #fileDropRef multiple (change)="fileBrowseHandler($event)" />
+    <input id="fileDropRef" type="file" #fileDropRef multiple [accept]="extensions.join(', ')" (change)="fileBrowseHandler($event)" />
 </div>
