@@ -7,11 +7,11 @@ import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 })
 export class TimepickerComponent implements OnInit {
     @Input() public placeholder: string = '';
-    @Input() public model?: Date | null = new Date();
+    @Input() public model?: Date | undefined = new Date();
     @Input() public timezone: number = -3;
     @Input() public disabled: boolean = false;
 
-    @Output() public modelChange: EventEmitter<Date | null> = new EventEmitter();
+    @Output() public modelChange: EventEmitter<Date | undefined> = new EventEmitter();
 
     public hover: boolean = false;
     public time: string = '';
@@ -28,14 +28,12 @@ export class TimepickerComponent implements OnInit {
 
     public changed(value: string): void {
         if (!value || value.length !== 4) {
-            this.model = null;
+            this.model = undefined;
             this.modelChange.emit(this.model);
         }
 
         const hour: number = value.includes(':') ? parseInt(value.split(':')[0]) : parseInt(value.substring(0, 2));
         const minute: number = value.includes(':') ? parseInt(value.split(':')[1]) : parseInt(value.substring(2, 4));
-
-        debugger;
 
         if (hour > 23 || hour < -1) {
             this.errors.push('error');
