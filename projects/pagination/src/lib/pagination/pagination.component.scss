@@ -1,17 +1,20 @@
-ps-button {
-    div {
-        width: 2rem;
-        margin-top: 0.25rem;
+.pagination {
+    display: flex;
+    align-items: center;
+    grid-gap: 0.5rem;
 
-        ps-icon {
-            font-size: 1.5rem;
-            color: var(--primary);
+    ps-button {
+        div {
+            ps-icon {
+                font-size: 0.75rem;
+                color: var(--primary);
+            }
         }
     }
-}
 
-.disabled {
-    ps-icon {
-        color: var(--primary-300) !important;
+    .disabled {
+        ps-icon {
+            color: var(--primary-300) !important;
+        }
     }
 }

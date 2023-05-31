@@ -1,18 +1,25 @@
-<div class="flex-center flex-row">
-    <ps-button type="cancel-border" [ngClass]="{ disabled: page === 1 }" [disabled]="page === 1" (onClick)="move('back')">
+<div class="pagination flex-center flex-row grid-gap-2">
+    <ps-button
+        [fixedHeight]="false"
+        type="cancel-border"
+        [ngClass]="{ disabled: page === 1 }"
+        [disabled]="page === 1"
+        (onClick)="move('back')"
+    >
         <div class="flex-center">
-            <ps-icon icon="icon-arrow_back"></ps-icon>
+            <ps-icon icon="icon-navigate_backwards"></ps-icon>
         </div>
     </ps-button>
-    <div class="flex-center padding-2">{{ page }}/{{ totalPages }}</div>
+    <div class="flex-center">{{ page }}/{{ totalPages }}</div>
     <ps-button
         type="cancel-border"
         [ngClass]="{ disabled: page === totalPages }"
         [disabled]="page === totalPages"
         (onClick)="move('forward')"
+        [fixedHeight]="false"
     >
         <div class="flex-center">
-            <ps-icon icon="icon-arrow_forward"></ps-icon>
+            <ps-icon icon="icon-navigate_forward"></ps-icon>
         </div>
     </ps-button>
 </div>

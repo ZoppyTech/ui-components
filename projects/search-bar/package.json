@@ -1,6 +1,6 @@
 {
     "name": "@ZoppyTech/search-bar",
-    "version": "0.1.9",
+    "version": "0.1.10",
     "peerDependencies": {
         "@angular/common": "~15.0.0",
         "@angular/core": "~15.0.0",
